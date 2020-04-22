@@ -54,6 +54,7 @@ class LoginController extends ControllerBase
                         $this->session->set('auth_email', $user->email);
                         $this->session->set('auth_created', $user->created);
                         $this->session->set('auth_updated', $user->updated);
+                        $this->session->set('auth_status', 1);
                         
                         // Go to User
                         if ($user->roles == 0) 
