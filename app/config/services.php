@@ -55,9 +55,7 @@ $di->setShared('view', function () {
 
             $volt->setOptions([
                 'path' => $config->application->cacheDir,
-                'separator' => '_',
-                'always' => true,
-                'extension' => '.php'
+                'separator' => '_'
             ]);
 
             return $volt;
@@ -81,7 +79,7 @@ $di->setShared('db', function () {
         'username' => $config->database->username,
         'password' => $config->database->password,
         'dbname'   => $config->database->dbname,
-        'port'     => $config->database->port,
+        'port'   => $config->database->port,
         'charset'  => $config->database->charset
     ];
 
