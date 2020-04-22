@@ -4,59 +4,128 @@
 
     <header class="header-section header-normal">
 
-        <!-- Register & Login -->
-        <div class="top-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="tn-right">
-                            <a href="/signup" class="bk-btn">Register</a>
-                            <a href="/login" class="bk-btn">Log In</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="menu-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">      
-                        <div class="nav-menu">
-                            <nav class="mainmenu">
-                                <div class="logo">
-                                    <a href="/">
-                                        <img src="img/icons/MainIcon.png" alt="">
-                                    </a>
+        <!-- Logged in -->
+        {% if session.has("auth_id") %}
+            <!-- Register & Login -->
+            <div class="top-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tn-right">
+                                <div class="language-option">
+                                    <span class="bk-btn">{{ session.get("auth_firstName")}}<i class="fa fa-angle-down"></i></span>
+                                    <div class="flag-dropdown">
+                                        <ul>
+                                            <li><a href="#">Profile</a></li>
+                                            <li><a href="/logout">Logout</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Navbar -->
-        <div class="menu-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">      
-                        <div class="nav-menu">
-                            <nav class="mainmenu">
-                                <ul>
-                                    <li><a href="">Home</a></li>
-                                    <li><a href="">Rooms</a></li>
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="">Booking</a>
-                                    <li><a href="">Contact</a>
-                                </ul>
-                            </nav>
+             <!-- Logo -->
+            <div class="menu-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">      
+                            <div class="nav-menu">
+                                <nav class="mainmenu">
+                                    <div class="logo">
+                                        <a href="/">
+                                            <img src="img/icons/MainIcon.png" alt="">
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <!-- Navbar -->
+            <div class="menu-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9">      
+                            <div class="nav-menu">
+                                <nav class="mainmenu">
+                                    <ul>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="">Rooms</a></li>
+                                        <li><a href="">About Us</a></li>
+                                        <li><a href="">Booking</a>
+                                        <li><a href="">Contact</a>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        {% else %}
+            <!-- Register & Login -->
+            <div class="top-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tn-right">
+                                <a href="/signup" class="bk-btn">Register</a>
+                                <a href="/login" class="bk-btn">Log In</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo -->
+            <div class="menu-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">      
+                            <div class="nav-menu">
+                                <nav class="mainmenu">
+                                    <div class="logo">
+                                        <a href="/">
+                                            <img src="img/icons/MainIcon.png" alt="">
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navbar -->
+            <div class="menu-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9">      
+                            <div class="nav-menu">
+                                <nav class="mainmenu">
+                                    <ul>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="">Rooms</a></li>
+                                        <li><a href="">About Us</a></li>
+                                        <li><a href="">Booking</a>
+                                        <li><a href="">Contact</a>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        
     </header>
+
 
     <!-- Booking -->
     <section class="hero-section">
@@ -251,7 +320,7 @@
                         <div class="ft-contact">
                             <h6>Contact Us</h6>
                             <ul>
-                                <li>Patrick</li>
+                                <li>Patrick Sungkharisma</li>
                                 <li>05111740000041</li>
                                 <li>PBKK C - FP Individu</li>
                             </ul>

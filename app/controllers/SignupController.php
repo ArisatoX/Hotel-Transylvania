@@ -76,11 +76,38 @@ class SignupController extends ControllerBase
 
                 // passing the result to the view
                 // $this->view->success = $success;
-
-                if ($success) {
-                    echo "Thanks for registering!";
-                    $this->view->disable();
-                } else {
+                
+                // Log the user/admin in
+                if ($success) 
+                {
+                    // Set a session
+                    $this->session->set('auth_id', $user->id);
+                    $this->session->set('auth_firstName', $user->firstName);
+                    $this->session->set('auth_lastName', $user->lastName);
+                    $this->session->set('auth_email', $user->email);
+                    $this->session->set('auth_created', $user->created);
+                    $this->session->set('auth_updated', $user->updated);
+                    
+                    // Go to User
+                    if ($user->roles == 0) 
+                    {
+                        $this->response->redirect("/");
+                    } 
+                    // Go to Admin
+                    else if ($user->roles == 1) 
+                    {
+                        echo "ADMIN LOGGED IN:" . PHP_EOL;
+                        echo $this->session->get("auth_firstName") . $this->session->get("auth_lastName");
+                        $this->view->disable();
+                    }
+                    // Exit 
+                    else 
+                    {
+                        return $this->response->redirect('login');
+                    }
+                } 
+                else 
+                {
                     echo "Sorry, the following problems were generated: " . implode('<br>', $user->getMessages());
                     $this->view->disable();
                 }
