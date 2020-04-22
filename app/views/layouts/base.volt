@@ -1,4 +1,4 @@
-a:3:{i:0;s:3598:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -82,7 +82,7 @@ a:3:{i:0;s:3598:"<!DOCTYPE html>
         </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:85;}}i:1;s:550:"
+        {% block content %} {% endblock %}
 
         <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->
         <script src="js/jquery-3.3.1.min.js"></script>
@@ -95,4 +95,4 @@ a:3:{i:0;s:3598:"<!DOCTYPE html>
         <script src="js/main.js"></script>
 
     </body>
-</html>";}
+</html>

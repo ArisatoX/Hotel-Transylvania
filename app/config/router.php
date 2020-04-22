@@ -13,6 +13,7 @@ $router->add('/', [
     'action' =>  'index'
 ]);
 
+
 $router->add('/:controller', [
     'namespace' => 'App\Controllers',
     'controller' =>  1,
@@ -45,5 +46,22 @@ $router->notFound([
     'action' => 'notFound',
 ]);
 
-$router->handle($di->get('request_uri'));
+$router->add('/signup', [
+    'namespace' => 'App\Controllers',
+    'controller' =>  'signup',
+    'action' =>  'index',
+]);
 
+$router->add('/login', [
+    'namespace' => 'App\Controllers',
+    'controller' =>  'login',
+    'action' =>  'index',
+]);
+
+// $router->add('/logout', [
+//     'namespace' => 'App\Controllers',
+//     'controller' =>  'users',
+//     'action' =>  'logout',
+// ]);
+
+$router->handle($di->get('request_uri'));

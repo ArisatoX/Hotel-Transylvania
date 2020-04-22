@@ -24,8 +24,8 @@ return new \Phalcon\Config([
         'migrationsDir'  => APP_PATH . '/migrations/',
         'viewsDir'       => APP_PATH . '/views/',
         'pluginsDir'     => APP_PATH . '/plugins/',
-        'libraryDir'     => APP_PATH . '/library/',
+        'libraryDir'     => APP_PATH . '/lib/',
         'cacheDir'       => BASE_PATH . '/cache/',
-        'baseUri'        => getenv('BASE_URI') ? : '/',
+        'baseUri'        => '/',
     ]
 ]);

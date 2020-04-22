@@ -1,3 +1,7 @@
+{% extends "layouts/base.volt" %}
+
+{% block content %}
+
 <?php echo "<h2> Login Form </h2>"; ?>
 
 <form action="" method="POST">
@@ -16,3 +20,5 @@
     </p>
 
 </form>
+
+{% endblock %}

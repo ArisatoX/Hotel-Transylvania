@@ -133,7 +133,6 @@ $di->setShared('dispatcher', function() {
 
     $eventsManager = new \Phalcon\Events\Manager();
 
-    // Error handler
     $eventsManager->attach(
         'dispatch:beforeException',
         function (Event $event, \Phalcon\Mvc\Dispatcher $dispatcher, Exception $exception) {

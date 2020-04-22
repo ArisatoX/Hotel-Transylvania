@@ -1,3 +1,7 @@
+{% extends "layouts/base.volt" %}
+
+{% block content %}
+
 <form method = "POST" action="signup/register">
 
     <h2> REGISTER FORM </h2><br>
@@ -26,3 +30,5 @@
     <input type="submit" value="Submit">
 
 </form>
+
+{% endblock %}
