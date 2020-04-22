@@ -1,4 +1,4 @@
-a:3:{i:0;s:3598:"<!DOCTYPE html>
+a:3:{i:0;s:1498:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -25,64 +25,9 @@ a:3:{i:0;s:3598:"<!DOCTYPE html>
 
     </head>
     <body>
-        <header class="header-section header-normal">
-
-        <!-- Register & Login -->
-        <div class="top-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="tn-right">
-                            <a href="/signup" class="bk-btn">Register</a>
-                            <a href="/login" class="bk-btn">Log In</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="menu-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">      
-                        <div class="nav-menu">
-                            <nav class="mainmenu">
-                                <div class="logo">
-                                    <a href="/">
-                                        <img src="img/icons/MainIcon.png" alt="">
-                                    </a>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navbar -->
-        <div class="menu-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">      
-                        <div class="nav-menu">
-                            <nav class="mainmenu">
-                                <ul>
-                                    <li><a href="">Home</a></li>
-                                    <li><a href="">Rooms</a></li>
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="">Booking</a>
-                                    <li><a href="">Contact</a>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:85;}}i:1;s:550:"
+        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:30;}}i:1;s:550:"
 
         <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->
         <script src="js/jquery-3.3.1.min.js"></script>

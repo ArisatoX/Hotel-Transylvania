@@ -6,7 +6,20 @@ $config = $di->getConfig();
 
 $router->removeExtraSlashes(true);
 
-// Mengatur routes
+// setting manual routes
+$router->add('/signup', [
+    'namespace' => 'App\Controllers',
+    'controller' =>  'signup',
+    'action' =>  'register',
+]);
+
+$router->add('/login', [
+    'namespace' => 'App\Controllers',
+    'controller' =>  'login',
+    'action' =>  'index',
+]);
+
+// setting automatic routes
 $router->add('/', [
     'namespace' => 'App\Controllers',
     'controller' =>  'index',
@@ -45,23 +58,5 @@ $router->notFound([
     'controller' => 'error',
     'action' => 'notFound',
 ]);
-
-$router->add('/signup', [
-    'namespace' => 'App\Controllers',
-    'controller' =>  'signup',
-    'action' =>  'index',
-]);
-
-$router->add('/login', [
-    'namespace' => 'App\Controllers',
-    'controller' =>  'login',
-    'action' =>  'index',
-]);
-
-// $router->add('/logout', [
-//     'namespace' => 'App\Controllers',
-//     'controller' =>  'users',
-//     'action' =>  'logout',
-// ]);
 
 $router->handle($di->get('request_uri'));

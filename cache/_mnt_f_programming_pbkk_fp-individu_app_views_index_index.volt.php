@@ -25,7 +25,11 @@
 
     </head>
     <body>
-        <header class="header-section header-normal">
+
+        <!-- Content -->
+        
+
+    <header class="header-section header-normal">
 
         <!-- Register & Login -->
         <div class="top-nav">
@@ -79,10 +83,7 @@
                 </div>
             </div>
         </div>
-        </header>
-
-        <!-- Content -->
-        
+    </header>
 
     <!-- Booking -->
     <section class="hero-section">
@@ -158,7 +159,10 @@
                     <div class="about-pic">
                         <div class="row">
                             <div class="col-sm-6">
-                                <img src="img/background/about.jpg" alt="">
+                                <img src="img/about/about1.jpg" alt="">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="img/about/about2.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -219,9 +223,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="room-item">
-                            <img src="img/room/studio.jpg" alt="">
+                            <img src="img/room/premierfamily.jpg" alt="">
                             <div class="ri-text">
-                                <h4>Studio</h4>
+                                <h4>Premier Family</h4>
                                 <h3>Rp 2.500.000,00<span> / Pernight</span></h3>
                                 <a href="#" class="primary-btn">Details</a>
                             </div>
@@ -229,9 +233,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="room-item">
-                            <img src="img/room/deluxeking.jpg" alt="">
+                            <img src="img/room/premiersuite.jpg" alt="">
                             <div class="ri-text">
-                                <h4>Deluxe King</h4>
+                                <h4>Premier Suite</h4>
                                 <h3>Rp 3.000.000,00<span> / Pernight</span></h3>
                                 <a href="#" class="primary-btn">Details</a>
                             </div>
@@ -239,9 +243,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="room-item">
-                            <img src="img/room/premiertwin.jpg" alt="">
+                            <img src="img/room/chairmansuite.jpg" alt="">
                             <div class="ri-text">
-                                <h4>Premier Twin</h4>
+                                <h4>Chairman Suite</h4>
                                 <h3>Rp 3.500.000,00<span> / Pernight</span></h3>
                                 <a href="#" class="primary-btn">Details</a>
                             </div>

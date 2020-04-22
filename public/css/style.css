@@ -387,13 +387,12 @@ ul, ol {
 	z-index: 9;
 }
 .menu-item .logo {
-	padding: 10px 0;
+	padding: 25px 0;
 }
 .menu-item .logo a {
 	display: inline-block;
 }
 .menu-item .nav-menu {
-	padding: 10px 0;
 	text-align: right;
 }
 .menu-item .nav-menu .mainmenu {
