@@ -10,7 +10,7 @@ class TestController extends ControllerBase
     {
         $db = $this->getDI()->get('db');
 
-        $sql = "SELECT * from Users";
+        $sql = "SELECT * from Rooms";
 
         $result = $db->fetchOne($sql, \Phalcon\Db\Enum::FETCH_ASSOC);
 

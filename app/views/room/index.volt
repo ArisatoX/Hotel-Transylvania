@@ -18,6 +18,44 @@
         <div class="container-fluid">
             <div class="hp-room-items">
                 <div class="row">
+
+                    {# Room #}
+                    {% for room in rooms %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="room-item">
+                            <img src="img/room/studio.jpg" alt="">
+                            <div class="ri-text">
+                                <h4>{{ room.names }}</h4>
+                                <h3>{{ room.price}}<span> / Pernight</span></h3>
+                                <a href="#" class="primary-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    <div class="col-lg-12">
+                        <div class="room-pagination">
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+{% endblock %}
+
+
+
+
+    {# <section class="hp-room-section">
+        <div class="container-fluid">
+            <div class="hp-room-items">
+                <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="room-item">
                             <img src="img/room/studio.jpg" alt="">
@@ -90,6 +128,4 @@
         </div>
     </section>
 
-    <br>
-
-{% endblock %}
+    <br> #}
