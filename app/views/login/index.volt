@@ -2,23 +2,34 @@
 
 {% block content %}
 
-<?php echo "<h2> Login Form </h2>"; ?>
+    <div class="container-contact100" style="background-image: url('img/background/bgform.jpg');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method ="POST" action="">
+				<span class="contact100-form-title">
+					Login
+				</span>
 
-<form action="" method="POST">
-    <p>
-        <label for="email">Email</label> <br>
-        <?php echo $this->tag->textField("email"); ?>
-    </p>
+				<div class="wrap-input100 validate-input" data-validate="Email is required">
+					<span class="label-input100">Email</span>
+					<input class="input100" type="text" name="email" placeholder="">
+                </div>
 
-    <p>
-        <label for="pass">Password</label> <br>
-        <?php echo $this->tag->PasswordField("pass"); ?>
-    </p>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+					<span class="label-input100">Password</span>
+					<input class="input100" type="password" name="pass" placeholder="">
+                </div>
 
-    <p>
-        <?php echo $this->tag->submitButton("Login"); ?>
-    </p>
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Submit
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
 
-</form>
+	</div>
 
 {% endblock %}

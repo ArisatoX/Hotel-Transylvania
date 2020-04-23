@@ -58,9 +58,7 @@ class LoginController extends ControllerBase
                         // Go to User
                         if ($user->roles == 0) 
                         {
-                            echo "USER LOGGED IN:" . PHP_EOL;
-                            echo $this->session->get("auth_firstName") . $this->session->get("auth_lastName");
-                            $this->view->disable();
+                            $this->response->redirect("/");
                         } 
                         // Go to Admin
                         else if ($user->roles == 1) 

@@ -36,8 +36,120 @@
     </head>
     <body>
 
+        <header class="header-section header-normal">
+
+        {% if session.has("auth_id") %}
+            <!-- Logged in -->
+            <div class="top-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tn-right">
+                                <div class="language-option">
+                                    <span class="bk-btn">{{ session.get("auth_firstName")}}<i class="fa fa-angle-down"></i></span>
+                                    <div class="flag-dropdown">
+                                        <ul>
+                                            <li><a href="#">Profile</a></li>
+                                            <li><a href="/logout">Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+
+        {% else %}
+            <!-- Not Logged In -->
+            <div class="top-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tn-right">
+                                <a href="/signup" class="bk-btn">Register</a>
+                                <a href="/login" class="bk-btn">Log In</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <!-- Logo -->
+        <div class="menu-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">      
+                        <div class="nav-menu">
+                            <nav class="mainmenu">
+                                <div class="logo">
+                                    <a href="/">
+                                        <img src="img/icons/MainIcon.png" alt="">
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="menu-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">      
+                        <div class="nav-menu">
+                            <nav class="mainmenu">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/room">Rooms</a></li>
+                                    <li><a href="">Booking</a></li>
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
         <!-- Content -->
         {% block content %} {% endblock %}
+
+        <!-- Footer -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="footer-text">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="ft-about">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 offset-lg-1">
+                            <div class="ft-contact">
+                                <h6>Contact Us</h6>
+                                <ul>
+                                    <li>Patrick Sungkharisma</li>
+                                    <li>05111740000041</li>
+                                    <li>PBKK C - FP Individu</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 offset-lg-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+
+
+
 
         <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->
 
@@ -60,32 +172,3 @@
 
     </body>
 </html>
-
-<!-- <form method = "POST" action="signup/register">
-
-    <h2> REGISTER FORM </h2><br>
-
-    <label for="firstName"> First name </label><br>
-    <input type="text" name="firstName"><br>
-
-    <label for="lastName">Last name</label><br>
-    <input type="text" name="lastName"><br>
-
-    <label for="email"> Email</label><br>
-    <input type="text" name="email"><br>
-
-    <label for="pass">Password</label><br>
-    <input type="password" name="pass"><br>
-
-    <label for="confirm">Confirm Password</label><br>
-    <input type="password" name="confirm"><br>
-
-    <label for="country"> Country / Region </label><br>
-    <input type="text" name="country"><br><br>
-
-    <label for="phone">Phone Number</label><br>
-    <input type="text" name="phone"><br><br>
-
-    <input type="submit" value="Submit">
-
-</form> -->

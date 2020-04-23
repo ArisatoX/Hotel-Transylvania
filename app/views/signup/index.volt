@@ -2,42 +2,6 @@
 
 {% block content %}
 
-    <!-- Register & Login -->
-        <div class="top-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="tn-right">
-                            <a href="/signup" class="bk-btn">Register</a>
-                            <a href="/login" class="bk-btn">Log In</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navbar -->
-        <div class="menu-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">      
-                        <div class="nav-menu">
-                            <nav class="mainmenu">
-                                <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="">Rooms</a></li>
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="">Booking</a>
-                                    <li><a href="">Contact</a>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <div class="container-contact100" style="background-image: url('img/background/bgform.jpg');">
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" method = "POST" action="/signup/register">

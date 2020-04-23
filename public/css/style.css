@@ -304,6 +304,7 @@ ul, ol {
 .top-nav .tn-right {
 	text-align: right;
 }
+
 .top-nav .tn-right .top-social {
 	display: inline-block;
 	margin-right: 35px;
@@ -392,7 +393,7 @@ ul, ol {
 	z-index: 9;
 }
 .menu-item .logo {
-	padding: 25px 0;
+	padding: 15px 0;
 }
 .menu-item .logo a {
 	display: inline-block;

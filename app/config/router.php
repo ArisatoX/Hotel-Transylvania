@@ -7,17 +7,6 @@ $config = $di->getConfig();
 $router->removeExtraSlashes(true);
 
 // setting manual routes
-$router->add('/signup', [
-    'namespace' => 'App\Controllers',
-    'controller' =>  'signup',
-    'action' =>  'register',
-]);
-
-$router->add('/login', [
-    'namespace' => 'App\Controllers',
-    'controller' =>  'login',
-    'action' =>  'index',
-]);
 
 // setting automatic routes
 $router->add('/', [
