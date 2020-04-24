@@ -83,8 +83,8 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="">Booking</a></li>
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="">Contact</a></li>
+                                    <li><a href="/#aboutus">About Us</a></li>
+                                    <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -212,7 +212,7 @@
 
         <!-- Footer -->
         <footer class="footer-section">
-            <div class="container">
+            <div class="container" id="contact">
                 <div class="footer-text">
                     <div class="row">
                         <div class="col-lg-4">

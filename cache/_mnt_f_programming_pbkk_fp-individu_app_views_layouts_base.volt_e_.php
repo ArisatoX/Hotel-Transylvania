@@ -1,4 +1,4 @@
-a:3:{i:0;s:3845:"<!DOCTYPE html>
+a:3:{i:0;s:3862:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -83,8 +83,8 @@ a:3:{i:0;s:3845:"<!DOCTYPE html>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="">Booking</a></li>
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="">Contact</a></li>
+                                    <li><a href="/#aboutus">About Us</a></li>
+                                    <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -96,11 +96,11 @@ a:3:{i:0;s:3845:"<!DOCTYPE html>
     </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:99;}}i:1;s:1180:"
+        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:99;}}i:1;s:1193:"
 
         <!-- Footer -->
         <footer class="footer-section">
-            <div class="container">
+            <div class="container" id="contact">
                 <div class="footer-text">
                     <div class="row">
                         <div class="col-lg-4">

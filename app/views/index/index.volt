@@ -57,7 +57,7 @@
 
     <!-- About Us -->
     <section class="aboutus-section spad">
-        <div class="container">
+        <div class="container" id="aboutus">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="about-text">
