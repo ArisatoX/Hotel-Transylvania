@@ -1,4 +1,4 @@
-a:3:{i:0;s:3845:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -62,7 +62,7 @@ a:3:{i:0;s:3845:"<!DOCTYPE html>
                             <nav class="mainmenu">
                                 <div class="logo">
                                     <a href="/">
-                                        <img src="<?= $this->url->get('img/icons/MainIcon.png') ?>" alt="">
+                                        <img src="img/icons/MainIcon.png" alt="">
                                     </a>
                                 </div>
                             </nav>
@@ -96,7 +96,39 @@ a:3:{i:0;s:3845:"<!DOCTYPE html>
     </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:99;}}i:1;s:1180:"
+        
+
+    <div class="container-contact100" style="background-image: url('img/background/bgform.jpg');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method ="POST" action="">
+				<span class="contact100-form-title">
+					Login
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Email is required">
+					<span class="label-input100">Email</span>
+					<input class="input100" type="text" name="email" placeholder="">
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+					<span class="label-input100">Password</span>
+					<input class="input100" type="password" name="pass" placeholder="">
+                </div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Submit
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+
 
         <!-- Footer -->
         <footer class="footer-section">
@@ -131,4 +163,3 @@ a:3:{i:0;s:3845:"<!DOCTYPE html>
 
     </body>
 </html>
-";}

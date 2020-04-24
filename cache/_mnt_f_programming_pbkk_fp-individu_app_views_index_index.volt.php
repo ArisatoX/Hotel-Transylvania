@@ -9,8 +9,6 @@
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
-        
-        
 
     </head>
     <body>
@@ -216,10 +214,8 @@
         <!-- Footer Section End -->
 
 
-        <!-- Load CSS -->
+        <!-- Load JS -->
         <?= $this->assets->outputJs() ?>
-
-        
 
     </body>
 </html>
