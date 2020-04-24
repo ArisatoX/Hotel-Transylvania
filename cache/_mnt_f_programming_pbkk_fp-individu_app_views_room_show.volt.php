@@ -1,4 +1,4 @@
-a:3:{i:0;s:3839:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -98,7 +98,10 @@ a:3:{i:0;s:3839:"<!DOCTYPE html>
     </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:125;}}i:1;s:1193:"
+        
+
+
+
 
         <!-- Footer -->
         <footer class="footer-section">
@@ -135,4 +138,3 @@ a:3:{i:0;s:3839:"<!DOCTYPE html>
 
     </body>
 </html>
-";}

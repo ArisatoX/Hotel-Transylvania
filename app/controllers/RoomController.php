@@ -11,7 +11,7 @@ class RoomController extends ControllerBase
     {
         $rooms = Rooms::find();
         $this->view->rooms = $rooms;
-        // dd($users);
+        
     }
 
     public function showAction($userId)
@@ -22,6 +22,6 @@ class RoomController extends ControllerBase
         'bind' => $conditions,
         ]);
         $this->view->room = $room;
-        // dd($users);
+        
     }
 }

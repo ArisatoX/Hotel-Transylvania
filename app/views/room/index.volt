@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<div class="container">
     <div class="breadcrumb-section">
         <div class="container">
             <div class="row">
@@ -19,15 +20,15 @@
             <div class="hp-room-items">
                 <div class="row">
 
-                    {# Room #}
+                    <!-- Room -->
                     {% for room in rooms %}
                     <div class="col-lg-4 col-md-6">
                         <div class="room-item">
-                            <img src="img/room/studio.jpg" alt="">
+                            {{ image(room.picture)}}
                             <div class="ri-text">
                                 <h4>{{ room.names }}</h4>
                                 <h3>{{ room.price}}<span> / Pernight</span></h3>
-                                <a href="#" class="primary-btn">Details</a>
+                                <a href="room/show/{{ room.id }}" class="primary-btn">Details</a>
                             </div>
                         </div>
                     </div>
@@ -44,8 +45,9 @@
             </div>
         </div>
     </section>
+</div>
 
-    <br>
+<br>
 
 {% endblock %}
 
@@ -91,7 +93,7 @@
                             <img src="img/room/premierfamily.jpg" alt="">
                             <div class="ri-text">
                                 <h4>Premier Family</h4>
-                                <h3>Rp 2.500.000,00<span> / Pernight</span></h3>
+                                <h3>Rp 3.750.000,00<span> / Pernight</span></h3>
                                 <a href="#" class="primary-btn">Details</a>
                             </div>
                         </div>
@@ -101,7 +103,7 @@
                             <img src="img/room/premiersuite.jpg" alt="">
                             <div class="ri-text">
                                 <h4>Premier Suite</h4>
-                                <h3>Rp 3.000.000,00<span> / Pernight</span></h3>
+                                <h3>Rp 5.000.000,00<span> / Pernight</span></h3>
                                 <a href="#" class="primary-btn">Details</a>
                             </div>
                         </div>
@@ -111,7 +113,7 @@
                             <img src="img/room/chairmansuite.jpg" alt="">
                             <div class="ri-text">
                                 <h4>Chairman Suite</h4>
-                                <h3>Rp 3.500.000,00<span> / Pernight</span></h3>
+                                <h3>Rp 10.000.000<span> / Pernight</span></h3>
                                 <a href="#" class="primary-btn">Details</a>
                             </div>
                         </div>

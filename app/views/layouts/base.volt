@@ -6,32 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>Phalcon PHP Framework</title>
-        
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-
-        <!-- Form -->
-        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-        <link rel="stylesheet" type="text/css" href="css/form/util.css">
-        <link rel="stylesheet" type="text/css" href="css/form/main.css">
+        <!-- Load CSS -->
+        {{ assets.outputCss() }}
 
     </head>
     <body>
@@ -149,9 +126,10 @@
         <!-- Footer Section End -->
 
 
+        <!-- Load JS -->
+        {{ assets.outputJs() }}
 
-
-        <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->
+        {# <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->
 
         <!-- Main -->
         <script src="js/jquery-3.3.1.min.js"></script>
@@ -168,7 +146,7 @@
         <script src="vendor/bootstrap/js/popper.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="vendor/select2/select2.min.js"></script>
-        <script src="js/form/main.js"></script>
+        <script src="js/form/main.js"></script> #}
 
     </body>
 </html>

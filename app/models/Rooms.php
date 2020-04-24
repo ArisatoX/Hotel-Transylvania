@@ -16,5 +16,6 @@ class Rooms extends Model
     public $bed;
     public $features;
     public $descriptions;
+    public $picture;
 
 }
