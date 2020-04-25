@@ -31,7 +31,7 @@
                         <div class="rd-text">
 
                             <h2>Booking ID: #{{book.id}}</h2>
-                            <h4>Total Price: Rp {{book.totalprice}}</h4>
+                            <h4>Subtotal: Rp {{book.totalprice}}</h4>
                             <br>
                             
                             {# <!-- Member and Non Member -->
@@ -64,6 +64,19 @@
                                         <td class="r-o">Duration:</td>
                                         <td>{{book.duration}} Day(s)</td>
                                     </tr>
+
+                                    {% if book.paid == 0 %}
+                                        <tr>
+                                            <td class="r-o">Paid:</td>
+                                            <td>No</td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td class="r-o">Paid:</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                    {% endif %}
+                                            
                                     <tr>
                                         <td class="r-o">Status:</td>
                                         <td>{{book.stat}}</td>
@@ -90,10 +103,6 @@
                 <div class="col-lg-6">   
                        {{ image(room.picture)}}
                 </div>
-
-
-
-
             </div>
         </div>
     </section>

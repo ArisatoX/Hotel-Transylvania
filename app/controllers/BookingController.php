@@ -17,7 +17,12 @@ class BookingController extends ControllerBase
         }
     }
 
-    public function SuccessAction()
+    public function successbookAction()
+    {
+
+    }
+
+    public function successdeleteAction()
     {
 
     }
@@ -70,7 +75,7 @@ class BookingController extends ControllerBase
         $id_room = $this->request->getPost('id_room', 'string');
         $duration = $this->request->getPost('duration', 'string');
         $totalroom = $this->request->getPost('totalroom', 'string');
-        $price = $this->request->getPost('price', 'string');
+        $totalprice = $this->request->getPost('totalprice', 'string');
 
         // echo $id_user . PHP_EOL . $id_room . PHP_EOL . $totalroom . PHP_EOL . ($totalroom * $price);
 
@@ -82,7 +87,7 @@ class BookingController extends ControllerBase
         $booking->id_room = $id_room;
         $booking->duration = $duration;
         $booking->totalroom = $totalroom;
-        $booking->totalprice = $totalroom * $price * $duration;
+        $booking->totalprice = $totalprice;
         $booking->payment = ' ';
         $booking->paid = 0;
         $booking->stat = "Waiting for payment";
@@ -97,13 +102,39 @@ class BookingController extends ControllerBase
 
         if ($success)
         {
-            $this->response->redirect('booking/success');
+            $this->response->redirect('booking/successbook');
         }
         else
         {
             echo "Sorry, the following problems were generated: " . implode('<br>', $booking->getMessages());
             $this->view->disable();
         }
+    }
+
+    public function confirmationAction()
+    {
+        // Get data
+        $id_user = $this->request->getPost('id_user', 'string');
+        $id_room = $this->request->getPost('id_room', 'string');
+        $duration = $this->request->getPost('duration', 'string');
+        $totalroom = $this->request->getPost('totalroom', 'string');
+        $price = $this->request->getPost('price', 'string');
+        $totalprice = $totalroom * $price * $duration;
+        
+        // Search room info
+        $conditions = ['id_room'=>$id_room];
+        $room = Rooms::findFirst([
+        'conditions' => 'id= :id_room:',
+        'bind' => $conditions,
+        ]);
+        $this->view->room = $room;  
+
+        $this->view->id_user = $id_user;
+        $this->view->id_room = $id_room;
+        $this->view->duration = $duration;
+        $this->view->totalroom = $totalroom;
+        $this->view->price = $price;
+        $this->view->totalprice = $totalprice;
     }
 
     public function showAction($bookingId)

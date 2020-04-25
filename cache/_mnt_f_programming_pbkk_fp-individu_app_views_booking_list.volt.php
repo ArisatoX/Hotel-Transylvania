@@ -99,115 +99,80 @@
         <!-- Content -->
         
 
-    <!-- Breadcrumb Section Begin -->
-    <div class="breadcrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Booking Details</h2>
-                        <div class="bt-option">
-                            <a href="/">Home</a>
-                            <a href="../bookinglist">Bookings</a>
-                            <span><?= $book->id ?></span>
+    <div class = "container">
+        <?php if ($flag == 1) { ?>
+
+            <section class="hp-room-section">
+                <div class="container-fluid">
+                    <div class="hp-room-items">
+                        <div class="row">
+
+                            <!-- Room Exist -->
+                            <?php foreach ($rooms as $room) { ?>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="room-item">
+                                    <?= $this->tag->image([$room->picture]) ?>
+                                    <div class="ri-text">
+                                        <h4><?= $room->names ?></h4>
+
+                                        <h3>Rp <?= $room->price ?><span> / night</span></h3>
+
+                                        
+            
+                                        <form method = "POST" action = "confirmation">
+                                            <input class="input100" type="text" name="id_user" value="<?= $this->session->get('auth_id') ?>" hidden>
+                                            <input class="input100" type="text" name="id_room" value="<?= $room->id ?>" hidden>
+                                            <input class="input100" type="text" name="duration" value="<?= $duration ?>" hidden>
+                                            <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
+                                            <input class="input100" type="text" name="price" value="<?= $room->price ?>" hidden>
+                                            <button type="submit" class="primary-btn">Select</a>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } ?>
+                            
+                            
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Section End -->
+            </section>
+                        
+        <?php } else { ?>
 
-    <!-- Room Details Section Begin -->
-    <section class="room-details-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="room-details-item">
-
-                        <div class="rd-text">
-
-                            <h2>Booking ID: #<?= $book->id ?></h2>
-                            <h4>Total Price: Rp <?= $book->totalprice ?></h4>
-                            <br>
-                            
-                            
-
-                            
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="r-o">Booking ID:</td>
-                                        <td><?= $book->id ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Room Name:</td>
-                                        <td><?= $room->names ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Price:</td>
-                                        <td>Rp <?= $room->price ?> <span> / night</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Room Count:</td>
-                                        <td><?= $book->totalroom ?> Room(s)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Duration:</td>
-                                        <td><?= $book->duration ?> Day(s)</td>
-                                    </tr>
-
-                                    <?php if ($book->paid == 0) { ?>
-                                        <tr>
-                                            <td class="r-o">Paid:</td>
-                                            <td>No</td>
-                                        </tr>
-                                    <?php } else { ?>
-                                        <tr>
-                                            <td class="r-o">Paid:</td>
-                                            <td>Yes</td>
-                                        </tr>
-                                    <?php } ?>
-                                            
-                                    <tr>
-                                        <td class="r-o">Status:</td>
-                                        <td><?= $book->stat ?></td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-
-                            <div class="room-details-item">
-                                <div class="rd-text">
-                                    <div class="rd-title">
-                                        <div class="rdt-left">
-                                            <a href="#">Payment</a>
-                                            <a href="#">Update</a>
-                                            <a href="../delete/<?= $book->id ?>">Delete</a>
+            <!-- Room Doesn't Exist -->
+            <div class = "container">
+                <section class="aboutus-section spad">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="about-text">
+                                    <div class="section-title">
+                                        <h2>Oops...</h2>
+                                    </div>
+                                    <p class="f-para"> The room that you are searching right now is not available or it might be full.
+                                    </p>
+                                    <br>
+                                    <a href="/booking" class="primary-btn about-btn">Back to Booking</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="about-pic">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <img src="<?= $this->url->get('img/icons/sad.png') ?>" alt="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-6">   
-                       <?= $this->tag->image([$room->picture]) ?>
-                </div>
-
-
-
-
+                </section>
             </div>
-        </div>
-    </section>
-    <!-- Room Details Section End -->
-
-    
-
-
-
+        
+        <?php } ?>
+    </div>
 
 
 

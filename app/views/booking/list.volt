@@ -27,7 +27,7 @@
                                             <h3>Rp {{room.price}}<span> / Pernight</span></h3>
                                         {% endif %} #}
             
-                                        <form method = "POST" action = "create">
+                                        <form method = "POST" action = "confirmation">
                                             <input class="input100" type="text" name="id_user" value="{{ session.get("auth_id")}}" hidden>
                                             <input class="input100" type="text" name="id_room" value="{{ room.id }}" hidden>
                                             <input class="input100" type="text" name="duration" value="{{ duration }}" hidden>

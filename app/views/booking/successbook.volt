@@ -14,7 +14,8 @@
                         
                         <p class="f-para"> You have successfully booked the room. We will wait for your arrival
                         
-                        <br>
+                        <br> <br>
+
                         <a href="/booking/bookinglist" class="primary-btn about-btn">Booking list</a>
                     </div>
                 </div>
