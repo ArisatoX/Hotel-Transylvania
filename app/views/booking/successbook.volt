@@ -12,7 +12,7 @@
                             <h2>Success</h2>
                         </div>
                         
-                        <p class="f-para"> You have successfully booked the room. We will wait for your arrival
+                        <p class="f-para"> You have successfully booked the room
                         
                         <br> <br>
 

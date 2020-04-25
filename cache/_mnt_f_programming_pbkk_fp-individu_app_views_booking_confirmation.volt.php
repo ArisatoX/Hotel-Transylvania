@@ -137,7 +137,6 @@
                                     <h5><b>Subtotal:</b></h5>
                                     <h2>Rp <?= $totalprice ?></h2>
 
-
                                 </div>
                             </div>
                         </div>

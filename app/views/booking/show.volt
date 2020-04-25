@@ -31,7 +31,7 @@
                         <div class="rd-text">
 
                             <h2>Booking ID: #{{book.id}}</h2>
-                            <h4>Subtotal: Rp {{book.totalprice}}</h4>
+                            <h4><b>Rp {{book.totalprice}}</b></h4>
                             <br>
                             
                             {# <!-- Member and Non Member -->
