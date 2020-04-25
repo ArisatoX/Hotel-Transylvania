@@ -10,6 +10,7 @@ class Booking extends Model
     public $id;
     public $id_user;
     public $id_room;
+    public $duration;
     public $totalroom;
     public $totalprice;
     public $payment;

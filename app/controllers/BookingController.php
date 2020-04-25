@@ -25,6 +25,7 @@ class BookingController extends ControllerBase
     public function listAction()
     {
         // get data
+        $duration = $this->request->getPost('duration', 'string');
         $capacity = $this->request->getPost('capacity', 'string');
         $totalroom = $this->request->getPost('room', 'string');
         
@@ -36,6 +37,7 @@ class BookingController extends ControllerBase
             $this->view->rooms = $available;
             $this->view->flag = 1;
             $this->view->totalroom = $totalroom;
+            $this->view->duration = $duration;
         }
         else
         {
@@ -66,6 +68,7 @@ class BookingController extends ControllerBase
         // Get data
         $id_user = $this->request->getPost('id_user', 'string');
         $id_room = $this->request->getPost('id_room', 'string');
+        $duration = $this->request->getPost('duration', 'string');
         $totalroom = $this->request->getPost('totalroom', 'string');
         $price = $this->request->getPost('price', 'string');
 
@@ -77,8 +80,9 @@ class BookingController extends ControllerBase
         // Set Booking
         $booking->id_user = $id_user;
         $booking->id_room = $id_room;
+        $booking->duration = $duration;
         $booking->totalroom = $totalroom;
-        $booking->totalprice = $totalroom * $price;
+        $booking->totalprice = $totalroom * $price * $duration;
         $booking->payment = ' ';
         $booking->paid = 0;
         $booking->stat = "Waiting for payment";

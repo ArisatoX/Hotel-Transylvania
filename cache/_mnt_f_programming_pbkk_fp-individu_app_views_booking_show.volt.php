@@ -118,6 +118,58 @@
     </div>
     <!-- Breadcrumb Section End -->
 
+    <!-- Room Details Section Begin -->
+    <section class="room-details-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="room-details-item">
+                        <div class="rd-text">
+
+                            <h2>Booking ID: #<?= $book->id ?></h2>
+                            
+                            
+
+                            
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Booking ID:</td>
+                                        <td><?= $book->id ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Total Price:</td>
+                                        <td>Rp <?= $book->totalprice ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Room ID:</td>
+                                        <td><?= $book->id_room ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Room Count:</td>
+                                        <td><?= $book->totalroom ?> Room(s)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Duration:</td>
+                                        <td><?= $book->duration ?> Day(s)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Status:</td>
+                                        <td><?= $book->stat ?></td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Room Details Section End -->
+
     
 
 

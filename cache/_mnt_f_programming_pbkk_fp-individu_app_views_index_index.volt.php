@@ -116,11 +116,17 @@
                         <h3>Reservation</h3>
                         <form method ="POST" action="/booking/list">
                             
+                            <div class="wrap-input100 validate-input" data-validate="Duration is required">
+                                <span class="label-input100">Duration</span>
+                                <input class="input100" type="text" name="duration" placeholder="">
+                            </div>
+
                             <div class="wrap-input100 validate-input" data-validate="Capacity is required">
                                 <span class="label-input100">Capacity</span>
                                 <input class="input100" type="text" name="capacity" placeholder="">
                             </div>
-                             <div class="wrap-input100 validate-input" data-validate="Room Count is required">
+
+                            <div class="wrap-input100 validate-input" data-validate="Room Count is required">
                                 <span class="label-input100">Room Count</span>
                                 <input class="input100" type="text" name="room" placeholder="">
                             </div>

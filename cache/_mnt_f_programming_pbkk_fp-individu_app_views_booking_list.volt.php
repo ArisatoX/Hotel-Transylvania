@@ -121,6 +121,7 @@
                                     <form method = "POST" action = "create">
                                         <input class="input100" type="text" name="id_user" value="<?= $this->session->get('auth_id') ?>" hidden>
                                         <input class="input100" type="text" name="id_room" value="<?= $room->id ?>" hidden>
+                                        <input class="input100" type="text" name="duration" value="<?= $duration ?>" hidden>
                                         <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
                                         <input class="input100" type="text" name="price" value="<?= $room->price ?>" hidden>
                                         <button type="submit" class="primary-btn">Select</a>
