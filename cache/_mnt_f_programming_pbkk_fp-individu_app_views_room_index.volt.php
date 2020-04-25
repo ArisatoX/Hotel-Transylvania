@@ -98,34 +98,57 @@
         <!-- Content -->
         
 
-<div class = "container">
-    <section class="aboutus-section spad">
+<div class="container">
+
+    
+    <div class="breadcrumb-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-text">
-                        <div class="section-title">
-                            <h2>Success</h2>
-                        </div>
-                        <p class="f-para"> You have successfully booked the room. We will wait for your arrival
-                        </p>
-                        <br>
-                        <a href="/booking" class="primary-btn about-btn">Back to Booking</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-pic">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
-                            </div>
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Rooms</h2>
+                        <div class="bt-option">
+                            <a href="/">Home</a>
+                            <span>Rooms</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    
+    
+    <section class="hp-room-section">
+        <div class="container-fluid">
+            <div class="hp-room-items">
+                <div class="row">
+
+                    <!-- Room -->
+                    <?php foreach ($rooms as $room) { ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="room-item">
+                            <?= $this->tag->image([$room->picture]) ?>
+                            <div class="ri-text">
+                                <h4><?= $room->names ?></h4>
+                                
+                                <h3>Rp <?= $room->price ?><span> / Pernight</span></h3>
+
+                                
+    
+                                <a href="room/show/<?= $room->id ?>" class="primary-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    
+                    
+                </div>
+            </div>
+        </div>
     </section>
 </div>
+
+<br>
 
 
 

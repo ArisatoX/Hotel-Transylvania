@@ -61,10 +61,16 @@ class BookingController extends ControllerBase
         $booking->id_room = $id_room;
         $booking->totalroom = $totalroom;
         $booking->totalprice = $totalroom * $price;
-        $booking->payment = '/';
+        $booking->payment = ' ';
         $booking->paid = 0;
         $booking->stat = "Waiting for payment";
 
+        // Change room availability
+    
+        $query = $this->modelsManager->createQuery("UPDATE App\Models\Rooms SET available = available - $totalroom WHERE id = $id_room");
+        $query->execute();
+
+        // Save booking
         $success = $booking->save();
 
         if ($success)
