@@ -6,7 +6,6 @@ use Phalcon\Mvc\Model;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\Email;
 
-
 class Users extends Model
 {
     // variables

@@ -4,7 +4,6 @@ Namespace App\Models;
 
 use Phalcon\Mvc\Model;
 
-
 class Rooms extends Model
 {
     // variables
@@ -18,5 +17,6 @@ class Rooms extends Model
     public $features;
     public $descriptions;
     public $picture;
+    public $available;
 
 }

@@ -2,25 +2,6 @@
 
 {% block content %}
 
-<div class="container">
-
-    {# Header #}
-    <div class="breadcrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Rooms</h2>
-                        <div class="bt-option">
-                            <a href="/">Home</a>
-                            <span>Rooms</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
     {# Room from DB #}
     <section class="hp-room-section">
         <div class="container-fluid">
@@ -60,8 +41,5 @@
             </div>
         </div>
     </section>
-</div>
-
-<br>
 
 {% endblock %}

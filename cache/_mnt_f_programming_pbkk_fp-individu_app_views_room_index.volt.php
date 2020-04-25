@@ -82,7 +82,11 @@
                                 <ul>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
-                                    <li><a href="">Booking</a></li>
+                                    <?php if ($this->session->has('auth_id')) { ?>
+                                        <li><a href="/booking">Booking</a></li>
+                                    <?php } else { ?>
+                                        <li><a href="/booking">Booking</a></li>
+                                    <?php } ?>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -145,13 +149,7 @@
                     </div>
                     <?php } ?>
                     
-                    <div class="col-lg-12">
-                        <div class="room-pagination">
-                            <a href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">Next</a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

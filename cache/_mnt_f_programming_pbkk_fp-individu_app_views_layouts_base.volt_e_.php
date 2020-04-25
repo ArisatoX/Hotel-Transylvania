@@ -1,4 +1,4 @@
-a:3:{i:0;s:3862:"<!DOCTYPE html>
+a:3:{i:0;s:3870:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -82,7 +82,7 @@ a:3:{i:0;s:3862:"<!DOCTYPE html>
                                 <ul>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
-                                    <li><a href="">Booking</a></li>
+                                    <li><a href="/booking">Booking</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>

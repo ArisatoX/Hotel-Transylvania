@@ -27,9 +27,9 @@ class RoomController extends ControllerBase
 
     public function showAction($userId)
     {
-        $conditions = ['id'=>$userId];
+        $conditions = ['id_user'=>$userId];
         $room = Rooms::findFirst([
-        'conditions' => 'id=:id:',
+        'conditions' => 'id= :id_user:',
         'bind' => $conditions,
         ]);
         $this->view->room = $room;

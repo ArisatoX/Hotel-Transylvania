@@ -82,7 +82,11 @@
                                 <ul>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
-                                    <li><a href="/booking">Booking</a></li>
+                                    <?php if ($this->session->has('auth_id')) { ?>
+                                        <li><a href="/booking">Booking</a></li>
+                                    <?php } else { ?>
+                                        <li><a href="/booking">Booking</a></li>
+                                    <?php } ?>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -98,115 +102,35 @@
         <!-- Content -->
         
 
-    <!-- Breadcrumb Section Begin -->
-    <div class="breadcrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Room Details</h2>
-                        <div class="bt-option">
-                            <a href="/">Home</a>
-                            <a href="/room">Room</a>
-                            <span><?= $room->names ?></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Section End -->
+    <div class="container-contact100" style="background-image: url('img/background/bgform.jpg');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method ="POST" action="">
+				<span class="contact100-form-title">
+					Login
+				</span>
 
-    <!-- Room Details Section Begin -->
-    <section class="room-details-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="room-details-item">
-                        <?= $this->tag->image([$room->picture]) ?>
-                        <div class="rd-text">
-                            <div class="rd-title">
-                                <h3><?= $room->names ?></h3>
-                                <div class="rdt-right">
-                                    <div class="rating">
-                                        
-                                    </div>
-                                    <a href="#">Booking Now</a>
-                                </div>
-                            </div>
-
-                            
-                            <?php if ($this->session->has('auth_id')) { ?>
-                                <h2><strike>Rp <?= $room->price ?></strike> Rp <?= $room->memberprice ?><span> / Pernight</span></h2>
-                            
-                            <?php } else { ?>
-                                <h2>Rp <?= $room->price ?><span> / Pernight</span></h2>
-                            <?php } ?>
-
-                            
-                            <p class="f-para"> <?= $room->descriptions ?></p>
-
-                            
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="r-o">Size:</td>
-                                        <td><?= $room->size ?> sqm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Capacity:</td>
-                                        <td><?= $room->capacity ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Bed:</td>
-                                        <td><?= $room->bed ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Features:</td>
-                                        <td><?= $room->features ?></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+				<div class="wrap-input100 validate-input" data-validate="Email is required">
+					<span class="label-input100">Email</span>
+					<input class="input100" type="text" name="email" placeholder="">
                 </div>
 
-                <div class="col-lg-4">
-                    <div class="room-booking">
-                        <h3>Your Reservation</h3>
-                        <form action="#">
-                            <div class="check-date">
-                                <label for="date-in">Check In:</label>
-                                <input type="text" class="date-input" id="date-in">
-                                <i class="icon_calendar"></i>
-                            </div>
-                            <div class="check-date">
-                                <label for="date-out">Check Out:</label>
-                                <input type="text" class="date-input" id="date-out">
-                                <i class="icon_calendar"></i>
-                            </div>
-                            <div class="select-option">
-                                <label for="guest">Guests:</label>
-                                <select id="guest">
-                                    <option value="">3 Adults</option>
-                                </select>
-                            </div>
-                            <div class="select-option">
-                                <label for="room">Room:</label>
-                                <select id="room">
-                                    <option value="">1 Room</option>
-                                </select>
-                            </div>
-                            <button type="submit">Check Availability</button>
-                        </form>
-                    </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+					<span class="label-input100">Password</span>
+					<input class="input100" type="password" name="pass" placeholder="">
                 </div>
 
-            </div>
-        </div>
-    </section>
-    <!-- Room Details Section End -->
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Submit
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
 
+	</div>
 
 
 
