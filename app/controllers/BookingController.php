@@ -43,6 +43,24 @@ class BookingController extends ControllerBase
         }
     }
 
+    public function bookinglistAction()
+    {
+        $getUserId = $this->session->get('auth_id');
+
+        $query = $this->modelsManager->createQuery("SELECT * FROM App\Models\Booking x WHERE x.id_user = $getUserId");
+        $booking = $query->execute();
+
+        if ($booking->count() > 0)
+        {
+            $this->view->booking = $booking;
+            $this->view->flag = 1;
+        }
+        else
+        {
+            $this->view->flag = 0;
+        }
+    }
+
     public function createAction()
     {
         // Get data
@@ -83,6 +101,22 @@ class BookingController extends ControllerBase
             $this->view->disable();
         }
     }
+
+    public function showAction($bookingId)
+    {
+        $conditions = ['id_book'=>$bookingId];
+        $room = Rooms::findFirst([
+        'conditions' => 'id= :id_book:',
+        'bind' => $conditions,
+        ]);
+        $this->view->room = $room;
+
+        echo "BOOKING DETAILS";
+        $this->view->disable();
+        
+    }
+
+    
 
     
 

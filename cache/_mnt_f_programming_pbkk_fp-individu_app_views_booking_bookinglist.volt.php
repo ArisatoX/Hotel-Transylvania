@@ -27,6 +27,7 @@
                                     <div class="flag-dropdown">
                                         <ul>
                                             <li><a href="#">Profile</a></li>
+                                            <li><a href="/booking/bookinglist">Bookings</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -98,35 +99,71 @@
         <!-- Content -->
         
 
-    <div class="container-contact100" style="background-image: url('img/background/bgform1.jpg');">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" method ="POST" action="">
-				<span class="contact100-form-title">
-					Login
-				</span>
+    <?php if ($flag == 1) { ?>
 
-				<div class="wrap-input100 validate-input" data-validate="Email is required">
-					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="email" placeholder="">
+        <section class="hp-room-section">
+            <div class="container-fluid">
+                <div class="hp-room-items">
+                    <div class="row">
+
+                        <!-- Booking Exist -->
+                        <?php foreach ($booking as $book) { ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="room-item">
+                                
+                                <div class="ri-text">
+                                    <h4><?= $book->id ?></h4>
+
+                                    <h3>Rp <?= $book->totalprice ?></h3>
+
+                                    
+        
+                                    <a href="show/<?= $book->id ?>" class="primary-btn">Details</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                        
+                        
+                    </div>
                 </div>
+            </div>
+        </section>
+                    
+        <?php } else { ?>
 
-                <div class="wrap-input100 validate-input" data-validate="Password is required">
-					<span class="label-input100">Password</span>
-					<input class="input100" type="password" name="pass" placeholder="">
-                </div>
-
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							Submit
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
-
-	</div>
+            <!-- Booking Doesn't Exist -->
+            <div class = "container">
+                <section class="aboutus-section spad">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="about-text">
+                                    <div class="section-title">
+                                        <h2>Oops...</h2>
+                                    </div>
+                                    <p class="f-para"> You don't have any booking yet
+                                    </p>
+                                    <br>
+                                    <a href="/booking" class="primary-btn about-btn">Back to Booking</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="about-pic">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <img src="<?= $this->url->get('img/icons/sad.png') ?>" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        
+        <?php } ?>
 
 
 

@@ -1,4 +1,4 @@
-a:3:{i:0;s:3870:"<!DOCTYPE html>
+a:3:{i:0;s:3968:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -27,6 +27,7 @@ a:3:{i:0;s:3870:"<!DOCTYPE html>
                                     <div class="flag-dropdown">
                                         <ul>
                                             <li><a href="#">Profile</a></li>
+                                            <li><a href="/booking/bookinglist">Bookings</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -96,7 +97,7 @@ a:3:{i:0;s:3870:"<!DOCTYPE html>
     </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:99;}}i:1;s:1193:"
+        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:100;}}i:1;s:1193:"
 
         <!-- Footer -->
         <footer class="footer-section">

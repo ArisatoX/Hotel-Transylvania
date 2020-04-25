@@ -27,6 +27,7 @@
                                     <div class="flag-dropdown">
                                         <ul>
                                             <li><a href="#">Profile</a></li>
+                                            <li><a href="/booking/bookinglist">Bookings</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
