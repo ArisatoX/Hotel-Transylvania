@@ -35,7 +35,7 @@
                             <div class="ri-text">
                                 <h4>{{ room.names }}</h4>
                                 
-                                <h3>Rp {{room.price}}<span> / Pernight</span></h3>
+                                <h3>Rp {{room.price}}<span> / night</span></h3>
 
                                 {# <!-- Member and Non Member -->
                                 {% if session.has("auth_id") %}

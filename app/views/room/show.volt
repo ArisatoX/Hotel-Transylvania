@@ -43,7 +43,7 @@
                                 </div>
                             </div>
 
-                            <h2>Rp {{room.price}}<span> / Pernight</span></h2>
+                            <h2>Rp {{room.price}}<span> / night</span></h2>
 
                             {# <!-- Member and Non Member -->
                             {% if session.has("auth_id") %}
@@ -109,7 +109,7 @@
                                 <span class="label-input100">Room Count</span>
                                 <input class="input100" type="text" name="room" placeholder="">
                             </div>
-                            
+
                             <button type="submit">Check Availability</button>
                         </form>
                     </div>

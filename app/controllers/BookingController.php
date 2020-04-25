@@ -115,8 +115,12 @@ class BookingController extends ControllerBase
         ]);
         $this->view->book = $book;
 
-        // echo "BOOKING DETAILS";
-        // $this->view->disable();
+        $conditions = ['id_room'=>$book->id_room];
+        $room = Rooms::findFirst([
+        'conditions' => 'id= :id_room:',
+        'bind' => $conditions,
+        ]);
+        $this->view->room = $room;        
         
     }
 

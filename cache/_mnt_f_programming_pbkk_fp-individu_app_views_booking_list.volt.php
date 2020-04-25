@@ -99,45 +99,46 @@
         <!-- Content -->
         
 
-    <?php if ($flag == 1) { ?>
+    <div class = "container">
+        <?php if ($flag == 1) { ?>
 
-        <section class="hp-room-section">
-            <div class="container-fluid">
-                <div class="hp-room-items">
-                    <div class="row">
+            <section class="hp-room-section">
+                <div class="container-fluid">
+                    <div class="hp-room-items">
+                        <div class="row">
 
-                        <!-- Room Exist -->
-                        <?php foreach ($rooms as $room) { ?>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="room-item">
-                                <?= $this->tag->image([$room->picture]) ?>
-                                <div class="ri-text">
-                                    <h4><?= $room->names ?></h4>
+                            <!-- Room Exist -->
+                            <?php foreach ($rooms as $room) { ?>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="room-item">
+                                    <?= $this->tag->image([$room->picture]) ?>
+                                    <div class="ri-text">
+                                        <h4><?= $room->names ?></h4>
 
-                                    <h3>Rp <?= $room->price ?><span> / Pernight</span></h3>
+                                        <h3>Rp <?= $room->price ?><span> / night</span></h3>
 
-                                    
-        
-                                    <form method = "POST" action = "create">
-                                        <input class="input100" type="text" name="id_user" value="<?= $this->session->get('auth_id') ?>" hidden>
-                                        <input class="input100" type="text" name="id_room" value="<?= $room->id ?>" hidden>
-                                        <input class="input100" type="text" name="duration" value="<?= $duration ?>" hidden>
-                                        <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
-                                        <input class="input100" type="text" name="price" value="<?= $room->price ?>" hidden>
-                                        <button type="submit" class="primary-btn">Select</a>
-                                    </form>
+                                        
+            
+                                        <form method = "POST" action = "create">
+                                            <input class="input100" type="text" name="id_user" value="<?= $this->session->get('auth_id') ?>" hidden>
+                                            <input class="input100" type="text" name="id_room" value="<?= $room->id ?>" hidden>
+                                            <input class="input100" type="text" name="duration" value="<?= $duration ?>" hidden>
+                                            <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
+                                            <input class="input100" type="text" name="price" value="<?= $room->price ?>" hidden>
+                                            <button type="submit" class="primary-btn">Select</a>
+                                        </form>
 
+                                    </div>
                                 </div>
                             </div>
+                            <?php } ?>
+                            
+                            
                         </div>
-                        <?php } ?>
-                        
-                        
                     </div>
                 </div>
-            </div>
-        </section>
-                    
+            </section>
+                        
         <?php } else { ?>
 
             <!-- Room Doesn't Exist -->
@@ -171,6 +172,7 @@
             </div>
         
         <?php } ?>
+    </div>
 
 
 

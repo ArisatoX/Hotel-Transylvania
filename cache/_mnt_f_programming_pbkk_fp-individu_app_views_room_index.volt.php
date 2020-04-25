@@ -99,102 +99,57 @@
         <!-- Content -->
         
 
-    <!-- Breadcrumb Section Begin -->
+<div class="container">
+
+    
     <div class="breadcrumb-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <h2>Booking Details</h2>
+                        <h2>Rooms</h2>
                         <div class="bt-option">
                             <a href="/">Home</a>
-                            <a href="../bookinglist">Bookings</a>
-                            <span><?= $book->id ?></span>
+                            <span>Rooms</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Breadcrumb Section End -->
+    
+    
+    <section class="hp-room-section">
+        <div class="container-fluid">
+            <div class="hp-room-items">
+                <div class="row">
 
-    <!-- Room Details Section Begin -->
-    <section class="room-details-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="room-details-item">
-                        <!-- <?= $this->tag->image([$room->picture]) ?> -->
-                        <div class="rd-text">
+                    <!-- Room -->
+                    <?php foreach ($rooms as $room) { ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="room-item">
+                            <?= $this->tag->image([$room->picture]) ?>
+                            <div class="ri-text">
+                                <h4><?= $room->names ?></h4>
+                                
+                                <h3>Rp <?= $room->price ?><span> / night</span></h3>
 
-                            <h2>Booking ID: #<?= $book->id ?></h2>
-                            <h4>Total Price: Rp <?= $book->totalprice ?></h4>
-                            <br>
-                            
-                            
-
-                            
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="r-o">Booking ID:</td>
-                                        <td><?= $book->id ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Room Name:</td>
-                                        <td><?= $room->names ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Price:</td>
-                                        <td>Rp <?= $room->price ?> <span> / night</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Room Count:</td>
-                                        <td><?= $book->totalroom ?> Room(s)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Duration:</td>
-                                        <td><?= $book->duration ?> Day(s)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Status:</td>
-                                        <td><?= $book->stat ?></td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-
-                            <div class="room-details-item">
-                                <div class="rd-text">
-                                    <div class="rd-title">
-                                        <div class="rdt-left">
-                                            <a href="#">Payment</a>
-                                            <a href="#">Update</a>
-                                            <a href="#">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+    
+                                <a href="room/show/<?= $room->id ?>" class="primary-btn">Details</a>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
+                    
+                    
                 </div>
-
-                <div class="col-lg-6">   
-                       <?= $this->tag->image([$room->picture]) ?>
-                </div>
-
-
-
-
             </div>
         </div>
     </section>
-    <!-- Room Details Section End -->
+</div>
 
-    
-
-
-
+<br>
 
 
 

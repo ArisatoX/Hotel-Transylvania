@@ -99,64 +99,64 @@
         <!-- Content -->
         
 
-    
-    <div class="breadcrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Booking List</h2>
-                        <div class="bt-option">
-                            <a href="/">Home</a>
-                            <span>Bookings</span>
+    <div class="container">
+        
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-text">
+                            <h2>Booking List</h2>
+                            <div class="bt-option">
+                                <a href="/">Home</a>
+                                <span>Bookings</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <?php if ($flag == 1) { ?>
+        <?php if ($flag == 1) { ?>
 
-        <section class="hp-room-section">
-            <div class="container-fluid">
-                <div class="hp-room-items">
-                    <div class="row">
+            <section class="hp-room-section">
+                <div class="container-fluid">
+                    <div class="hp-room-items">
+                        <div class="row">
 
-                        <!-- Booking Exist -->
-                        <?php foreach ($booking as $book) { ?>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="room-item">
-                                
-                                <div class="ri-text">
-                                    <h4> Booking ID: #<?= $book->id ?></h4>
+                            <!-- Booking Exist -->
+                            <?php foreach ($booking as $book) { ?>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="room-item">
+                                    <div class="ri-text">
+                                        <h4> Booking ID: #<?= $book->id ?></h4>
 
-                                    <h3>Rp <?= $book->totalprice ?></h3>
+                                        <h3>Rp <?= $book->totalprice ?></h3>
 
-                                    
+                                        
 
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="r-o">Status:</td>
-                                                <td><?= $book->stat ?></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-        
-                                    <a href="show/<?= $book->id ?>" class="primary-btn">Details</a>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="r-o">Status:</td>
+                                                    <td><?= $book->stat ?></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+            
+                                        <a href="show/<?= $book->id ?>" class="primary-btn">Details</a>
 
+                                    </div>
                                 </div>
                             </div>
+                            <?php } ?>
+                            
+                            
                         </div>
-                        <?php } ?>
-                        
-                        
                     </div>
                 </div>
-            </div>
-        </section>
-                    
+            </section>
+                        
         <?php } else { ?>
 
             <!-- Booking Doesn't Exist -->
@@ -190,6 +190,8 @@
             </div>
         
         <?php } ?>
+        
+    </div>
 
 
 

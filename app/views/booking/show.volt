@@ -25,11 +25,14 @@
     <section class="room-details-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-6">
                     <div class="room-details-item">
+
                         <div class="rd-text">
 
                             <h2>Booking ID: #{{book.id}}</h2>
+                            <h4>Total Price: Rp {{book.totalprice}}</h4>
+                            <br>
                             
                             {# <!-- Member and Non Member -->
                             {% if session.has("auth_id") %}
@@ -46,12 +49,12 @@
                                         <td>{{book.id}}</td>
                                     </tr>
                                     <tr>
-                                        <td class="r-o">Total Price:</td>
-                                        <td>Rp {{book.totalprice}}</td>
+                                        <td class="r-o">Room Name:</td>
+                                        <td>{{room.names}}</td>
                                     </tr>
                                     <tr>
-                                        <td class="r-o">Room ID:</td>
-                                        <td>{{book.id_room}}</td>
+                                        <td class="r-o">Price:</td>
+                                        <td>Rp {{room.price}} <span> / night</span></td>
                                     </tr>
                                     <tr>
                                         <td class="r-o">Room Count:</td>
@@ -69,9 +72,27 @@
                                 </tbody>
                             </table>
 
+                            <div class="room-details-item">
+                                <div class="rd-text">
+                                    <div class="rd-title">
+                                        <div class="rdt-left">
+                                            <a href="#">Payment</a>
+                                            <a href="#">Update</a>
+                                            <a href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-6">   
+                       {{ image(room.picture)}}
+                </div>
+
+
+
 
             </div>
         </div>
