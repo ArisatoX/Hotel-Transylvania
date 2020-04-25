@@ -178,10 +178,11 @@ class BookingController extends ControllerBase
 
             $book->delete();
 
-            echo "Deleted";
+            $this->response->redirect('booking/successdelete');
         }
         else
         {
+            echo "can't delete";
             $this->view->disable();
         }
         

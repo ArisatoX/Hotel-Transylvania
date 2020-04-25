@@ -90,8 +90,8 @@
                                     <div class="rd-title">
                                         <div class="rdt-left">
                                             <a href="#">Payment</a>
-                                            <a href="#">Update</a>
-                                            <a href="../delete/{{book.id}}">Delete</a>
+                                            <a href="#">Change</a>
+                                            <a href="../delete/{{book.id}}">Cancel</a>
                                         </div>
                                     </div>
                                 </div>
