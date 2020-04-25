@@ -99,23 +99,6 @@
         <!-- Content -->
         
 
-    
-    <div class="breadcrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Booking List</h2>
-                        <div class="bt-option">
-                            <a href="/">Home</a>
-                            <span>Bookings</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <?php if ($flag == 1) { ?>
 
         <section class="hp-room-section">
@@ -123,28 +106,25 @@
                 <div class="hp-room-items">
                     <div class="row">
 
-                        <!-- Booking Exist -->
-                        <?php foreach ($booking as $book) { ?>
+                        <!-- Room Exist -->
+                        <?php foreach ($rooms as $room) { ?>
                         <div class="col-lg-4 col-md-6">
                             <div class="room-item">
-                                
+                                <?= $this->tag->image([$room->picture]) ?>
                                 <div class="ri-text">
-                                    <h4> Booking ID: #<?= $book->id ?></h4>
+                                    <h4><?= $room->names ?></h4>
 
-                                    <h3>Rp <?= $book->totalprice ?></h3>
+                                    <h3>Rp <?= $room->price ?><span> / Pernight</span></h3>
 
                                     
-
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="r-o">Status:</td>
-                                                <td><?= $book->stat ?></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
         
-                                    <a href="show/<?= $book->id ?>" class="primary-btn">Details</a>
+                                    <form method = "POST" action = "create">
+                                        <input class="input100" type="text" name="id_user" value="<?= $this->session->get('auth_id') ?>" hidden>
+                                        <input class="input100" type="text" name="id_room" value="<?= $room->id ?>" hidden>
+                                        <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
+                                        <input class="input100" type="text" name="price" value="<?= $room->price ?>" hidden>
+                                        <button type="submit" class="primary-btn">Select</a>
+                                    </form>
 
                                 </div>
                             </div>
@@ -159,7 +139,7 @@
                     
         <?php } else { ?>
 
-            <!-- Booking Doesn't Exist -->
+            <!-- Room Doesn't Exist -->
             <div class = "container">
                 <section class="aboutus-section spad">
                     <div class="container">
@@ -169,7 +149,7 @@
                                     <div class="section-title">
                                         <h2>Oops...</h2>
                                     </div>
-                                    <p class="f-para"> You don't have any booking yet
+                                    <p class="f-para"> The room that you are searching right now is not available or it might be full.
                                     </p>
                                     <br>
                                     <a href="/booking" class="primary-btn about-btn">Back to Booking</a>

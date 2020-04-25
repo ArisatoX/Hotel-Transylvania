@@ -99,97 +99,35 @@
         <!-- Content -->
         
 
-    
-    <div class="breadcrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Booking List</h2>
-                        <div class="bt-option">
-                            <a href="/">Home</a>
-                            <span>Bookings</span>
-                        </div>
-                    </div>
+    <div class="container-contact100" style="background-image: url('img/background/bgform2.jpg');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method = "POST" action="/booking/list">
+				<span class="contact100-form-title">
+					Reservation
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Capacity is required">
+					<span class="label-input100">Capacity</span>
+					<input class="input100" type="text" name="capacity" placeholder="">
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <?php if ($flag == 1) { ?>
-
-        <section class="hp-room-section">
-            <div class="container-fluid">
-                <div class="hp-room-items">
-                    <div class="row">
-
-                        <!-- Booking Exist -->
-                        <?php foreach ($booking as $book) { ?>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="room-item">
-                                
-                                <div class="ri-text">
-                                    <h4> Booking ID: #<?= $book->id ?></h4>
-
-                                    <h3>Rp <?= $book->totalprice ?></h3>
-
-                                    
-
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="r-o">Status:</td>
-                                                <td><?= $book->stat ?></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-        
-                                    <a href="show/<?= $book->id ?>" class="primary-btn">Details</a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <?php } ?>
-                        
-                        
-                    </div>
+                <div class="wrap-input100 validate-input" data-validate="Room is required">
+					<span class="label-input100">Room Count</span>
+					<input class="input100" type="text" name="room" placeholder="">
                 </div>
-            </div>
-        </section>
-                    
-        <?php } else { ?>
 
-            <!-- Booking Doesn't Exist -->
-            <div class = "container">
-                <section class="aboutus-section spad">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="about-text">
-                                    <div class="section-title">
-                                        <h2>Oops...</h2>
-                                    </div>
-                                    <p class="f-para"> You don't have any booking yet
-                                    </p>
-                                    <br>
-                                    <a href="/booking" class="primary-btn about-btn">Back to Booking</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="about-pic">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <img src="<?= $this->url->get('img/icons/sad.png') ?>" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        
-        <?php } ?>
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Check availability
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
 
 
 

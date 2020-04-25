@@ -2,6 +2,23 @@
 
 {% block content %}
 
+    {# Header #}
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Booking List</h2>
+                        <div class="bt-option">
+                            <a href="/">Home</a>
+                            <span>Bookings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% if flag == 1 %}
 
         <section class="hp-room-section">
@@ -15,7 +32,7 @@
                             <div class="room-item">
                                 
                                 <div class="ri-text">
-                                    <h4>{{ book.id }}</h4>
+                                    <h4> Booking ID: #{{ book.id }}</h4>
 
                                     <h3>Rp {{book.totalprice}}</h3>
 
@@ -25,6 +42,15 @@
                                     {% else %}
                                         <h3>Rp {{room.price}}<span> / Pernight</span></h3>
                                     {% endif %} #}
+
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="r-o">Status:</td>
+                                                <td>{{book.stat}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
         
                                     <a href="show/{{ book.id }}" class="primary-btn">Details</a>
 

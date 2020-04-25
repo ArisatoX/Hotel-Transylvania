@@ -105,14 +105,14 @@ class BookingController extends ControllerBase
     public function showAction($bookingId)
     {
         $conditions = ['id_book'=>$bookingId];
-        $room = Rooms::findFirst([
+        $book = Booking::findFirst([
         'conditions' => 'id= :id_book:',
         'bind' => $conditions,
         ]);
-        $this->view->room = $room;
+        $this->view->book = $book;
 
-        echo "BOOKING DETAILS";
-        $this->view->disable();
+        // echo "BOOKING DETAILS";
+        // $this->view->disable();
         
     }
 

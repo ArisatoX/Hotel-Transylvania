@@ -6,7 +6,7 @@
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" method = "POST" action="/booking/list">
 				<span class="contact100-form-title">
-					Booking
+					Reservation
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Capacity is required">
@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Room is required">
-					<span class="label-input100">Room</span>
+					<span class="label-input100">Room Count</span>
 					<input class="input100" type="text" name="room" placeholder="">
                 </div>
 

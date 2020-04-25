@@ -82,8 +82,8 @@
 
                 <div class="col-lg-4">
                     <div class="room-booking">
-                        <h3>Your Reservation</h3>
-                        <form action="#">
+                        <h3>Reservation</h3>
+                        <form method ="POST" action="/booking/list">
                             {# <div class="check-date">
                                 <label for="date-in">Check In:</label>
                                 <input type="text" class="date-input" id="date-in">
@@ -94,17 +94,13 @@
                                 <input type="text" class="date-input" id="date-out">
                                 <i class="icon_calendar"></i>
                             </div> #}
-                            <div class="select-option">
-                                <label for="guest">Guests:</label>
-                                <select id="guest">
-                                    <option value="">3 Adults</option>
-                                </select>
+                            <div class="wrap-input100 validate-input" data-validate="Capacity is required">
+                                <span class="label-input100">Capacity</span>
+                                <input class="input100" type="text" name="capacity" placeholder="">
                             </div>
-                            <div class="select-option">
-                                <label for="room">Room:</label>
-                                <select id="room">
-                                    <option value="">1 Room</option>
-                                </select>
+                             <div class="wrap-input100 validate-input" data-validate="Room Count is required">
+                                <span class="label-input100">Room Count</span>
+                                <input class="input100" type="text" name="room" placeholder="">
                             </div>
                             <button type="submit">Check Availability</button>
                         </form>
