@@ -124,7 +124,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="room-details-item">
-                        <!-- <?= $this->tag->image([$room->picture]) ?> -->
+
                         <div class="rd-text">
 
                             <h2>Booking ID: #<?= $book->id ?></h2>
@@ -170,7 +170,7 @@
                                         <div class="rdt-left">
                                             <a href="#">Payment</a>
                                             <a href="#">Update</a>
-                                            <a href="#">Delete</a>
+                                            <a href="../delete/<?= $book->id ?>">Delete</a>
                                         </div>
                                     </div>
                                 </div>

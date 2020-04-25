@@ -11,10 +11,11 @@
                         <div class="section-title">
                             <h2>Success</h2>
                         </div>
+                        
                         <p class="f-para"> You have successfully booked the room. We will wait for your arrival
-                        </p>
+                        
                         <br>
-                        <a href="/booking" class="primary-btn about-btn">Back to Booking</a>
+                        <a href="/booking/bookinglist" class="primary-btn about-btn">Booking list</a>
                     </div>
                 </div>
                 <div class="col-lg-6">

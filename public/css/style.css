@@ -2133,6 +2133,7 @@ ul, ol {
 		-webkit-transition: all 0.3s;
 		-o-transition: all 0.3s;
 		transition: all 0.3s;
+		text-align: left;
 	}
 	.offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown ul li a:hover {
 		color: #dfa974;

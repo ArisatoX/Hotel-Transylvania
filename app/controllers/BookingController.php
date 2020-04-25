@@ -120,7 +120,39 @@ class BookingController extends ControllerBase
         'conditions' => 'id= :id_room:',
         'bind' => $conditions,
         ]);
-        $this->view->room = $room;        
+        $this->view->room = $room;         
+    }
+
+    public function deleteAction($bookingId)
+    {
+        $conditions = ['id_book'=>$bookingId];
+        $book = Booking::findFirst([
+        'conditions' => 'id= :id_book:',
+        'bind' => $conditions,
+        ]);
+
+        $conditions = ['id_room'=>$book->id_room];
+        $room = Rooms::findFirst([
+        'conditions' => 'id= :id_room:',
+        'bind' => $conditions,
+        ]);
+        $this->view->room = $room;  
+        
+        // Delete booking
+        if ($book->paid == 0)
+        {
+            // Update the room stock
+            $room->available += $book->totalroom;
+            $room->save();
+
+            $book->delete();
+
+            echo "Deleted";
+        }
+        else
+        {
+            $this->view->disable();
+        }
         
     }
 
