@@ -82,11 +82,7 @@
                                 <ul>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
-                                    <?php if ($this->session->has('auth_id')) { ?>
-                                        <li><a href="/booking">Booking</a></li>
-                                    <?php } else { ?>
-                                        <li><a href="/booking">Booking</a></li>
-                                    <?php } ?>
+                                    <li><a href="/booking">Booking</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -102,7 +98,7 @@
         <!-- Content -->
         
 
-    <div class="container-contact100" style="background-image: url('img/background/bgform.jpg');">
+    <div class="container-contact100" style="background-image: url('img/background/bgform1.jpg');">
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" method ="POST" action="">
 				<span class="contact100-form-title">

@@ -20,6 +20,7 @@ class Users extends Model
     public $active;
     public $created;
     public $updated;
+    public $ismember;
 
     // validate email
     public function validation()

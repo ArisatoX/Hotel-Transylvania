@@ -82,11 +82,7 @@
                                 <ul>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
-                                    <?php if ($this->session->has('auth_id')) { ?>
-                                        <li><a href="/booking">Booking</a></li>
-                                    <?php } else { ?>
-                                        <li><a href="/booking">Booking</a></li>
-                                    <?php } ?>
+                                    <li><a href="/booking">Booking</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -102,61 +98,77 @@
         <!-- Content -->
         
 
-<div class="container">
+    <?php if ($flag == 1) { ?>
 
-    
-    <div class="breadcrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Rooms</h2>
-                        <div class="bt-option">
-                            <a href="/">Home</a>
-                            <span>Rooms</span>
+        <section class="hp-room-section">
+            <div class="container-fluid">
+                <div class="hp-room-items">
+                    <div class="row">
+
+                        <!-- Room Exist -->
+                        <?php foreach ($rooms as $room) { ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="room-item">
+                                <?= $this->tag->image([$room->picture]) ?>
+                                <div class="ri-text">
+                                    <h4><?= $room->names ?></h4>
+
+                                    <h3>Rp <?= $room->price ?><span> / Pernight</span></h3>
+
+                                    
+        
+                                    <form method = "POST" action = "create">
+                                        <input class="input100" type="text" name="id_user" value="<?= $this->session->get('auth_id') ?>" hidden>
+                                        <input class="input100" type="text" name="id_room" value="<?= $room->id ?>" hidden>
+                                        <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
+                                        <input class="input100" type="text" name="price" value="<?= $room->price ?>" hidden>
+                                        <button type="submit" class="primary-btn">Select</a>
+                                    </form>
+
+                                </div>
+                            </div>
                         </div>
+                        <?php } ?>
+                        
+                        
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    
-    <section class="hp-room-section">
-        <div class="container-fluid">
-            <div class="hp-room-items">
-                <div class="row">
+        </section>
+                    
+        <?php } else { ?>
 
-                    <!-- Room -->
-                    <?php foreach ($rooms as $room) { ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="room-item">
-                            <?= $this->tag->image([$room->picture]) ?>
-                            <div class="ri-text">
-                                <h4><?= $room->names ?></h4>
-
-                                
-                                <?php if ($this->session->has('auth_id')) { ?>
-                                    <h3>Rp <?= $room->memberprice ?><span> / Pernight</span></h3>
-                                
-                                <?php } else { ?>
-                                    <h3>Rp <?= $room->price ?><span> / Pernight</span></h3>
-                                <?php } ?>
-    
-                                <a href="room/show/<?= $room->id ?>" class="primary-btn">Details</a>
+            <!-- Room Doesn't Exist -->
+            <div class = "container">
+                <section class="aboutus-section spad">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="about-text">
+                                    <div class="section-title">
+                                        <h2>Oops...</h2>
+                                    </div>
+                                    <p class="f-para"> The room that you are searching right now is not available or it might be full.
+                                    </p>
+                                    <br>
+                                    <a href="/booking" class="primary-btn about-btn">Back to Booking</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="about-pic">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <img src="<?= $this->url->get('img/icons/sad.png') ?>" alt="">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
-                    
-                    
-                </div>
+                </section>
             </div>
-        </div>
-    </section>
-</div>
-
-<br>
+        
+        <?php } ?>
 
 
 

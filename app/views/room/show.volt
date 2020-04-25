@@ -43,13 +43,14 @@
                                 </div>
                             </div>
 
-                            {# Member #}
+                            <h2>Rp {{room.price}}<span> / Pernight</span></h2>
+
+                            {# <!-- Member and Non Member -->
                             {% if session.has("auth_id") %}
-                                <h2><strike>Rp {{room.price}}</strike> Rp {{room.memberprice}}<span> / Pernight</span></h2>
-                            {# Non Member #}
+                                <h2>Rp {{room.memberprice}}<span> / Pernight</span></h2>
                             {% else %}
                                 <h2>Rp {{room.price}}<span> / Pernight</span></h2>
-                            {% endif %}
+                            {% endif %} #}
 
                             {# Description #}
                             <p class="f-para"> {{room.descriptions}}</p>
@@ -83,7 +84,7 @@
                     <div class="room-booking">
                         <h3>Your Reservation</h3>
                         <form action="#">
-                            <div class="check-date">
+                            {# <div class="check-date">
                                 <label for="date-in">Check In:</label>
                                 <input type="text" class="date-input" id="date-in">
                                 <i class="icon_calendar"></i>
@@ -92,7 +93,7 @@
                                 <label for="date-out">Check Out:</label>
                                 <input type="text" class="date-input" id="date-out">
                                 <i class="icon_calendar"></i>
-                            </div>
+                            </div> #}
                             <div class="select-option">
                                 <label for="guest">Guests:</label>
                                 <select id="guest">

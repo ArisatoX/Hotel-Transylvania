@@ -98,39 +98,35 @@
         <!-- Content -->
         
 
-    
-    <section class="hp-room-section">
-        <div class="container-fluid">
-            <div class="hp-room-items">
-                <div class="row">
+    <div class="container-contact100" style="background-image: url('img/background/bgform2.jpg');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method = "POST" action="/booking/list">
+				<span class="contact100-form-title">
+					Booking
+				</span>
 
-                    <!-- Room -->
-                    <?php foreach ($rooms as $room) { ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="room-item">
-                            <?= $this->tag->image([$room->picture]) ?>
-                            <div class="ri-text">
-                                <h4><?= $room->names ?></h4>
-
-                                
-                                <?php if ($this->session->has('auth_id')) { ?>
-                                    <h3>Rp <?= $room->memberprice ?><span> / Pernight</span></h3>
-                                
-                                <?php } else { ?>
-                                    <h3>Rp <?= $room->price ?><span> / Pernight</span></h3>
-                                <?php } ?>
-    
-                                <a href="room/show/<?= $room->id ?>" class="primary-btn">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
-                    
-                    
+				<div class="wrap-input100 validate-input" data-validate="Capacity is required">
+					<span class="label-input100">Capacity</span>
+					<input class="input100" type="text" name="capacity" placeholder="">
                 </div>
-            </div>
-        </div>
-    </section>
+
+                <div class="wrap-input100 validate-input" data-validate="Room is required">
+					<span class="label-input100">Room</span>
+					<input class="input100" type="text" name="room" placeholder="">
+                </div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Check availability
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
 
 
 

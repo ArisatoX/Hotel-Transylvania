@@ -82,11 +82,7 @@
                                 <ul>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
-                                    <?php if ($this->session->has('auth_id')) { ?>
-                                        <li><a href="/booking">Booking</a></li>
-                                    <?php } else { ?>
-                                        <li><a href="/booking/redirect">Booking</a></li>
-                                    <?php } ?>
+                                    <li><a href="/booking">Booking</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -118,16 +114,7 @@
                     <div class="booking-form">
                         <h3>Booking Your Hotel</h3>
                         <form action="#">
-                            <div class="check-date">
-                                <label for="date-in">Check In:</label>
-                                <input type="text" class="date-input" id="date-in">
-                                <i class="icon_calendar"></i>
-                            </div>
-                            <div class="check-date">
-                                <label for="date-out">Check Out:</label>
-                                <input type="text" class="date-input" id="date-out">
-                                <i class="icon_calendar"></i>
-                            </div>
+                            
                             <div class="select-option">
                                 <label for="guest">Guests:</label>
                                 <select id="guest">

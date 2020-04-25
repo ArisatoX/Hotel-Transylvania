@@ -60,6 +60,7 @@ class SignupController extends ControllerBase
                 $user->active = 1;
                 $user->created = time();
                 $user->updated = time();
+                $user->ismember = 0;
 
                 // Check admin
                 if (strpos($user->email, "@admin.com") !== false)
@@ -87,6 +88,7 @@ class SignupController extends ControllerBase
                     $this->session->set('auth_email', $user->email);
                     $this->session->set('auth_created', $user->created);
                     $this->session->set('auth_updated', $user->updated);
+                    $this->session->set('auth_ismember', $user->ismember);
                     
                     // Go to User
                     if ($user->roles == 0) 

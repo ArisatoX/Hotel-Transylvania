@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div class="container-contact100" style="background-image: url('img/background/bgform.jpg');">
+    <div class="container-contact100" style="background-image: url('img/background/bgform1.jpg');">
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" method ="POST" action="">
 				<span class="contact100-form-title">

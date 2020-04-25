@@ -41,7 +41,7 @@ class LoginController extends ControllerBase
                     // check user disable
                     if ($user->active != 1) 
                     {
-                        $this->flashSession->error("User not active");
+                        $this->flashSession->error("User Disabled");
                         return $this->response->redirect('login');
                     }
                     // active user
@@ -54,6 +54,7 @@ class LoginController extends ControllerBase
                         $this->session->set('auth_email', $user->email);
                         $this->session->set('auth_created', $user->created);
                         $this->session->set('auth_updated', $user->updated);
+                        $this->session->set('auth_ismember', $user->ismember);
                         
                         // Go to User
                         if ($user->roles == 0) 

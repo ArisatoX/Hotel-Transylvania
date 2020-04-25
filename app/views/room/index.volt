@@ -34,14 +34,15 @@
                             {{ image(room.picture)}}
                             <div class="ri-text">
                                 <h4>{{ room.names }}</h4>
+                                
+                                <h3>Rp {{room.price}}<span> / Pernight</span></h3>
 
-                                {# Member #}
+                                {# <!-- Member and Non Member -->
                                 {% if session.has("auth_id") %}
                                     <h3>Rp {{room.memberprice}}<span> / Pernight</span></h3>
-                                {# Non Member #}
                                 {% else %}
                                     <h3>Rp {{room.price}}<span> / Pernight</span></h3>
-                                {% endif %}
+                                {% endif %} #}
     
                                 <a href="room/show/{{ room.id }}" class="primary-btn">Details</a>
                             </div>
