@@ -96,12 +96,19 @@
                                     </div>
                                 </div>
                             </div>
+
+                            {# Payment #}
+                            {% if book.paid == 1 %}
+                                {{image(book.payment)}}
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6">   
-                       {{ image(room.picture)}}
+                <div class="col-lg-6">
+                    {# Room Picture#}
+                    {{ image(room.picture)}}
                 </div>
             </div>
         </div>
