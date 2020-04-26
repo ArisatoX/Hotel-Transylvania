@@ -80,20 +80,22 @@ class LoginController extends ControllerBase
                 // wrong password
                 else
                 {
-                    echo "Wrong email or password";
-                    $this->view->disable();
+                    $this->response->redirect('login/failedlogin');
                 }
             } 
             
             // user not found
             else 
             {
-                echo "Wrong email or password";
-                $this->view->disable();
+                $this->response->redirect('login/failedlogin');
             }
 
         }
     }
 
+    public function failedloginAction()
+    {
+
+    }
 }
 

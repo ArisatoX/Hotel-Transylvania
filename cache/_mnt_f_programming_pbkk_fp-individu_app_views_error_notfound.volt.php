@@ -103,16 +103,16 @@
                         <div class="col-lg-6">
                             <div class="about-text">
                                 <div class="section-title">
-                                    <h2>Success</h2>
+                                    <h2>Failed</h2>
                                 </div>
                                 
                                 
 
-    <h6> You have successfully made the reservation </h6>
+    <h6> 404 - Not Found </h6>
                         
     <br> 
 
-    <a href="/booking/bookinglist" class="primary-btn about-btn">Booking list</a>
+    <a href="/" class="primary-btn about-btn">Home</a>
 
 
                                 
@@ -122,7 +122,7 @@
                             <div class="about-pic">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
+                                        <img src="<?= $this->url->get('img/icons/failed.png') ?>" alt="">
                                     </div>
                                 </div>
                             </div>

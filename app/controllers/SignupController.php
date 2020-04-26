@@ -113,12 +113,12 @@ class SignupController extends ControllerBase
                     echo "Sorry, the following problems were generated: " . implode('<br>', $user->getMessages());
                     $this->view->disable();
                 }
-
-                // passing a message to the view
-                // $this->view->message = $message;
             }
         }
+    }
 
+    public function failedsignupAction()
+    {
         
     }
 }
