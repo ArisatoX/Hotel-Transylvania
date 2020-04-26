@@ -99,40 +99,36 @@
         <!-- Content -->
         
 
-    <div class="container-contact100" style="background-image: url('img/background/bgform2.jpg');">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" method = "POST" action="/booking/list">
-				<span class="contact100-form-title">
-					Reservation
-				</span>
-
-				<div class="wrap-input100 validate-input" data-validate="Duration is required">
-					<span class="label-input100">Duration</span>
-					<input class="input100" type="text" name="duration" placeholder="">
+    <div class="container">
+        <div class="booking-form">
+            <h3>Reservation</h3>
+            <h6 style="color:red">Please refill your data</h6>
+            <br>
+            <form method ="POST" action="/booking/updatelist">
+                
+                <div class="wrap-input100 validate-input" data-validate="Duration is required">
+                    <span class="label-input100">Duration</span>
+                    <input class="input100" type="text" name="duration" placeholder="<?= $book->duration ?>">
                 </div>
 
-				<div class="wrap-input100 validate-input" data-validate="Capacity is required">
-					<span class="label-input100">Capacity</span>
-					<input class="input100" type="text" name="capacity" placeholder="">
+                <div class="wrap-input100 validate-input" data-validate="Capacity is required">
+                    <span class="label-input100">Capacity</span>
+                    <input class="input100" type="text" name="capacity" placeholder="<?= $room->capacity ?>">
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Room is required">
-					<span class="label-input100">Room Count</span>
-					<input class="input100" type="text" name="room" placeholder="">
+                <div class="wrap-input100 validate-input" data-validate="Room Count is required">
+                    <span class="label-input100">Room Count</span>
+                    <input class="input100" type="text" name="room" placeholder="<?= $book->totalroom ?>">
                 </div>
 
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							Check availability
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
+                <input class="input100" type="text" name="id_book" value="<?= $book->id ?> "placeholder="<?= $book->id ?>" hidden>
+                <input class="input100" type="text" name="old_totalroom" value="<?= $book->totalroom ?>" placeholder="<?= $book->totalroom ?>" hidden>
+                <input class="input100" type="text" name="old_id_room" value="<?= $book->id_room ?>" placeholder="<?= $book->id_room ?>" hidden>
 
-	</div>
+                <button type="submit">Check Availability</button>
+            </form>
+        </div>
+    </div>
 
 
 

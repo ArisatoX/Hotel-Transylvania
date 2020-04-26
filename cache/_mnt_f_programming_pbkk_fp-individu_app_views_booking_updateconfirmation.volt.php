@@ -99,106 +99,64 @@
         <!-- Content -->
         
 
-    <!-- Breadcrumb Section Begin -->
-    <div class="breadcrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Room Details</h2>
-                        <div class="bt-option">
-                            <a href="/">Home</a>
-                            <a href="/room">Room</a>
-                            <span><?= $room->names ?></span>
+    <div class="container">
+        <br>
+        <div class="room-booking">
+            <h3>Booking Confirmation</h3>
+
+            <section class="room-details-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="room-details-item">
+
+                            <div class="rd-text">
+
+                                <!-- Repost Data -->
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">Room Name:</td>
+                                            <td><?= $room->names ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Price:</td>
+                                            <td>Rp <?= $room->price ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Duration:</td>
+                                            <td><?= $duration ?> Day(s)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Total Room:</td>
+                                            <td><?= $totalroom ?> Room(s)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h5><b>Subtotal:</b></h5>
+                                <h2>Rp <?= $totalprice ?></h2>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <form method = "POST" action = "updatefix">
+                <input class="input100" type="text" name="id_room" value="<?= $id_room ?>" hidden>
+                <input class="input100" type="text" name="duration" value="<?= $duration ?>" hidden>
+                <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
+                <input class="input100" type="text" name="totalprice" value="<?= $totalprice ?>" hidden>
+                <input class="input100" type="text" name="id_book" value="<?= $id_book ?>" hidden>
+                <input class="input100" type="text" name="old_totalroom" value="<?= $old_totalroom ?>" hidden>
+                <input class="input100" type="text" name="old_id_room" value="<?= $old_id_room ?>" hidden>
+                <button type="submit" class="primary-btn">Confirm</a>
+            </form>
+
         </div>
+        <br>
     </div>
-    <!-- Breadcrumb Section End -->
-
-    <!-- Room Details Section Begin -->
-    <section class="room-details-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="room-details-item">
-                        <?= $this->tag->image([$room->picture]) ?>
-                        <div class="rd-text">
-                            <div class="rd-title">
-                                <h3><?= $room->names ?></h3>
-                                <div class="rdt-right">
-                                    <div class="rating">
-                                        
-                                    </div>
-                                    <a href="#">Booking Now</a>
-                                </div>
-                            </div>
-
-                            <h2>Rp <?= $room->price ?><span> / night</span></h2>
-
-                            
-
-                            
-                            <p class="f-para"> <?= $room->descriptions ?></p>
-
-                            
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="r-o">Size:</td>
-                                        <td><?= $room->size ?> sqm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Capacity:</td>
-                                        <td><?= $room->capacity ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Bed:</td>
-                                        <td><?= $room->bed ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Features:</td>
-                                        <td><?= $room->features ?></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="room-booking">
-                        <h3>Reservation</h3>
-                        <form method ="POST" action="/booking/list">
-                            
-
-                            <div class="wrap-input100 validate-input" data-validate="Duration is required">
-                                <span class="label-input100">Duration</span>
-                                <input class="input100" type="text" name="duration" placeholder="">
-                            </div>
-
-                            <div class="wrap-input100 validate-input" data-validate="Capacity is required">
-                                <span class="label-input100">Capacity</span>
-                                <input class="input100" type="text" name="capacity" placeholder="">
-                            </div>
-
-                            <div class="wrap-input100 validate-input" data-validate="Room Count is required">
-                                <span class="label-input100">Room Count</span>
-                                <input class="input100" type="text" name="room" placeholder="">
-                            </div>
-
-                            <button type="submit">Check Availability</button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- Room Details Section End -->
-
 
 
 

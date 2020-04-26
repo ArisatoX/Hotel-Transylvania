@@ -182,7 +182,7 @@
                                     <div class="rd-title">
                                         <div class="rdt-left">
                                             <a href="#">Payment</a>
-                                            <a href="#">Change</a>
+                                            <a href="../update/<?= $book->id ?>">Change</a>
                                             <a href="../delete/<?= $book->id ?>">Cancel</a>
                                         </div>
                                     </div>
