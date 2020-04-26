@@ -8,14 +8,14 @@
         <title>Phalcon PHP Framework</title>
 
         <!-- Load CSS -->
-        {{ assets.outputCss() }}
+        <?= $this->assets->outputCss() ?>
 
     </head>
     <body>
 
         <header class="header-section header-normal">
 
-        {% if session.has("auth_id") %}
+        <?php if ($this->session->has('auth_id')) { ?>
             <!-- Logged in -->
             <div class="top-nav">
                 <div class="container">
@@ -23,7 +23,7 @@
                         <div class="col-lg-12">
                             <div class="tn-right">
                                 <div class="language-option">
-                                    <span class="bk-btn">{{ session.get("auth_firstName")}}<i class="fa fa-angle-down"></i></span>
+                                    <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
                                             <li><a href="#">Profile</a></li>
@@ -38,7 +38,7 @@
                 </div>
             </div>        
 
-        {% else %}
+        <?php } else { ?>
             <!-- Not Logged In -->
             <div class="top-nav">
                 <div class="container">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
+        <?php } ?>
 
         <!-- Logo -->
         <div class="menu-item">
@@ -63,7 +63,7 @@
                             <nav class="mainmenu">
                                 <div class="logo">
                                     <a href="/">
-                                        <img src="{{ url("img/icons/MainIcon.png") }}" alt="">
+                                        <img src="<?= $this->url->get('img/icons/MainIcon.png') ?>" alt="">
                                     </a>
                                 </div>
                             </nav>
@@ -96,34 +96,67 @@
         
     </header>
 
-        <div class = "container">
-            <section class="aboutus-section spad">
+        <!-- Content -->
+        
+
+    <div class="container">
+        <br>
+        <div class="room-booking">
+            <h3>Booking Confirmation</h3>
+
+                <section class="room-details-section spad">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h2>Failed</h2>
-                                </div>
-                                
-                                {% block content %} {% endblock %}
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="about-pic">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="{{ url("img/icons/failed.png") }}" alt="">
-                                    </div>
+                            <div class="room-details-item">
+
+                                <div class="rd-text">
+
+                                    <!-- Repost Data -->
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="r-o">Room Name:</td>
+                                                <td><?= $room->names ?> </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Price:</td>
+                                                <td>Rp <?= $room->price ?> </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Duration:</td>
+                                                <td><?= $duration ?> Day(s)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Total Room:</td>
+                                                <td><?= $totalroom ?> Room(s)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <h5><b>Subtotal:</b></h5>
+                                    <h2>Rp <?= $totalprice ?></h2>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+
+                <form method = "POST" action = "create">
+                    <input class="input100" type="text" name="id_user" value="<?= $id_user ?>" hidden>
+                    <input class="input100" type="text" name="id_room" value="<?= $id_room ?>" hidden>
+                    <input class="input100" type="text" name="duration" value="<?= $duration ?>" hidden>
+                    <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
+                    <input class="input100" type="text" name="totalprice" value="<?= $totalprice ?>" hidden>
+                    <button type="submit">Confirm</a>
+                </form>
         </div>
-        
+        <br>
+    </div>
+
+
+
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -153,7 +186,7 @@
 
 
         <!-- Load JS -->
-        {{ assets.outputJs() }}
+        <?= $this->assets->outputJs() ?>
 
     </body>
 </html>

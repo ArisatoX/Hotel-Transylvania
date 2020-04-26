@@ -37,6 +37,26 @@ class BookingController extends ControllerBase
 
     }
 
+    public function failedbookAction()
+    {
+
+    }
+
+    public function failedupdateAction()
+    {
+
+    }
+
+    public function faileddeleteAction()
+    {
+
+    }
+
+    public function failedpaymentAction()
+    {
+
+    }
+
     public function bookinglistAction()
     {
         $getUserId = $this->session->get('auth_id');
@@ -116,8 +136,7 @@ class BookingController extends ControllerBase
         }
         else
         {
-            echo "Sorry, the following problems were generated: " . implode('<br>', $booking->getMessages());
-            $this->view->disable();
+            $this->response->redirect('booking/failedbook');
         }
     }
 
@@ -185,8 +204,7 @@ class BookingController extends ControllerBase
         }
         else
         {
-            echo "can't change";
-            $this->view->disable();
+            $this->response->redirect('booking/failedupdate');
         }
     }
 
@@ -287,9 +305,6 @@ class BookingController extends ControllerBase
         ]);
         $this->view->book = $book;
 
-        // echo $id_book;
-        // $this->view->disable();
-
         // Set Booking
         $book->id_room = $id_room;
         $book->duration = $duration;
@@ -317,8 +332,7 @@ class BookingController extends ControllerBase
         }
         else
         {
-            echo "Sorry, the following problems were generated: " . implode('<br>', $book->getMessages());
-            $this->view->disable();
+            $this->response->redirect('booking/failedupdate');
         }
     }
 
@@ -350,8 +364,7 @@ class BookingController extends ControllerBase
         }
         else
         {
-            echo "can't delete";
-            $this->view->disable();
+            $this->response->redirect('booking/faileddelete');
         }
         
     }
@@ -370,8 +383,7 @@ class BookingController extends ControllerBase
         }
         else
         {
-            echo "already paid";
-            $this->view->disable();
+            $this->response->redirect('booking/failedpayment');
         }
     }
 
@@ -414,8 +426,7 @@ class BookingController extends ControllerBase
             }
             else
             {
-                echo "failed";
-                $this->view->disable();
+                $this->response->redirect('booking/failedpayment');
             }
         }
 
