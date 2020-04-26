@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h6> You have successfully canceled the reservation </h6>
+    <h6> You have successfully changed your reservation </h6>
                         
     <br> 
 

@@ -102,7 +102,7 @@
     <div class="container">
         <div class="booking-form">
             <h3>Reservation</h3>
-            <h6 style="color:red">Please refill your data</h6>
+            <h6 style="color:red">*Please refill your data</h6>
             <br>
             <form method ="POST" action="/booking/updatelist">
                 

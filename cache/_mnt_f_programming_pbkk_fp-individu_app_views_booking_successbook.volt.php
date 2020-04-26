@@ -96,42 +96,42 @@
         
     </header>
 
-        <!-- Content -->
-        
+        <div class = "container">
+            <section class="aboutus-section spad">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="about-text">
+                                <div class="section-title">
+                                    <h2>Success</h2>
+                                </div>
+                                
+                                
 
-<div class = "container">
-    <section class="aboutus-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-text">
-                        <div class="section-title">
-                            <h2>Success</h2>
+    <h6> You have successfully made the reservation </h6>
+                        
+    <br> 
+
+    <a href="/booking/bookinglist" class="primary-btn about-btn">Booking list</a>
+
+
+                                
+                            </div>
                         </div>
-                        
-                        <p class="f-para"> You have successfully booked the room
-                        
-                        <br> <br>
-
-                        <a href="/booking/bookinglist" class="primary-btn about-btn">Booking list</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-pic">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
+                        <div class="col-lg-6">
+                            <div class="about-pic">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
-</div>
-
-
-
+        
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">

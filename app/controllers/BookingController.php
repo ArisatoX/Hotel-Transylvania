@@ -22,7 +22,17 @@ class BookingController extends ControllerBase
 
     }
 
+    public function successupdateAction()
+    {
+
+    }
+
     public function successdeleteAction()
+    {
+
+    }
+
+    public function successpaymentAction()
     {
 
     }
@@ -303,7 +313,7 @@ class BookingController extends ControllerBase
 
         if ($success)
         {
-            $this->response->redirect('booking/successbook');
+            $this->response->redirect('booking/successupdate');
         }
         else
         {
@@ -346,11 +356,69 @@ class BookingController extends ControllerBase
         
     }
 
-    
+    public function paymentAction($id_book)
+    {
+        $conditions = ['id_book'=>$id_book];
+        $book = Booking::findFirst([
+        'conditions' => 'id= :id_book:',
+        'bind' => $conditions,
+        ]);
 
-    
+        if ($book->paid == 0)
+        {
+            $this->view->book = $book;
+        }
+        else
+        {
+            echo "already paid";
+            $this->view->disable();
+        }
+    }
 
+    public function uploadpaymentAction()
+    {
+        $id_book = $this->request->getPost('id_book', 'string');
 
+        $conditions = ['id_book'=>$id_book];
+        $book = Booking::findFirst([
+        'conditions' => 'id= :id_book:',
+        'bind' => $conditions,
+        ]);
+        
+        $path = 'img/payment/';
 
+        if($this->request->hasFiles())
+        {
+            $picture = $this->request->getUploadedFiles()[0];
+            $allow = array('jpeg', 'png', 'jpg');
+            $name = $picture->getName();
+            $extension = pathinfo($name, PATHINFO_EXTENSION);
+
+            // Checking extension
+            if (in_array($extension, $allow))
+            {
+                $path = $path . "user " . $book->id_user . "_ booking " . $book->id . "_" . $name;
+                $picture->moveTo($path);
+            }
+            
+            // Update booking
+            $book->payment = $path;
+            $book->paid = 1;
+            $book->stat = "Payment received";
+
+            $success = $book->save();
+
+            if($success)
+            {
+                $this->response->redirect('booking/successpayment');
+            }
+            else
+            {
+                echo "failed";
+                $this->view->disable();
+            }
+        }
+
+    }
 
 }

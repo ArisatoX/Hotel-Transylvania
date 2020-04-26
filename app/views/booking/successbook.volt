@@ -1,36 +1,11 @@
-{% extends "layouts/base.volt" %}
+{% extends "layouts/success.volt" %}
 
 {% block content %}
 
-<div class = "container">
-    <section class="aboutus-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-text">
-                        <div class="section-title">
-                            <h2>Success</h2>
-                        </div>
+    <h6> You have successfully made the reservation </h6>
                         
-                        <p class="f-para"> You have successfully booked the room
-                        
-                        <br> <br>
+    <br> 
 
-                        <a href="/booking/bookinglist" class="primary-btn about-btn">Booking list</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-pic">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <img src="{{ url("img/icons/success.png") }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
+    <a href="/booking/bookinglist" class="primary-btn about-btn">Booking list</a>
 
 {% endblock %}

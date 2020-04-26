@@ -54,7 +54,7 @@
                 <input class="input100" type="text" name="id_book" value="{{ id_book }}" hidden>
                 <input class="input100" type="text" name="old_totalroom" value="{{ old_totalroom }}" hidden>
                 <input class="input100" type="text" name="old_id_room" value="{{ old_id_room }}" hidden>
-                <button type="submit" class="primary-btn">Confirm</a>
+                <button type="submit">Confirm</a>
             </form>
 
         </div>

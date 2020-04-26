@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a:3:{i:0;s:4424:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -96,70 +96,34 @@
         
     </header>
 
-        <!-- Content -->
-        
-
-    <div class="container">
-        <br>
-        <div class="room-booking">
-            <h3>Booking Confirmation</h3>
-
-            <section class="room-details-section spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="room-details-item">
-
-                            <div class="rd-text">
-
-                                <!-- Repost Data -->
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td class="r-o">Room Name:</td>
-                                            <td><?= $room->names ?> </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Price:</td>
-                                            <td>Rp <?= $room->price ?> </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Duration:</td>
-                                            <td><?= $duration ?> Day(s)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Total Room:</td>
-                                            <td><?= $totalroom ?> Room(s)</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <h5><b>Subtotal:</b></h5>
-                                <h2>Rp <?= $totalprice ?></h2>
-
+        <div class = "container">
+            <section class="aboutus-section spad">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="about-text">
+                                <div class="section-title">
+                                    <h2>Success</h2>
+                                </div>
+                                
+                                ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:66:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/success.volt";s:4:"line";i:109;}}i:1;s:1867:"
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-pic">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <form method = "POST" action = "updatefix">
-                <input class="input100" type="text" name="id_room" value="<?= $id_room ?>" hidden>
-                <input class="input100" type="text" name="duration" value="<?= $duration ?>" hidden>
-                <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
-                <input class="input100" type="text" name="totalprice" value="<?= $totalprice ?>" hidden>
-                <input class="input100" type="text" name="id_book" value="<?= $id_book ?>" hidden>
-                <input class="input100" type="text" name="old_totalroom" value="<?= $old_totalroom ?>" hidden>
-                <input class="input100" type="text" name="old_id_room" value="<?= $old_id_room ?>" hidden>
-                <button type="submit">Confirm</a>
-            </form>
-
         </div>
-        <br>
-    </div>
-
-
-
+        
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -193,3 +157,4 @@
 
     </body>
 </html>
+";}

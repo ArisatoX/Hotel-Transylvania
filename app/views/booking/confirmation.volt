@@ -52,7 +52,7 @@
                     <input class="input100" type="text" name="duration" value="{{ duration }}" hidden>
                     <input class="input100" type="text" name="totalroom" value="{{ totalroom }}" hidden>
                     <input class="input100" type="text" name="totalprice" value="{{ totalprice }}" hidden>
-                    <button type="submit" class="primary-btn">Confirm</a>
+                    <button type="submit">Confirm</a>
                 </form>
         </div>
         <br>
