@@ -105,16 +105,16 @@ $di->setShared('modelsMetadata', function () {
  */
 $di->set('flash', function () {
     $escaper = new Escaper();
-    $flash = new Flash($escaper);
-    $flash->setImplicitFlush(false);
-    $flash->setCssClasses([
+    $flashSession = new Flash($escaper);
+    $flashSession->setImplicitFlush(false);
+    $flashSession->setCssClasses([
         'error'   => 'alert alert-danger',
         'success' => 'alert alert-success',
         'notice'  => 'alert alert-info',
         'warning' => 'alert alert-warning'
     ]);
 
-    return $flash;
+    return $flashSession;
 });
 
 /**

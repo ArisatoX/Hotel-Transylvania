@@ -9,12 +9,19 @@ use App\Models\Booking;
 class BookingController extends ControllerBase
 {   
 
-    public function indexAction()
+    public function beforeExecuteRoute()
     {
         if (!$this->session->has('auth_id'))
         {
-            return $this->response->redirect('login');
+            $this->flashSession->error('*You must login first');
+            $this->response->redirect('login');
+            return false;
         }
+    }
+    
+    public function indexAction()
+    {
+    
     }
 
     public function successbookAction()

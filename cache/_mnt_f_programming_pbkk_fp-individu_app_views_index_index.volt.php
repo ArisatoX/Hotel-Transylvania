@@ -152,11 +152,11 @@
                         <div class="section-title">
                             <h2>About Us</h2>
                         </div>
-                        <p class="f-para">Sona.com is a leading online accommodation site. We’re passionate about
-                            travel. Every day, we inspire and reach millions of travelers across 90 local websites in 41
-                            languages.</p>
-                        <p class="s-para">So when it comes to booking the perfect hotel, vacation rental, resort,
-                            apartment, guest house, or tree house, we’ve got you covered.</p>
+                        <p class="f-para">Hotel Transylvania is a 5 star hotel with luxurious interior design and well-designed rooms. This hotel 
+                        have various entertainment including restaurant, meeting rooms, and many more. It is also categorized into various room choices that will suit your needs.
+                        We have got standard hotel rooms up until a magnificent suite.
+                        </p>
+                        <p class="s-para">So if you're looking to spend your time with your familiy, friends or even alone, don't hesitate and come join us!</p>
                         <a href="#" class="primary-btn about-btn">Read More</a>
                     </div>
                 </div>

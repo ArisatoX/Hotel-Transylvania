@@ -41,7 +41,7 @@ class LoginController extends ControllerBase
                     // check user disable
                     if ($user->active != 1) 
                     {
-                        $this->flashSession->error("User Disabled");
+                        // $this->flashSession->error("User Disabled");
                         return $this->response->redirect('login');
                     }
                     // active user

@@ -9,6 +9,10 @@
 					Login
 				</span>
 
+				{# Access booking before login #}
+				<b style="color:red">{{flashSession.output()}}</b>
+				<br><br>
+
 				<div class="wrap-input100 validate-input" data-validate="Email is required">
 					<span class="label-input100">Email</span>
 					<input class="input100" type="text" name="email" placeholder="">
