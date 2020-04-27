@@ -38,15 +38,21 @@ class SignupController extends ControllerBase
 
         if ($exist)
         {
-            echo "Sorry, the following problems were generated: Email already exist";
-            $this->view->disable();
+            $this->flashSession->error("*Email already exist");
+            $this->response->redirect('signup');
+            return false;
+            // echo "Sorry, the following problems were generated: Email already exist";
+            // $this->view->disable();
         }
         else
         {
             if ($pass != $confirm)
             {
-                echo "Sorry, the following problems were generated: Password doesn't match";
-                $this->view->disable();
+                $this->flashSession->error("*Password doesn't match");
+                $this->response->redirect('signup');
+                return false;
+                // echo "Sorry, the following problems were generated: Password doesn't match";
+                // $this->view->disable();
             }
             else
             {
@@ -110,8 +116,7 @@ class SignupController extends ControllerBase
                 } 
                 else 
                 {
-                    echo "Sorry, the following problems were generated: " . implode('<br>', $user->getMessages());
-                    $this->view->disable();
+                    return $this->response->redirect('signup/failedsignup');
                 }
             }
         }

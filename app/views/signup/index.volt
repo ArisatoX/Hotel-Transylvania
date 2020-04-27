@@ -9,6 +9,9 @@
 					Register
 				</span>
 
+				<b style="color:red">{{flashSession.output()}}</b>
+				<br><br>
+
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="First Name is required">
 					<span class="label-input100">First Name</span>
 					<input class="input100" type="text" name="firstName" placeholder="">
