@@ -142,7 +142,7 @@ class ReserveController extends ControllerBase
         $book->price = $price;
 
         $success = $book->save();
-        $this->response->redirect((($success) ? 'reserve/successupdate' : 'reserve/failedupdate'));
+        $this->response->redirect((($success && !$book->paid) ? 'reserve/successupdate' : 'reserve/failedupdate'));
     }
     public function successupdateAction()
     {
@@ -150,31 +150,27 @@ class ReserveController extends ControllerBase
     public function failedupdateAction()
     {
     }
+    // public function deleteAction()
+    // {
+    //     $bookid = $this->request->getPost('id','number');
+    //     $this->view->bookid = $bookid;
+    // }
     public function deleteAction()
     {
         $bookid = $this->request->getPost('id','number');
-        $this->view->bookid = $bookid;
-    }
-    public function deletingAction()
-    {
-        $bookid = $this->request->getPost('bookid','number');
-        $cond1 = ['bookid'=>$bookid];
+        $cond1 = ['id'=>$bookid];
         $book = Reservation::findFirst([
-                'conditions' => 'id = :bookid:',
+                'conditions' => 'id = :id:',
                 'bind' => $cond1,
         ]);
         $decision = $this->request->getPost('action','string');
-        if($decision == "yes"){
-            if (!$book->paid)
-            {
-                $book->delete();
-                $this->response->redirect('reserve/successdelete');
-            }
-            else
-                $this->response->redirect('reserve/faileddelete');
+        if (!$book->paid)
+        {
+            $book->delete();
+            $this->response->redirect('reserve/successdelete');
         }
-        else if($decision == "no")
-            $this->response->redirect('reserve/history');
+        else
+            $this->response->redirect('reserve/faileddelete');
     }
     public function successdeleteAction()
     {
@@ -204,10 +200,13 @@ class ReserveController extends ControllerBase
                 'conditions' => 'id = :bookid:',
                 'bind' => $cond1,
         ]);
+        
+        if(!$book->paid)
+            $book->paid = 1;
+        else
+            $this->response->redirect('reserve/failedpaid');
 
-        $book->paid = 1;
-
-        $this->response->redirect((($book->save()) ? 'reserve/successpaid' : 'reserve/failedpaid'));
+        $this->response->redirect($book->save() ? 'reserve/successpaid' : 'reserve/failedpaid');
     }
     public function successpaidAction()
     {

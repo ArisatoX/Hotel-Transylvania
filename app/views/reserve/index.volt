@@ -9,7 +9,7 @@
                 Meeting Room Reservation
             </span>
 
-            <div class="wrap-input100 validate-input" data-validate="Duration is required">
+            <div class="wrap-input100 validate-input">
                 <span class="label-input100">Rooms</span>
                 <br>
                 <select id="room" name="room">
@@ -19,21 +19,21 @@
                 </select>
             </div>
 
-            <div class="wrap-input100 validate-input" data-validate="Capacity is required">
+            <div class="wrap-input100 validate-input" data-validate="Invalid date">
                 <span class="label-input100">Choose reservation date:</span>
                 <input class="input100" type="date" name="reserveDate" placeholder=""
                     value="{{ date('Y-m-d',time()) }}"
                     min="2020-01-01" max="2030-12-31" required>
             </div>
 
-            <div class="wrap-input100 validate-input" data-validate="Room is required">
+            <div class="wrap-input100 validate-input" data-validate="Time must in between 7:00 AM and 8:00 PM">
                 <span class="label-input100">Start Time</span>
                 <input class="input100" type="time" name="start_time" placeholder=""
                     value="{{ date('H:i',time()) }}"
                     min="07:00" max="20:00" required>
             </div>
 
-            <div class="wrap-input100 validate-input" data-validate="Room is required">
+            <div class="wrap-input100 validate-input" data-validate="Time must in between 8:00 AM and 9:00 PM">
                 <span class="label-input100">Finish Time</span>
                 <input class="input100" type="time" name="end_time" placeholder=""
                     value="{{ date('H:i',time()+3600) }}"

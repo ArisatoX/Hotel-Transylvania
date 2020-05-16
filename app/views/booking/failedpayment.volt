@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h6> You already paid the reservation </h6>
+    <h6> You have already paid the reservation </h6>
                         
     <br> 
 

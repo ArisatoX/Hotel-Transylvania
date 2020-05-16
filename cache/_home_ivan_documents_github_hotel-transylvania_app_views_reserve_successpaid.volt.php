@@ -5,17 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Success!!</title>
+        <title>Phalcon PHP Framework</title>
 
         <!-- Load CSS -->
-        {{ assets.outputCss() }}
+        <?= $this->assets->outputCss() ?>
 
     </head>
     <body>
 
         <header class="header-section header-normal">
 
-        {% if session.has("auth_id") %}
+        <?php if ($this->session->has('auth_id')) { ?>
             <!-- Logged in -->
             <div class="top-nav">
                 <div class="container">
@@ -23,7 +23,7 @@
                         <div class="col-lg-12">
                             <div class="tn-right">
                                 <div class="language-option">
-                                    <span class="bk-btn">{{ session.get("auth_firstName")}}<i class="fa fa-angle-down"></i></span>
+                                    <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
                                             <li><a href="#">Profile</a></li>
@@ -38,7 +38,7 @@
                 </div>
             </div>        
 
-        {% else %}
+        <?php } else { ?>
             <!-- Not Logged In -->
             <div class="top-nav">
                 <div class="container">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
+        <?php } ?>
 
         <!-- Logo -->
         <div class="menu-item">
@@ -63,7 +63,7 @@
                             <nav class="mainmenu">
                                 <div class="logo">
                                     <a href="/">
-                                        <img src="{{ url("img/icons/MainIcon.png") }}" alt="">
+                                        <img src="<?= $this->url->get('img/icons/MainIcon.png') ?>" alt="">
                                     </a>
                                 </div>
                             </nav>
@@ -106,7 +106,15 @@
                                     <h2>Success</h2>
                                 </div>
                                 
-                                {% block content %} {% endblock %}
+                                
+
+    <h6> You have successfully completed the payment </h6>
+                        
+    <br> 
+
+    <a href="/reserve/history" class="primary-btn about-btn">Reservation History</a>
+
+
                                 
                             </div>
                         </div>
@@ -114,7 +122,7 @@
                             <div class="about-pic">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <img src="{{ url("img/icons/success.png") }}" alt="">
+                                        <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +161,7 @@
 
 
         <!-- Load JS -->
-        {{ assets.outputJs() }}
+        <?= $this->assets->outputJs() ?>
 
     </body>
 </html>

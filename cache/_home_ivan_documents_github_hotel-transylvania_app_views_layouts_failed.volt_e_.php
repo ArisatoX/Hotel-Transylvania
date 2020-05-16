@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+a:3:{i:0;s:4315:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Success!!</title>
+        <title>Phalcon PHP Framework</title>
 
         <!-- Load CSS -->
-        {{ assets.outputCss() }}
+        <?= $this->assets->outputCss() ?>
 
     </head>
     <body>
 
         <header class="header-section header-normal">
 
-        {% if session.has("auth_id") %}
+        <?php if ($this->session->has('auth_id')) { ?>
             <!-- Logged in -->
             <div class="top-nav">
                 <div class="container">
@@ -23,7 +23,7 @@
                         <div class="col-lg-12">
                             <div class="tn-right">
                                 <div class="language-option">
-                                    <span class="bk-btn">{{ session.get("auth_firstName")}}<i class="fa fa-angle-down"></i></span>
+                                    <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
                                             <li><a href="#">Profile</a></li>
@@ -38,7 +38,7 @@
                 </div>
             </div>        
 
-        {% else %}
+        <?php } else { ?>
             <!-- Not Logged In -->
             <div class="top-nav">
                 <div class="container">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
+        <?php } ?>
 
         <!-- Logo -->
         <div class="menu-item">
@@ -63,7 +63,7 @@
                             <nav class="mainmenu">
                                 <div class="logo">
                                     <a href="/">
-                                        <img src="{{ url("img/icons/MainIcon.png") }}" alt="">
+                                        <img src="<?= $this->url->get('img/icons/MainIcon.png') ?>" alt="">
                                     </a>
                                 </div>
                             </nav>
@@ -103,10 +103,10 @@
                         <div class="col-lg-6">
                             <div class="about-text">
                                 <div class="section-title">
-                                    <h2>Success</h2>
+                                    <h2>Failed</h2>
                                 </div>
                                 
-                                {% block content %} {% endblock %}
+                                ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:76:"/home/ivan/Documents/GitHub/Hotel-Transylvania/app/views/layouts/failed.volt";s:4:"line";i:109;}}i:1;s:1815:"
                                 
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                             <div class="about-pic">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <img src="{{ url("img/icons/success.png") }}" alt="">
+                                        <img src="<?= $this->url->get('img/icons/failed.png') ?>" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,8 @@
 
 
         <!-- Load JS -->
-        {{ assets.outputJs() }}
+        <?= $this->assets->outputJs() ?>
 
     </body>
 </html>
+";}
