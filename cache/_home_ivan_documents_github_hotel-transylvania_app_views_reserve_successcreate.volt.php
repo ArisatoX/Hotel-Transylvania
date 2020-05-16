@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Phalcon PHP Framework</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,6 +28,7 @@
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -84,6 +85,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meeting Rooms</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -96,42 +98,24 @@
         
     </header>
 
-        <div class = "container">
-            <section class="aboutus-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h2>Failed</h2>
-                                </div>
-                                
-                                
-
-    <h6> Sign up failed, please try again</h6>
-                        
-    <br> 
-
-    <a href="/signup" class="primary-btn about-btn">Signup</a>
-
-
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="about-pic">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="<?= $this->url->get('img/icons/failed.png') ?>" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <!-- Content -->
         
+
+<br><br><br><br>
+<div class="welcome-area" id="welcome">
+    <div class="header-text">
+        <div class="container">
+            <div class="row"> 
+                <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <h1>Success!!</h1>
+                    <a href="/reserve/history" class="main-button-slider">Check History</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">

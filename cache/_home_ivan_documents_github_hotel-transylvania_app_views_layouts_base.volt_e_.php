@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+a:3:{i:0;s:4045:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Phalcon PHP Framework</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,6 +28,7 @@
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -84,6 +85,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meeting Rooms</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -96,42 +98,9 @@
         
     </header>
 
-        <div class = "container">
-            <section class="aboutus-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h2>Failed</h2>
-                                </div>
-                                
-                                
+        <!-- Content -->
+        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:74:"/home/ivan/Documents/GitHub/Hotel-Transylvania/app/views/layouts/base.volt";s:4:"line";i:102;}}i:1;s:1158:"
 
-    <h6> 404 - Not Found </h6>
-                        
-    <br> 
-
-    <a href="/" class="primary-btn about-btn">Home</a>
-
-
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="about-pic">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="<?= $this->url->get('img/icons/failed.png') ?>" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -165,3 +134,4 @@
 
     </body>
 </html>
+";}

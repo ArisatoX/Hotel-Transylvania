@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Phalcon PHP Framework</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,6 +28,7 @@
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -84,6 +85,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meeting Rooms</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -99,64 +101,61 @@
         <!-- Content -->
         
 
-    <div class="container-contact100" style="background-image: url('img/background/bgform.jpg');">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" method = "POST" action="/signup/register">
-				<span class="contact100-form-title">
-					Register
-				</span>
+<div class="container">
+    <br>
+    <div class="room-booking">
+        <h3>Reservation Confirmation</h3>
+            <section class="room-details-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="room-details-item">
 
-				<b style="color:red"><?= $this->flashSession->output() ?></b>
-				<br><br>
+                            <div class="rd-text">
 
-				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="First Name is required">
-					<span class="label-input100">First Name</span>
-					<input class="input100" type="text" name="firstName" placeholder="">
+                                <!-- Repost Data -->
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">Meeting Room:</td>
+                                            <td><?= $room->name ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Date:</td>
+                                            <td><?= $dates ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Start time:</td>
+                                            <td><?= $start_time ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Finish time:</td>
+                                            <td><?= $end_time ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Price:</td>
+                                            <td>Rp. <?= $price ?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Last Name is required">
-					<span class="label-input100">Last Name</span>
-					<input class="input100" type="text" name="lastName" placeholder="">
-				</div>
+            </section>
 
-				<div class="wrap-input100 validate-input" data-validate="Email is required">
-					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="email" placeholder="">
-                </div>
-
-                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Password is required">
-					<span class="label-input100">Password</span>
-					<input class="input100" type="password" name="pass" placeholder="">
-                </div>
-                
-                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Confirm Password is required">
-					<span class="label-input100">Confirm Password</span>
-					<input class="input100" type="password" name="confirm" placeholder="">
-				</div>
-
-				<div class="wrap-input100 validate-input" data-validate="Country is required">
-					<span class="label-input100">Country / Region</span>
-					<input class="input100" type="text" name="country" placeholder="">
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Phone is required">
-					<span class="label-input100">Phone Number</span>
-					<input class="input100" type="text" name="phone" placeholder="">
-                </div>
-
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							Submit
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
-
-	</div>
-
+            <form method = "POST" action = "/reserve/create">
+                <input class="input100" type="text" name="userid" value="<?= $userid ?>" hidden>
+                <input class="input100" type="text" name="roomid" value="<?= $roomid ?>" hidden>
+                <input class="input100" type="date" name="dates" value="<?= $dates ?>" hidden>
+                <input class="input100" type="time" name="start_time" value="<?= $start_time ?>" hidden>
+                <input class="input100" type="time" name="end_time" value="<?= $end_time ?>" hidden>
+                <input class="input100" type="text" name="price" value="<?= $price ?>" hidden>
+                <button type="submit">Confirm</button>
+            </form>
+    </div>
+    <br>
+</div>
 
 
         <!-- Footer -->

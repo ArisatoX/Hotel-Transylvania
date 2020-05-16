@@ -1,11 +1,11 @@
-a:3:{i:0;s:4423:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Phalcon PHP Framework</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,6 +28,7 @@ a:3:{i:0;s:4423:"<!DOCTYPE html>
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -84,6 +85,7 @@ a:3:{i:0;s:4423:"<!DOCTYPE html>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meeting Rooms</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -96,34 +98,56 @@ a:3:{i:0;s:4423:"<!DOCTYPE html>
         
     </header>
 
-        <div class = "container">
-            <section class="aboutus-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h2>Failed</h2>
-                                </div>
-                                
-                                ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:65:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/failed.volt";s:4:"line";i:109;}}i:1;s:1866:"
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="about-pic">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="<?= $this->url->get('img/icons/failed.png') ?>" alt="">
-                                    </div>
-                                </div>
-                            </div>
+        <!-- Content -->
+        
+
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Meeting Rooms</h2>
+                        <div class="bt-option">
+                            <a href="/">Home</a>
+                            <span>Meeting Rooms</span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
-        
+    </div>
+    
+<?php if (($rooms->count() > 0)) { ?>
+<div class="welcome-area" id="welcome">
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th><h5>Room Name</h5></th>
+                <th><h5>Room Location</h5></th>
+                <th><h5>Capacity</h5></th>
+                <th><h5>Price per Hour</h5></th>
+            </tr>
+            </thead>
+            
+            <tbody class="table-secondary">
+            <?php foreach ($rooms as $room) { ?>
+                <tr>
+                    <td><h6><?= $room->name ?></h6></td>
+                    <td><h6><?= $room->location ?></h6></td>
+                    <td><h6><?= $room->capacity ?></h6></td>
+                    <td><h6><?= $room->hourPrice ?></h6></td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+        <a href="/reserve">Reserve</a>
+    </div>
+</div>
+<?php } ?>
+
+
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -157,4 +181,3 @@ a:3:{i:0;s:4423:"<!DOCTYPE html>
 
     </body>
 </html>
-";}

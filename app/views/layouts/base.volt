@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Phalcon PHP Framework</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         {{ assets.outputCss() }}
@@ -28,6 +28,7 @@
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -84,6 +85,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meeting Rooms</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>

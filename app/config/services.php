@@ -60,6 +60,8 @@ $di->setShared('view', function () {
                 'Always' => true  
             ]);
 
+            $volt->getCompiler()->addFunction('strtotime','strtotime');
+            
             return $volt;
         },
         '.phtml' => PhpEngine::class

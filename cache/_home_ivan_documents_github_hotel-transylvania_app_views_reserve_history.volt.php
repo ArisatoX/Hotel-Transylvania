@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Phalcon PHP Framework</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,6 +28,7 @@
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -84,6 +85,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meeting Rooms</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -99,58 +101,76 @@
         <!-- Content -->
         
 
-<div class="container">
-
-    
-    <div class="breadcrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>Rooms</h2>
-                        <div class="bt-option">
-                            <a href="/">Home</a>
-                            <span>Rooms</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <section class="hp-room-section">
-        <div class="container-fluid">
-            <div class="hp-room-items">
-                <div class="row">
-
-                    <!-- Room -->
-                    <?php foreach ($rooms as $room) { ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="room-item">
-                            <?= $this->tag->image([$room->picture]) ?>
-                            <div class="ri-text">
-                                <h4><?= $room->names ?></h4>
-                                
-                                <h3>Rp <?= $room->price ?><span> / night</span></h3>
-
-                                
-    
-                                <a href="room/show/<?= $room->id ?>" class="primary-btn">Details</a>
-                            </div>
-                        </div>
-                    </div>
+<br><br><br><br>
+<?php if (($books->count() > 0)) { ?>
+<!-- <div class="welcome-area" id="welcome"> -->
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th>Room Name</th>
+                <th>Room Location</th>
+                <th>Reserve Date</th>
+                <th>Start Time</th>
+                <th>Finish Time</th>
+                <th>Price</th>
+                <th colspan="3"></th>
+            </tr>
+            </thead>
+            
+            <tbody class="table-secondary">
+            <?php foreach ($books as $data) { ?>
+                <?php foreach ($rooms as $room) { ?>
+                    <?php if ($room->id == $data->RoomID && $userid == $data->userID) { ?>
+                        <tr>
+                            <td><?= $room->name ?></td>
+                            <td><?= $room->location ?></td>
+                            <td><?= $data->reserveDate ?></td>
+                            <td><?= date('H:i', strtotime($data->start_time)) ?></td>
+                            <td><?= date('H:i', strtotime($data->end_time)) ?></td>
+                            <td>Rp.<?= $data->price ?></td>
+                            <?php if (!$data->paid) { ?>
+                            <td>
+                                <form action="/reserve/update" method="post">
+                                    <input type="text" name="id" value="<?= $data->id ?>" hidden>
+                                    <button class="updatebutton" type="submit">Update</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/reserve/delete" method="post">
+                                    <input type="text" name="id" value="<?= $data->id ?>" hidden>
+                                    <button class="deletebutton" type="submit">Delete</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/reserve/payment" method="post">
+                                    <input type="text" name="id" value="<?= $data->id ?>" hidden>
+                                    <button class="updatebutton" type="submit">Payment</button>
+                                </form>
+                            </td>
+                            <?php } else { ?>
+                            <td>
+                                <button class="offbutton" type="submit" disabled>Update</button>
+                            </td>
+                            <td>
+                                <button class="offbutton" type="submit" disabled>Delete</button>
+                            </td>
+                            <td>
+                                <button class="offbutton" type="submit" disabled>Completed</button>
+                            </td>
+                            <?php } ?>
+                        </tr>
                     <?php } ?>
-                    
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
+                <?php } ?>
+            <?php } ?>
+            </tbody>
+        </table>
+        <br>
+    </div>
+<!-- </div> -->
+<?php } else { ?>
 
-<br>
-
+<?php } ?>
 
 
         <!-- Footer -->

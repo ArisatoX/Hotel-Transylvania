@@ -1,11 +1,11 @@
-a:3:{i:0;s:3968:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Phalcon PHP Framework</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,6 +28,7 @@ a:3:{i:0;s:3968:"<!DOCTYPE html>
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -84,6 +85,7 @@ a:3:{i:0;s:3968:"<!DOCTYPE html>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meeting Rooms</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -97,7 +99,59 @@ a:3:{i:0;s:3968:"<!DOCTYPE html>
     </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:100;}}i:1;s:1193:"
+        
+
+<div class="container-contact100" style="background-image: url('img/background/bgform2.jpg');">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form" method = "POST" action="/reserve/confirm">
+            <span class="contact100-form-title">
+                Meeting Room Reservation
+            </span>
+
+            <div class="wrap-input100 validate-input" data-validate="Duration is required">
+                <span class="label-input100">Rooms</span>
+                <br>
+                <select id="room" name="room">
+                    <?php foreach ($rooms as $room) { ?>
+                        <option value='<?= $room->id ?>'><?= $room->name ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Capacity is required">
+                <span class="label-input100">Choose reservation date:</span>
+                <input class="input100" type="date" name="reserveDate" placeholder=""
+                    value="<?= date('Y-m-d', time()) ?>"
+                    min="2020-01-01" max="2030-12-31" required>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Room is required">
+                <span class="label-input100">Start Time</span>
+                <input class="input100" type="time" name="start_time" placeholder=""
+                    value="<?= date('H:i', time()) ?>"
+                    min="07:00" max="20:00" required>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate="Room is required">
+                <span class="label-input100">Finish Time</span>
+                <input class="input100" type="time" name="end_time" placeholder=""
+                    value="<?= date('H:i', time() + 3600) ?>"
+                    min="08:00" max="21:00" required>
+            </div>
+
+            <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button class="contact100-form-btn">
+                        Reserve
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
 
         <!-- Footer -->
         <footer class="footer-section">
@@ -132,4 +186,3 @@ a:3:{i:0;s:3968:"<!DOCTYPE html>
 
     </body>
 </html>
-";}
