@@ -43,7 +43,17 @@
             {% endfor %}
             </tbody>
         </table>
-        <a href="/reserve">Reserve</a>
+
+        <div class="room-booking">
+            <form method="get" action="/reserve">
+                <button type="submit">Reserve</button><br>
+            </form>
+        </div>
+
+        {# <div>
+            <a href="/reserve" class="primary-btn">Reserve</a>
+        </div>                #}
+
     </div>
 </div>
 {% endif %}

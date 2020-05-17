@@ -1,4 +1,4 @@
-a:3:{i:0;s:4411:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -106,7 +106,15 @@ a:3:{i:0;s:4411:"<!DOCTYPE html>
                                     <h2>Failed</h2>
                                 </div>
                                 
-                                ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:65:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/failed.volt";s:4:"line";i:109;}}i:1;s:1866:"
+                                
+
+    <h6> The data that you entered is wrong or corrupted, please try again </h6>
+                        
+    <br> 
+
+    <a href="/meeting" class="primary-btn about-btn">Room List</a>
+    
+
                                 
                             </div>
                         </div>
@@ -157,4 +165,3 @@ a:3:{i:0;s:4411:"<!DOCTYPE html>
 
     </body>
 </html>
-";}

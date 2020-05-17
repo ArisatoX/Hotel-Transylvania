@@ -1,11 +1,11 @@
-a:3:{i:0;s:4411:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Failed!!</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,6 +28,7 @@ a:3:{i:0;s:4411:"<!DOCTYPE html>
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -86,6 +87,7 @@ a:3:{i:0;s:4411:"<!DOCTYPE html>
                                     <li><a href="/booking">Booking</a></li>
                                     <li><a href="/meeting">Meetings</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
+                                    
                                 </ul>
                             </nav>
                         </div>
@@ -96,34 +98,66 @@ a:3:{i:0;s:4411:"<!DOCTYPE html>
         
     </header>
 
-        <div class = "container">
-            <section class="aboutus-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h2>Failed</h2>
-                                </div>
-                                
-                                ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:65:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/failed.volt";s:4:"line";i:109;}}i:1;s:1866:"
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="about-pic">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="<?= $this->url->get('img/icons/failed.png') ?>" alt="">
-                                    </div>
-                                </div>
+        <!-- Content -->
+        
+
+<div class="container">
+    <br>
+    <div class="room-booking">
+        <h3>Reservation Confirmation</h3>
+            <section class="room-details-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="room-details-item">
+
+                            <div class="rd-text">
+
+                                <!-- Repost Data -->
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">Meeting Room:</td>
+                                            <td><?= $room->name ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Date:</td>
+                                            <td><?= $dates ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Start time:</td>
+                                            <td><?= $start_time ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Finish time:</td>
+                                            <td><?= $end_time ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Price:</td>
+                                            <td>Rp. <?= $price ?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-        </div>
-        
+
+            <form method = "POST" action = "/reserve/create">
+                <input class="input100" type="text" name="userid" value="<?= $userid ?>" hidden>
+                <input class="input100" type="text" name="roomid" value="<?= $roomid ?>" hidden>
+                <input class="input100" type="date" name="dates" value="<?= $dates ?>" hidden>
+                <input class="input100" type="time" name="start_time" value="<?= $start_time ?>" hidden>
+                <input class="input100" type="time" name="end_time" value="<?= $end_time ?>" hidden>
+                <input class="input100" type="text" name="price" value="<?= $price ?>" hidden>
+                <button type="submit">Confirm</button>
+            </form>
+    </div>
+    <br>
+</div>
+
+
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -137,9 +171,9 @@ a:3:{i:0;s:4411:"<!DOCTYPE html>
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li>Patrick Sungkharisma</li>
-                                    <li>05111740000041</li>
-                                    <li>PBKK C - FP Individu</li>
+                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
+                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
+                                    <li>PBKK C - FP Kelompok</li>
                                 </ul>
                             </div>
                         </div>
@@ -157,4 +191,3 @@ a:3:{i:0;s:4411:"<!DOCTYPE html>
 
     </body>
 </html>
-";}
