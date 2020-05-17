@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+a:3:{i:0;s:4410:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Success!!</title>
+        <title>Failed!!</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -103,18 +103,10 @@
                         <div class="col-lg-6">
                             <div class="about-text">
                                 <div class="section-title">
-                                    <h2>Success</h2>
+                                    <h2>Failed</h2>
                                 </div>
                                 
-                                
-
-    <h6> You have successfully completed the payment </h6>
-                        
-    <br> 
-
-    <a href="/reserve/history" class="primary-btn about-btn">Reservation History</a>
-
-
+                                ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:65:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/failed.volt";s:4:"line";i:109;}}i:1;s:1866:"
                                 
                             </div>
                         </div>
@@ -122,7 +114,7 @@
                             <div class="about-pic">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
+                                        <img src="<?= $this->url->get('img/icons/failed.png') ?>" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -165,3 +157,4 @@
 
     </body>
 </html>
+";}
