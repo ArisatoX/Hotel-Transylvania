@@ -107,10 +107,10 @@
             <h4>Price: Rp.<?= $book->price ?></h4>
             <h6 style="color:red">*Please upload the payment</h6>
             <br>
-            <form method ="POST" action="/booking/uploadpayment" enctype="multipart/form-data">
+            <form method ="POST" action="/reserve/progress" enctype="multipart/form-data">
 
                 <input type="file" name="payment" placeholder="">  
-                <input type="text" name="id_book" value="<?= $book->id ?>" hidden>  
+                <input type="text" name="id" value="<?= $bookid ?>" hidden>  
                 <button type="submit">Submit</button>
             </form>
         </div>
@@ -144,9 +144,9 @@
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li>Patrick Sungkharisma</li>
-                                    <li>05111740000041</li>
-                                    <li>PBKK C - FP Individu</li>
+                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
+                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
+                                    <li>PBKK C - FP Kelompok</li>
                                 </ul>
                             </div>
                         </div>

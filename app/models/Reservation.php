@@ -15,4 +15,5 @@ class Reservation extends Model
     public $price;
     public $userID;
     public $paid;
+    public $payment;
 }

@@ -201,8 +201,25 @@ class ReserveController extends ControllerBase
                 'bind' => $cond1,
         ]);
         
-        if(!$book->paid)
-            $book->paid = 1;
+        if($book->paid == 0){
+            if($this->request->hasFiles()){
+                $picture = $this->request->getUploadedFiles()[0];
+                $allow = array('jpeg', 'png', 'jpg');
+                $name = $picture->getName();
+                $extension = pathinfo($name, PATHINFO_EXTENSION);
+
+                // Checking extension
+                if (in_array($extension, $allow))
+                {
+                    $path = $path . "user " . $book->id_user . "_ booking " . $book->id . "_" . $name;
+                    $picture->moveTo($path);
+                }
+
+                // Update payment
+                $book->payment = $path;
+                $book->paid = 1;
+            }
+        }
         else
             $this->response->redirect('reserve/failedpaid');
 

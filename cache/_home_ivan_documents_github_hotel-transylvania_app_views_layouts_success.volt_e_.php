@@ -1,11 +1,11 @@
-a:3:{i:0;s:4316:"<!DOCTYPE html>
+a:3:{i:0;s:4304:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Phalcon PHP Framework</title>
+        <title>Success!!</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>

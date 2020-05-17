@@ -99,7 +99,7 @@ a:3:{i:0;s:4045:"<!DOCTYPE html>
     </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:74:"/home/ivan/Documents/GitHub/Hotel-Transylvania/app/views/layouts/base.volt";s:4:"line";i:102;}}i:1;s:1158:"
+        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:74:"/home/ivan/Documents/GitHub/Hotel-Transylvania/app/views/layouts/base.volt";s:4:"line";i:102;}}i:1;s:1233:"
 
         <!-- Footer -->
         <footer class="footer-section">
@@ -114,9 +114,9 @@ a:3:{i:0;s:4045:"<!DOCTYPE html>
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li>Patrick Sungkharisma</li>
-                                    <li>05111740000041</li>
-                                    <li>PBKK C - FP Individu</li>
+                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
+                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
+                                    <li>PBKK C - FP Kelompok</li>
                                 </ul>
                             </div>
                         </div>

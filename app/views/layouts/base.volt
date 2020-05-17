@@ -114,9 +114,9 @@
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li>Patrick Sungkharisma</li>
-                                    <li>05111740000041</li>
-                                    <li>PBKK C - FP Individu</li>
+                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
+                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
+                                    <li>PBKK C - FP Kelompok</li>
                                 </ul>
                             </div>
                         </div>

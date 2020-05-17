@@ -108,12 +108,12 @@
         <table class="table table-bordered table-hover">
             <thead class="thead-light">
             <tr>
-                <th>Room Name</th>
-                <th>Room Location</th>
-                <th>Reserve Date</th>
-                <th>Start Time</th>
-                <th>Finish Time</th>
-                <th>Price</th>
+                <th><h5>Room Name</h5></th>
+                <th><h5>Room Location</h5></th>
+                <th><h5>Reserve Date</h5></th>
+                <th><h5>Start Time</h5></th>
+                <th><h5>Finish Time</h5></th>
+                <th><h5>Price</h5></th>
                 <th colspan="3"></th>
             </tr>
             </thead>
@@ -123,40 +123,40 @@
                 <?php foreach ($rooms as $room) { ?>
                     <?php if ($room->id == $data->RoomID && $userid == $data->userID) { ?>
                         <tr>
-                            <td><?= $room->name ?></td>
-                            <td><?= $room->location ?></td>
-                            <td><?= $data->reserveDate ?></td>
-                            <td><?= date('H:i', strtotime($data->start_time)) ?></td>
-                            <td><?= date('H:i', strtotime($data->end_time)) ?></td>
-                            <td>Rp.<?= $data->price ?></td>
+                            <td><h6><?= $room->name ?></h6></td>
+                            <td><h6><?= $room->location ?></h6></td>
+                            <td><h6><?= $data->reserveDate ?></h6></td>
+                            <td><h6><?= date('H:i', strtotime($data->start_time)) ?></h6></td>
+                            <td><h6><?= date('H:i', strtotime($data->end_time)) ?></h6></td>
+                            <td><h6>Rp.<?= $data->price ?></h6></td>
                             <?php if (!$data->paid) { ?>
                             <td>
                                 <form action="/reserve/update" method="post">
                                     <input type="text" name="id" value="<?= $data->id ?>" hidden>
-                                    <button class="updatebutton" type="submit">Update</button>
+                                    <button class="updatebutton" type="submit"><h6>Update</h6></button>
                                 </form>
                             </td>
                             <td>
                                 <form action="/reserve/delete" method="post">
                                     <input type="text" name="id" value="<?= $data->id ?>" hidden>
-                                    <button class="deletebutton" type="submit">Delete</button>
+                                    <button class="deletebutton" type="submit"><h6>Delete</h6></button>
                                 </form>
                             </td>
                             <td>
                                 <form action="/reserve/payment" method="post">
                                     <input type="text" name="id" value="<?= $data->id ?>" hidden>
-                                    <button class="updatebutton" type="submit">Payment</button>
+                                    <button class="updatebutton" type="submit"><h6>Payment</h6></button>
                                 </form>
                             </td>
                             <?php } else { ?>
                             <td>
-                                <button class="offbutton" type="submit" disabled>Update</button>
+                                <button class="offbutton" type="submit" disabled><h6>Update</h6></button>
                             </td>
                             <td>
-                                <button class="offbutton" type="submit" disabled>Delete</button>
+                                <button class="offbutton" type="submit" disabled><h6>Delete</h6></button>
                             </td>
                             <td>
-                                <button class="offbutton" type="submit" disabled>Completed</button>
+                                <button class="offbutton" type="submit" disabled><h6>Paid</h6></button>
                             </td>
                             <?php } ?>
                         </tr>
@@ -186,9 +186,9 @@
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li>Patrick Sungkharisma</li>
-                                    <li>05111740000041</li>
-                                    <li>PBKK C - FP Individu</li>
+                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
+                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
+                                    <li>PBKK C - FP Kelompok</li>
                                 </ul>
                             </div>
                         </div>
