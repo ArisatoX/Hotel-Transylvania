@@ -14,8 +14,8 @@
 				<br><br>
 
 				<div class="wrap-input100 validate-input" data-validate="id is required">
-					<span class="label-input100">Room ID</span>
-					<input class="input100" type="text" name="id" placeholder="">
+					<span class="label-input100">Room Name</span>
+					<input class="input100" type="text" name="name" placeholder="">
                 </div>
 
 				<div class="container-contact100-form-btn">

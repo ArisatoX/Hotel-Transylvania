@@ -96,17 +96,17 @@ class AdminController extends ControllerBase
 
     public function roomdeleteregisterAction()
     {
-        $id = $this->request->getPost('id', 'string');
+        $names = $this->request->getPost('name', 'string');
 
-        $conditions = ['id'=>$id];
+        $conditions = ['names'=>$names];
         $room = Rooms::findFirst([
-        'conditions' => 'id= :id:',
+        'conditions' => 'names= :names:',
         'bind' => $conditions,
         ]);
 
         $room->delete();
 
-        echo "deleted";
+        $this->response->redirect('admin/roomlist');
     }
 
     public function meetinglistAction()
