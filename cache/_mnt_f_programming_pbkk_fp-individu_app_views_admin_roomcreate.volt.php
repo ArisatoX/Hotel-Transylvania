@@ -97,55 +97,72 @@
         <!-- Content -->
         
 
-<div class="container">
+    <div class="container-contact100" style="background-image: url('img/background/bgform1.jpg');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method ="POST" action="../admin/roomcreateregister" enctype="multipart/form-data">
+				<span class="contact100-form-title">
+					CREATE ROOM
+				</span>
 
-    <br><br>
+				
+				<b style="color:red"><?= $this->flashSession->output() ?></b>
+				<br><br>
 
-    
-    <section class="hp-room-section">
-        <div class="container-fluid">
-            <div class="hp-room-items">
-                <div class="row">
-
-                    <!-- Room -->
-                    <?php foreach ($rooms as $room) { ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="room-item">
-                            <?= $this->tag->image([$room->picture]) ?>
-                            <div class="ri-text">
-                                <h4><?= $room->names ?></h4>
-                                
-                                <h3>Rp <?= $room->price ?><span> / night</span></h3>
-
-                                
-
-                                <a href="roomshow/<?= $room->id ?>" class="primary-btn">Edit</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
-                    
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Name</span>
+					<input class="input100" type="text" name="name" placeholder="">
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <div class="room-booking">
-        <form method="get" action="../admin/roomcreate">
-            <button type="submit">Create</button><br>
-        </form>
-    </div>
+                <div class="wrap-input100 validate-input" data-validate="Price is required">
+					<span class="label-input100">Price</span>
+					<input class="input100" type="text" name="price" placeholder="">
+                </div>
 
-    <div class="room-booking">
-        <form method="get" action="../admin/roomdelete">
-            <button type="submit">Delete</button><br>
-        </form>
-    </div>
+                <div class="wrap-input100 validate-input" data-validate="Size is required">
+					<span class="label-input100">Size</span>
+					<input class="input100" type="text" name="size" placeholder="">
+                </div>
 
-    
+                <div class="wrap-input100 validate-input" data-validate="Capacity is required">
+					<span class="label-input100">Capacity</span>
+					<input class="input100" type="text" name="capacity" placeholder="">
+                </div>
 
-</div>
+                <div class="wrap-input100 validate-input" data-validate="Bed is required">
+					<span class="label-input100">Bed</span>
+					<input class="input100" type="text" name="bed" placeholder="">
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Features is required">
+					<span class="label-input100">Features</span>
+					<input class="input100" type="text" name="features" placeholder="">
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Description is required">
+					<span class="label-input100">Description</span>
+					<input class="input100" type="text" name="description" placeholder="">
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Room Count is required">
+					<span class="label-input100">Available</span>
+					<input class="input100" type="text" name="available" placeholder="">
+                </div>
+
+                <input type="file" name="picture" placeholder="">
+                <br><br>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Submit
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
 
 
 

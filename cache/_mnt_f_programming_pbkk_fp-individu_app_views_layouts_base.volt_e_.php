@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a:3:{i:0;s:4102:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -26,6 +26,9 @@
                                     <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
+                                            <li><a href="#">Profile</a></li>
+                                            <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -75,14 +78,15 @@
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">      
+                    <div class="col-lg-9">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/admin/roomlist">Rooms</a></li>
-                                    <li><a href="/admin/meetinglist">Meetings</a></li>
-                                    <li><a href="#contact">Contact Us</a></li>
-                                    
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/room">Rooms</a></li>
+                                    <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meetings</a></li>
+                                    <li><a href="/#aboutus">About Us</a></li>
                                     
                                 </ul>
                             </nav>
@@ -95,59 +99,7 @@
     </header>
 
         <!-- Content -->
-        
-
-<div class="container">
-
-    <br><br>
-
-    
-    <section class="hp-room-section">
-        <div class="container-fluid">
-            <div class="hp-room-items">
-                <div class="row">
-
-                    <!-- Room -->
-                    <?php foreach ($rooms as $room) { ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="room-item">
-                            <?= $this->tag->image([$room->picture]) ?>
-                            <div class="ri-text">
-                                <h4><?= $room->names ?></h4>
-                                
-                                <h3>Rp <?= $room->price ?><span> / night</span></h3>
-
-                                
-
-                                <a href="roomshow/<?= $room->id ?>" class="primary-btn">Edit</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="room-booking">
-        <form method="get" action="../admin/roomcreate">
-            <button type="submit">Create</button><br>
-        </form>
-    </div>
-
-    <div class="room-booking">
-        <form method="get" action="../admin/roomdelete">
-            <button type="submit">Delete</button><br>
-        </form>
-    </div>
-
-    
-
-</div>
-
-
+        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:63:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/base.volt";s:4:"line";i:102;}}i:1;s:1268:"
 
         <!-- Footer -->
         <footer class="footer-section">
@@ -182,3 +134,4 @@
 
     </body>
 </html>
+";}
