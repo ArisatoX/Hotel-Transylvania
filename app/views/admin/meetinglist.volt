@@ -29,6 +29,7 @@
                 <th><h5>Room Location</h5></th>
                 <th><h5>Capacity</h5></th>
                 <th><h5>Price per Hour</h5></th>
+                <th></th>
             </tr>
             </thead>
             
@@ -39,6 +40,9 @@
                     <td><h6>{{room.location}}</h6></td>
                     <td><h6>{{room.capacity}}</h6></td>
                     <td><h6>{{room.hourPrice}}</h6></td>
+                    <td><h6>
+                        
+                    </h6></td>
                 </tr>
             {% endfor %}
             </tbody>
