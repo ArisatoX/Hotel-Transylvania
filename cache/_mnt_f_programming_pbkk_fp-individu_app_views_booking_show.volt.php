@@ -192,7 +192,7 @@
                             </div>
 
                             
-                            <?php if ($book->paid == 1) { ?>
+                            <?php if ($book->stat != 'Waiting for payment') { ?>
                                 <?= $this->tag->image([$book->payment]) ?>
                             <?php } ?>
 

@@ -409,20 +409,23 @@ class BookingController extends ControllerBase
         if($this->request->hasFiles())
         {
             $picture = $this->request->getUploadedFiles()[0];
-            $allow = array('jpeg', 'png', 'jpg');
-            $name = $picture->getName();
-            $extension = pathinfo($name, PATHINFO_EXTENSION);
+            $allow = array('jpeg', 'png', 'jpg', 'JPG');
+            $picturename = $picture->getName();
+            $extension = pathinfo($picturename, PATHINFO_EXTENSION);
 
             // Checking extension
             if (in_array($extension, $allow))
             {
-                $path = $path . "user " . $book->id_user . "_ booking " . $book->id . "_" . $name;
+                $path = $path . "user " . $book->id_user . "_ booking " . $book->id . "_" . $picturename;
                 $picture->moveTo($path);
             }
             
             // Update booking
             $book->payment = $path;
-            $book->stat = "Payment in Proccess";
+
+            // echo $book->payment;
+            // $this->view->disable();
+            $book->stat = "Payment in process";
 
             $success = $book->save();
 

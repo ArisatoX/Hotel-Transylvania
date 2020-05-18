@@ -26,9 +26,6 @@
                                     <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
-                                            <li><a href="#">Profile</a></li>
-                                            <li><a href="/booking/bookinglist">Bookings</a></li>
-                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -78,15 +75,14 @@
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9">      
+                    <div class="col-lg-8">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/room">Rooms</a></li>
-                                    <li><a href="/booking">Booking</a></li>
-                                    <li><a href="/meeting">Meetings</a></li>
-                                    <li><a href="/#aboutus">About Us</a></li>
+                                    <li><a href="/admin/roomlist">Rooms</a></li>
+                                    <li><a href="/admin/meetinglist">Meetings</a></li>
+                                    <li><a href="#contact">Contact Us</a></li>
+                                    
                                     
                                 </ul>
                             </nav>
@@ -101,59 +97,55 @@
         <!-- Content -->
         
 
+<div class="container">
 
+    <!-- Breadcrumb Section Begin -->
     <div class="breadcrumb-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <h2>Meeting Rooms</h2>
+                        <h2>Validation</h2>
                         <div class="bt-option">
-                            <a href="/">Home</a>
-                            <span>Meeting Rooms</span>
+                            <a href="../admin/roomlist">Room List</a>
+                            <span>Validation List</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Breadcrumb Section End -->
+
     
-<?php if (($rooms->count() > 0)) { ?>
-<div class="welcome-area" id="welcome">
-    <div class="container">
-        <table class="table table-bordered table-hover">
-            <thead class="thead-light">
-            <tr>
-                <th><h5>Room Name</h5></th>
-                <th><h5>Room Location</h5></th>
-                <th><h5>Capacity</h5></th>
-                <th><h5>Price per Hour</h5></th>
-            </tr>
-            </thead>
-            
-            <tbody class="table-secondary">
-            <?php foreach ($rooms as $room) { ?>
-                <tr>
-                    <td><h6><?= $room->name ?></h6></td>
-                    <td><h6><?= $room->location ?></h6></td>
-                    <td><h6><?= $room->capacity ?></h6></td>
-                    <td><h6><?= $room->hourPrice ?></h6></td>
-                </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+    <section class="hp-room-section">
+        <div class="container-fluid">
+            <div class="hp-room-items">
+                <div class="row">
 
-        <div class="room-booking">
-            <form method="get" action="/reserve">
-                <button type="submit">Reserve</button><br>
-            </form>
+                    <!-- Room -->
+                    <?php foreach ($booking as $book) { ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="room-item">
+                            <div class="ri-text">
+                                <h3>Booking #<?= $book->id ?></h3>
+                                
+                                <h5><?= $book->stat ?></h5> <br>
+
+                                <a href="bookingshow/<?= $book->id ?>" class="primary-btn">View</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    
+                </div>
+            </div>
         </div>
+    </section>
 
-        
-
-    </div>
 </div>
-<?php } ?>
+
 
 
         <!-- Footer -->
