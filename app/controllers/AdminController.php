@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Models\Rooms;
+use App\Models\Meetings;
 
 class AdminController extends ControllerBase
 {
@@ -108,4 +109,15 @@ class AdminController extends ControllerBase
         echo "deleted";
     }
 
+    public function meetinglistAction()
+    {
+            $rooms = Meetings::find();
+            $this->view->rooms = $rooms;
+            
+    }
+
+    public function meetingcreateAction()
+    {
+        
+    }
 }
