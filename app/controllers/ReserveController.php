@@ -202,21 +202,23 @@ class ReserveController extends ControllerBase
 
         $cond1 = ['bookid'=>$bookid];
         $book = Reservation::findFirst([
-                'conditions' => 'id = :bookid:',
-                'bind' => $cond1,
+            'conditions' => 'id = :bookid:',
+            'bind' => $cond1,
         ]);
+
+        $path = 'img/payment/';
         
         if($book->paid == 0){
             if($this->request->hasFiles()){
                 $picture = $this->request->getUploadedFiles()[0];
-                $allow = array('jpeg', 'png', 'jpg');
+                $allow = array('jpeg', 'png', 'jpg', 'JPG');
                 $name = $picture->getName();
                 $extension = pathinfo($name, PATHINFO_EXTENSION);
 
                 // Checking extension
                 if (in_array($extension, $allow))
                 {
-                    $path = $path . "user " . $book->id_user . "_ booking " . $book->id . "_" . $name;
+                    $path = $path . "user " . $book->id_user . "_ reserve " . $book->id . "_" . $name;
                     $picture->moveTo($path);
                 }
 
