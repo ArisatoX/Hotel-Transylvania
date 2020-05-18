@@ -19,9 +19,9 @@
         </div>
     </div>
     
-{% if (rooms.count() > 0) %}
 <div class="welcome-area" id="welcome">
     <div class="container">
+        {% if (rooms.count() > 0) %}
         <table class="table table-bordered table-hover">
             <thead class="thead-light">
             <tr>
@@ -29,7 +29,7 @@
                 <th><h5>Room Location</h5></th>
                 <th><h5>Capacity</h5></th>
                 <th><h5>Price per Hour</h5></th>
-                <th></th>
+                <th colspan="2"></th>
             </tr>
             </thead>
             
@@ -40,13 +40,23 @@
                     <td><h6>{{room.location}}</h6></td>
                     <td><h6>{{room.capacity}}</h6></td>
                     <td><h6>{{room.hourPrice}}</h6></td>
-                    <td><h6>
-                        
-                    </h6></td>
+                    <td>
+                        <form action="/admin/meetingedit" method="post">
+                            <input type="text" name="id" value="{{ room.id }}" hidden>
+                            <button type="submit"><h6>Edit</h6></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/admin/meetingdelete" method="post">
+                            <input type="text" name="id" value="{{ room.id }}" hidden>
+                            <button type="submit"><h6>Delete</h6></button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+        {% endif %}
 
         <div class="room-booking">
             <form method="get" action="/admin/meetingcreate">
@@ -60,6 +70,5 @@
 
     </div>
 </div>
-{% endif %}
 
 {% endblock %}

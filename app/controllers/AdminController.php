@@ -230,4 +230,60 @@ class AdminController extends ControllerBase
             $this->view->disable();
         }
     }
+    public function meetingeditAction()
+    {
+        $meetID = $this->request->getPost('id','string');
+        $conditions = ['id'=>$meetID];
+        $meet = Meetings::findFirst([
+        'conditions' => 'id= :id:',
+        'bind' => $conditions,
+        ]);
+        $this->view->meet = $meet;
+    }
+
+    public function meetingupdateAction()
+    {
+        $meetID = $this->request->getPost('id','string');
+        $conditions = ['id'=>$meetID];
+        $meet = Meetings::findFirst([
+        'conditions' => 'id= :id:',
+        'bind' => $conditions,
+        ]);
+
+        $name = $this->request->getPost('room', 'string');
+        $location = $this->request->getPost('location', 'string');
+        $capacity = $this->request->getPost('capacity', 'number');
+        $description = $this->request->getPost('description', 'string');
+        $hourPrice = $this->request->getPost('hourprice', 'number');
+
+        $meet->name = $name;
+        $meet->location = $location;
+        $meet->capacity = $capacity;
+        $meet->description = $description;
+        $meet->hourPrice = $hourPrice;
+
+        $success = $meet->save();
+
+        if($success){
+            $this->response->redirect('admin/meetinglist');
+        }
+        else{
+            echo "failed";
+            $this->view->disable();
+        }
+    }
+
+    public function meetingdeleteAction()
+    {
+        $meetID = $this->request->getPost('id','string');
+        $conditions = ['id'=>$meetID];
+        $meet = Meetings::findFirst([
+        'conditions' => 'id= :id:',
+        'bind' => $conditions,
+        ]);
+
+        $meet->delete();
+
+        $this->response->redirect('admin/meetinglist');
+    }
 }
