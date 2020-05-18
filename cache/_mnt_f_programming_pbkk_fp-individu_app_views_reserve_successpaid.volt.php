@@ -112,7 +112,7 @@
                         
     <br> 
 
-    <a href="/booking/bookinglist" class="primary-btn about-btn">Booking list</a>
+    <a href="/reserve/history" class="primary-btn about-btn">Reservation History</a>
 
 
                                 

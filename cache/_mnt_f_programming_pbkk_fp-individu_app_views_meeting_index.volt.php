@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Success!!</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,6 +28,7 @@
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -86,6 +87,7 @@
                                     <li><a href="/booking">Booking</a></li>
                                     <li><a href="/meeting">Meetings</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
+                                    
                                 </ul>
                             </nav>
                         </div>
@@ -96,42 +98,64 @@
         
     </header>
 
-        <div class = "container">
-            <section class="aboutus-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h2>Success</h2>
-                                </div>
-                                
-                                
-
-    <h6> You have successfully made the reservation </h6>
-                        
-    <br> 
-
-    <a href="/booking/bookinglist" class="primary-btn about-btn">Booking list</a>
+        <!-- Content -->
+        
 
 
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="about-pic">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
-                                    </div>
-                                </div>
-                            </div>
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Meeting Rooms</h2>
+                        <div class="bt-option">
+                            <a href="/">Home</a>
+                            <span>Meeting Rooms</span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
+    </div>
+    
+<?php if (($rooms->count() > 0)) { ?>
+<div class="welcome-area" id="welcome">
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th><h5>Room Name</h5></th>
+                <th><h5>Room Location</h5></th>
+                <th><h5>Capacity</h5></th>
+                <th><h5>Price per Hour</h5></th>
+            </tr>
+            </thead>
+            
+            <tbody class="table-secondary">
+            <?php foreach ($rooms as $room) { ?>
+                <tr>
+                    <td><h6><?= $room->name ?></h6></td>
+                    <td><h6><?= $room->location ?></h6></td>
+                    <td><h6><?= $room->capacity ?></h6></td>
+                    <td><h6><?= $room->hourPrice ?></h6></td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+
+        <div class="room-booking">
+            <form method="get" action="/reserve">
+                <button type="submit">Reserve</button><br>
+            </form>
+        </div>
+
         
+
+    </div>
+</div>
+<?php } ?>
+
+
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -145,9 +169,9 @@
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li>Patrick Sungkharisma</li>
-                                    <li>05111740000041</li>
-                                    <li>PBKK C - FP Individu</li>
+                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
+                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
+                                    <li>PBKK C - FP Kelompok</li>
                                 </ul>
                             </div>
                         </div>

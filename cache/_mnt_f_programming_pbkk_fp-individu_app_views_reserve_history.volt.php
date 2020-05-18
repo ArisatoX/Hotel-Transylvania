@@ -101,62 +101,76 @@
         <!-- Content -->
         
 
+<br><br><br><br>
+<?php if (($books->count() > 0)) { ?>
+<!-- <div class="welcome-area" id="welcome"> -->
     <div class="container">
-        <br>
-        <div class="room-booking">
-            <h3>Booking Confirmation</h3>
-
-                <section class="room-details-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="room-details-item">
-
-                                <div class="rd-text">
-
-                                    <!-- Repost Data -->
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="r-o">Room Name:</td>
-                                                <td><?= $room->names ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="r-o">Price:</td>
-                                                <td>Rp <?= $room->price ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="r-o">Duration:</td>
-                                                <td><?= $duration ?> Day(s)</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="r-o">Total Room:</td>
-                                                <td><?= $totalroom ?> Room(s)</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                    <h5><b>Subtotal:</b></h5>
-                                    <h2>Rp <?= $totalprice ?></h2>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <form method = "POST" action = "create">
-                    <input class="input100" type="text" name="id_user" value="<?= $id_user ?>" hidden>
-                    <input class="input100" type="text" name="id_room" value="<?= $id_room ?>" hidden>
-                    <input class="input100" type="text" name="duration" value="<?= $duration ?>" hidden>
-                    <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
-                    <input class="input100" type="text" name="totalprice" value="<?= $totalprice ?>" hidden>
-                    <button type="submit">Confirm</a>
-                </form>
-        </div>
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th><h5>Room Name</h5></th>
+                <th><h5>Room Location</h5></th>
+                <th><h5>Reserve Date</h5></th>
+                <th><h5>Start Time</h5></th>
+                <th><h5>Finish Time</h5></th>
+                <th><h5>Price</h5></th>
+                <th colspan="3"></th>
+            </tr>
+            </thead>
+            
+            <tbody class="table-secondary">
+            <?php foreach ($books as $data) { ?>
+                <?php foreach ($rooms as $room) { ?>
+                    <?php if ($room->id == $data->RoomID && $userid == $data->userID) { ?>
+                        <tr>
+                            <td><h6><?= $room->name ?></h6></td>
+                            <td><h6><?= $room->location ?></h6></td>
+                            <td><h6><?= $data->reserveDate ?></h6></td>
+                            <td><h6><?= date('H:i', strtotime($data->start_time)) ?></h6></td>
+                            <td><h6><?= date('H:i', strtotime($data->end_time)) ?></h6></td>
+                            <td><h6>Rp.<?= $data->price ?></h6></td>
+                            <?php if (!$data->paid) { ?>
+                            <td>
+                                <form action="/reserve/update" method="post">
+                                    <input type="text" name="id" value="<?= $data->id ?>" hidden>
+                                    <button class="updatebutton" type="submit"><h6>Update</h6></button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/reserve/delete" method="post">
+                                    <input type="text" name="id" value="<?= $data->id ?>" hidden>
+                                    <button class="deletebutton" type="submit"><h6>Delete</h6></button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/reserve/payment" method="post">
+                                    <input type="text" name="id" value="<?= $data->id ?>" hidden>
+                                    <button class="updatebutton" type="submit"><h6>Payment</h6></button>
+                                </form>
+                            </td>
+                            <?php } else { ?>
+                            <td>
+                                <button class="offbutton" type="submit" disabled><h6>Update</h6></button>
+                            </td>
+                            <td>
+                                <button class="offbutton" type="submit" disabled><h6>Delete</h6></button>
+                            </td>
+                            <td>
+                                <button class="offbutton" type="submit" disabled><h6>Paid</h6></button>
+                            </td>
+                            <?php } ?>
+                        </tr>
+                    <?php } ?>
+                <?php } ?>
+            <?php } ?>
+            </tbody>
+        </table>
         <br>
     </div>
+<!-- </div> -->
+<?php } else { ?>
 
+<?php } ?>
 
 
         <!-- Footer -->
