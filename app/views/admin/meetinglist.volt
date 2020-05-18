@@ -45,8 +45,8 @@
         </table>
 
         <div class="room-booking">
-            <form method="get" action="/reserve">
-                <button type="submit">Reserve</button><br>
+            <form method="get" action="/admin/meetingcreate">
+                <button type="submit">Create</button><br>
             </form>
         </div>
 

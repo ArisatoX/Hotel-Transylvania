@@ -32,4 +32,9 @@ class AdminController extends ControllerBase
             $this->view->rooms = $rooms;
             
     }
+
+    public function meetingcreateAction()
+    {
+        
+    }
 }
