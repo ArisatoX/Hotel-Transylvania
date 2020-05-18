@@ -84,8 +84,8 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/room">Rooms</a></li>
                                     <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meetings</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
-                                    <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>

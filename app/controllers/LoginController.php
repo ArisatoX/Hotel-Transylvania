@@ -64,9 +64,10 @@ class LoginController extends ControllerBase
                         // Go to Admin
                         else if ($user->roles == 1) 
                         {
-                            echo "ADMIN LOGGED IN(FP KELOMPOK):" . PHP_EOL;
-                            echo $this->session->get("auth_firstName") . $this->session->get("auth_lastName");
-                            $this->view->disable();
+                            return $this->response->redirect('admin');
+                            // echo "ADMIN LOGGED IN(FP KELOMPOK):" . PHP_EOL;
+                            // echo $this->session->get("auth_firstName") . $this->session->get("auth_lastName");
+                            // $this->view->disable();
                         }
                         // Exit 
                         else 

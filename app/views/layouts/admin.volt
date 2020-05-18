@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Success!!</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         {{ assets.outputCss() }}
@@ -26,8 +26,6 @@
                                     <span class="bk-btn">{{ session.get("auth_firstName")}}<i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
-                                            <li><a href="#">Profile</a></li>
-                                            <li><a href="/booking/bookinglist">Bookings</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -81,11 +79,10 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/room">Rooms</a></li>
-                                    <li><a href="/booking">Booking</a></li>
-                                    <li><a href="/meeting">Meetings</a></li>
-                                    <li><a href="/#aboutus">About Us</a></li>
+                                    <li><a href="/">Rooms</a></li>
+                                    <li><a href="/">Meetings</a></li>
+                                    
+                                    {# <li><a href="#contact">Contact</a></li> #}
                                 </ul>
                             </nav>
                         </div>
@@ -96,34 +93,9 @@
         
     </header>
 
-        <div class = "container">
-            <section class="aboutus-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h2>Success</h2>
-                                </div>
-                                
-                                {% block content %} {% endblock %}
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="about-pic">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="{{ url("img/icons/success.png") }}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
+        <!-- Content -->
+        {% block content %} {% endblock %}
+
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -137,9 +109,9 @@
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li>Patrick Sungkharisma</li>
-                                    <li>05111740000041</li>
-                                    <li>PBKK C - FP Individu</li>
+                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
+                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
+                                    <li>PBKK C - FP Kelompok</li>
                                 </ul>
                             </div>
                         </div>
