@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Hotel Transylvania</title>
+        <title>Success!!</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,7 +28,6 @@
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
-                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -87,7 +86,6 @@
                                     <li><a href="/booking">Booking</a></li>
                                     <li><a href="/meeting">Meetings</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
-                                    
                                 </ul>
                             </nav>
                         </div>
@@ -98,25 +96,42 @@
         
     </header>
 
-        <!-- Content -->
-        
+        <div class = "container">
+            <section class="aboutus-section spad">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="about-text">
+                                <div class="section-title">
+                                    <h2>Success</h2>
+                                </div>
+                                
+                                
 
-    <div class="container">
-        <div class="booking-form">
-            <h3>Payment</h3>
-            <h6 style="color:red">*Please upload the payment</h6>
-            <br>
-            <form method ="POST" action="/booking/uploadpayment" enctype="multipart/form-data">
+    <h6> You have successfully completed the payment </h6>
+                        
+    <br> 
 
-                <input type="file" name="payment" placeholder="">  
-                <input type="text" name="id_book" value="<?= $book->id ?>" hidden>  
-                <button type="submit">Submit</button>
-            </form>
+    <a href="/reserve/history" class="primary-btn about-btn">Reservation History</a>
+
+
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-pic">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
-
-
-
+        
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -130,9 +145,9 @@
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
-                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
-                                    <li>PBKK C - FP Kelompok</li>
+                                    <li>Patrick Sungkharisma</li>
+                                    <li>05111740000041</li>
+                                    <li>PBKK C - FP Individu</li>
                                 </ul>
                             </div>
                         </div>

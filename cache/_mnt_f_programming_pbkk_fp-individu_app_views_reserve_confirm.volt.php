@@ -26,6 +26,9 @@
                                     <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
+                                            <li><a href="#">Profile</a></li>
+                                            <li><a href="/booking/bookinglist">Bookings</a></li>
+                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -75,14 +78,15 @@
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">      
+                    <div class="col-lg-9">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/admin/roomlist">Rooms</a></li>
-                                    <li><a href="/admin/meetinglist">Meetings</a></li>
-                                    <li><a href="#contact">Contact Us</a></li>
-                                    
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/room">Rooms</a></li>
+                                    <li><a href="/booking">Booking</a></li>
+                                    <li><a href="/meeting">Meetings</a></li>
+                                    <li><a href="/#aboutus">About Us</a></li>
                                     
                                 </ul>
                             </nav>
@@ -98,61 +102,60 @@
         
 
 <div class="container">
-
-    <br><br>
-
-    
-    <section class="hp-room-section">
-        <div class="container-fluid">
-            <div class="hp-room-items">
+    <br>
+    <div class="room-booking">
+        <h3>Reservation Confirmation</h3>
+            <section class="room-details-section spad">
+            <div class="container">
                 <div class="row">
+                    <div class="col-lg-6">
+                        <div class="room-details-item">
 
-                    <!-- Room -->
-                    <?php foreach ($rooms as $room) { ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="room-item">
-                            <?= $this->tag->image([$room->picture]) ?>
-                            <div class="ri-text">
-                                <h4><?= $room->names ?></h4>
-                                
-                                <h3>Rp <?= $room->price ?><span> / night</span></h3>
+                            <div class="rd-text">
 
-                                
-
-                                <a href="roomshow/<?= $room->id ?>" class="primary-btn">Edit</a>
-
+                                <!-- Repost Data -->
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">Meeting Room:</td>
+                                            <td><?= $room->name ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Date:</td>
+                                            <td><?= $dates ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Start time:</td>
+                                            <td><?= $start_time ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Finish time:</td>
+                                            <td><?= $end_time ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Price:</td>
+                                            <td>Rp. <?= $price ?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
-                    
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <div class="room-booking">
-        <form method="get" action="../admin/roomcreate">
-            <button type="submit">Create</button><br>
-        </form>
+            <form method = "POST" action = "/reserve/create">
+                <input class="input100" type="text" name="userid" value="<?= $userid ?>" hidden>
+                <input class="input100" type="text" name="roomid" value="<?= $roomid ?>" hidden>
+                <input class="input100" type="date" name="dates" value="<?= $dates ?>" hidden>
+                <input class="input100" type="time" name="start_time" value="<?= $start_time ?>" hidden>
+                <input class="input100" type="time" name="end_time" value="<?= $end_time ?>" hidden>
+                <input class="input100" type="text" name="price" value="<?= $price ?>" hidden>
+                <button type="submit">Confirm</button>
+            </form>
     </div>
-
-    <div class="room-booking">
-        <form method="get" action="../admin/roomdelete">
-            <button type="submit">Delete</button><br>
-        </form>
-    </div>
-
-    <div class="room-booking">
-        <form method="get" action="../admin/bookinglist">
-            <button type="submit">Validation</button><br>
-        </form>
-    </div>
-
-    
-
+    <br>
 </div>
-
 
 
         <!-- Footer -->

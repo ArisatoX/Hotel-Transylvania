@@ -205,10 +205,12 @@ class ReserveController extends ControllerBase
                 'bind' => $cond1,
         ]);
         
+        $path = 'img/payment/';
+
         if($book->paid == 0){
             if($this->request->hasFiles()){
                 $picture = $this->request->getUploadedFiles()[0];
-                $allow = array('jpeg', 'png', 'jpg');
+                $allow = array('jpeg', 'png', 'jpg', 'JPG');
                 $name = $picture->getName();
                 $extension = pathinfo($name, PATHINFO_EXTENSION);
 

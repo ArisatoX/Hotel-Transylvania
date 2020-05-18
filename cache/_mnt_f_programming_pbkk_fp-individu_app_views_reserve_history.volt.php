@@ -101,81 +101,76 @@
         <!-- Content -->
         
 
-    <div class = "container">
-        <?php if ($flag == 1) { ?>
-
-            <section class="hp-room-section">
-                <div class="container-fluid">
-                    <div class="hp-room-items">
-                        <div class="row">
-
-                            <!-- Room Exist -->
-                            <?php foreach ($rooms as $room) { ?>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="room-item">
-                                    <?= $this->tag->image([$room->picture]) ?>
-                                    <div class="ri-text">
-                                        <h4><?= $room->names ?></h4>
-
-                                        <h3>Rp <?= $room->price ?><span> / night</span></h3>
-
-                                        
+<br><br><br><br>
+<?php if (($books->count() > 0)) { ?>
+<!-- <div class="welcome-area" id="welcome"> -->
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th><h5>Room Name</h5></th>
+                <th><h5>Room Location</h5></th>
+                <th><h5>Reserve Date</h5></th>
+                <th><h5>Start Time</h5></th>
+                <th><h5>Finish Time</h5></th>
+                <th><h5>Price</h5></th>
+                <th colspan="3"></th>
+            </tr>
+            </thead>
             
-                                        <form method = "POST" action = "confirmation">
-                                            <input class="input100" type="text" name="id_user" value="<?= $this->session->get('auth_id') ?>" hidden>
-                                            <input class="input100" type="text" name="id_room" value="<?= $room->id ?>" hidden>
-                                            <input class="input100" type="text" name="duration" value="<?= $duration ?>" hidden>
-                                            <input class="input100" type="text" name="totalroom" value="<?= $totalroom ?>" hidden>
-                                            <input class="input100" type="text" name="price" value="<?= $room->price ?>" hidden>
-                                            <button type="submit" class="primary-btn">Select</a>
-                                        </form>
-
-                                    </div>
-                                </div>
-                            </div>
+            <tbody class="table-secondary">
+            <?php foreach ($books as $data) { ?>
+                <?php foreach ($rooms as $room) { ?>
+                    <?php if ($room->id == $data->RoomID && $userid == $data->userID) { ?>
+                        <tr>
+                            <td><h6><?= $room->name ?></h6></td>
+                            <td><h6><?= $room->location ?></h6></td>
+                            <td><h6><?= $data->reserveDate ?></h6></td>
+                            <td><h6><?= date('H:i', strtotime($data->start_time)) ?></h6></td>
+                            <td><h6><?= date('H:i', strtotime($data->end_time)) ?></h6></td>
+                            <td><h6>Rp.<?= $data->price ?></h6></td>
+                            <?php if (!$data->paid) { ?>
+                            <td>
+                                <form action="/reserve/update" method="post">
+                                    <input type="text" name="id" value="<?= $data->id ?>" hidden>
+                                    <button class="updatebutton" type="submit"><h6>Update</h6></button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/reserve/delete" method="post">
+                                    <input type="text" name="id" value="<?= $data->id ?>" hidden>
+                                    <button class="deletebutton" type="submit"><h6>Delete</h6></button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/reserve/payment" method="post">
+                                    <input type="text" name="id" value="<?= $data->id ?>" hidden>
+                                    <button class="updatebutton" type="submit"><h6>Payment</h6></button>
+                                </form>
+                            </td>
+                            <?php } else { ?>
+                            <td>
+                                <button class="offbutton" type="submit" disabled><h6>Update</h6></button>
+                            </td>
+                            <td>
+                                <button class="offbutton" type="submit" disabled><h6>Delete</h6></button>
+                            </td>
+                            <td>
+                                <button class="offbutton" type="submit" disabled><h6>Paid</h6></button>
+                            </td>
                             <?php } ?>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </section>
-                        
-        <?php } else { ?>
-
-            <!-- Room Doesn't Exist -->
-            <div class = "container">
-                <section class="aboutus-section spad">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="about-text">
-                                    <div class="section-title">
-                                        <h2>Oops...</h2>
-                                    </div>
-                                    <p class="f-para"> The room that you are searching right now is not available or it might be full.
-                                    </p>
-                                    <br>
-                                    <a href="/booking" class="primary-btn about-btn">Back to Booking</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="about-pic">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <img src="<?= $this->url->get('img/icons/sad.png') ?>" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        
-        <?php } ?>
+                        </tr>
+                    <?php } ?>
+                <?php } ?>
+            <?php } ?>
+            </tbody>
+        </table>
+        <br>
     </div>
+<!-- </div> -->
+<?php } else { ?>
 
+<?php } ?>
 
 
         <!-- Footer -->

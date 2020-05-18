@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Hotel Transylvania</title>
+        <title>Success!!</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -28,7 +28,6 @@
                                         <ul>
                                             <li><a href="#">Profile</a></li>
                                             <li><a href="/booking/bookinglist">Bookings</a></li>
-                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -87,7 +86,6 @@
                                     <li><a href="/booking">Booking</a></li>
                                     <li><a href="/meeting">Meetings</a></li>
                                     <li><a href="/#aboutus">About Us</a></li>
-                                    
                                 </ul>
                             </nav>
                         </div>
@@ -98,105 +96,42 @@
         
     </header>
 
-        <!-- Content -->
-        
+        <div class = "container">
+            <section class="aboutus-section spad">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="about-text">
+                                <div class="section-title">
+                                    <h2>Success</h2>
+                                </div>
+                                
+                                
 
-    <div class="container">
-        
-        <div class="breadcrumb-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="breadcrumb-text">
-                            <h2>Booking List</h2>
-                            <div class="bt-option">
-                                <a href="/">Home</a>
-                                <span>Bookings</span>
+    <h6> You have successfully changed your reservation </h6>
+                        
+    <br> 
+
+    <a href="/reserve/history" class="primary-btn about-btn">Reservation History</a>
+
+
+                                
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <?php if ($flag == 1) { ?>
-
-            <section class="hp-room-section">
-                <div class="container-fluid">
-                    <div class="hp-room-items">
-                        <div class="row">
-
-                            <!-- Booking Exist -->
-                            <?php foreach ($booking as $book) { ?>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="room-item">
-                                    <div class="ri-text">
-                                        <h4> Booking ID: #<?= $book->id ?></h4>
-
-                                        <h3>Rp <?= $book->totalprice ?></h3>
-
-                                        
-
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="r-o">Status:</td>
-                                                    <td><?= $book->stat ?></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-            
-                                        <a href="show/<?= $book->id ?>" class="primary-btn">Details</a>
-
+                        <div class="col-lg-6">
+                            <div class="about-pic">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
                                     </div>
                                 </div>
                             </div>
-                            <?php } ?>
-                            
-                            
                         </div>
                     </div>
                 </div>
             </section>
-                        
-        <?php } else { ?>
-
-            <!-- Booking Doesn't Exist -->
-            <div class = "container">
-                <section class="aboutus-section spad">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="about-text">
-                                    <div class="section-title">
-                                        <h2>Oops...</h2>
-                                    </div>
-                                    <p class="f-para"> You don't have any booking yet
-                                    </p>
-                                    <br>
-                                    <a href="/booking" class="primary-btn about-btn">Back to Booking</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="about-pic">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <img src="<?= $this->url->get('img/icons/sad.png') ?>" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+        </div>
         
-        <?php } ?>
-        
-    </div>
-
-
-
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -210,9 +145,9 @@
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
-                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
-                                    <li>PBKK C - FP Kelompok</li>
+                                    <li>Patrick Sungkharisma</li>
+                                    <li>05111740000041</li>
+                                    <li>PBKK C - FP Individu</li>
                                 </ul>
                             </div>
                         </div>
