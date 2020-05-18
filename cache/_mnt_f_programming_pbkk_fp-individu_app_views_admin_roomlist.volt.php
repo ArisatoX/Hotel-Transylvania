@@ -143,6 +143,12 @@
         </form>
     </div>
 
+    <div class="room-booking">
+        <form method="get" action="../admin/bookinglist">
+            <button type="submit">Validation</button><br>
+        </form>
+    </div>
+
     
 
 </div>

@@ -26,9 +26,6 @@
                                     <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
-                                            <li><a href="#">Profile</a></li>
-                                            <li><a href="/booking/bookinglist">Bookings</a></li>
-                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -78,15 +75,14 @@
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9">      
+                    <div class="col-lg-8">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/room">Rooms</a></li>
-                                    <li><a href="/booking">Booking</a></li>
-                                    <li><a href="/meeting">Meetings</a></li>
-                                    <li><a href="/#aboutus">About Us</a></li>
+                                    <li><a href="/admin/roomlist">Rooms</a></li>
+                                    <li><a href="/admin/meetinglist">Meetings</a></li>
+                                    <li><a href="#contact">Contact Us</a></li>
+                                    
                                     
                                 </ul>
                             </nav>
@@ -101,61 +97,93 @@
         <!-- Content -->
         
 
-<div class="container">
-    <br>
-    <div class="room-booking">
-        <h3>Reservation Confirmation</h3>
-            <section class="room-details-section spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="room-details-item">
-
-                            <div class="rd-text">
-
-                                <!-- Repost Data -->
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td class="r-o">Meeting Room:</td>
-                                            <td><?= $room->name ?> </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Date:</td>
-                                            <td><?= $dates ?> </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Start time:</td>
-                                            <td><?= $start_time ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Finish time:</td>
-                                            <td><?= $end_time ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="r-o">Price:</td>
-                                            <td>Rp. <?= $price ?></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+    <!-- Breadcrumb Section Begin -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Validation</h2>
+                        <div class="bt-option">
+                            <a href="../roomlist">Room List</a>
+                            <a href="../bookinglist">Validation List</a>
+                            <span><?= $book->id ?></span>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <form method = "POST" action = "/reserve/create">
-                <input class="input100" type="text" name="userid" value="<?= $userid ?>" hidden>
-                <input class="input100" type="text" name="roomid" value="<?= $roomid ?>" hidden>
-                <input class="input100" type="date" name="dates" value="<?= $dates ?>" hidden>
-                <input class="input100" type="time" name="start_time" value="<?= $start_time ?>" hidden>
-                <input class="input100" type="time" name="end_time" value="<?= $end_time ?>" hidden>
-                <input class="input100" type="text" name="price" value="<?= $price ?>" hidden>
-                <button type="submit">Confirm</button>
-            </form>
+            </div>
+        </div>
     </div>
-    <br>
-</div>
+    <!-- Breadcrumb Section End -->
+
+    
+    <!-- Room Details Section Begin -->
+    <section class="room-details-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="room-details-item">
+                        <div class="rd-text">
+
+                            <?php if ($book->stat == 'Payment in process') { ?>
+
+                                <div class="rd-title">
+                                    <h3>Booking #<?= $book->id ?></h3>
+                                    <div class="rdt-right">
+                                        <div class="rating">
+                                            
+                                        </div>
+                                        <a href="../bookingvalidation/<?= $book->id ?>">Verify</a>
+                                    </div>
+                                </div>
+                            
+                            <?php } ?>
+                                
+
+                            
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">ID User:</td>
+                                        <td><?= $book->id_user ?> sqm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">ID Room:</td>
+                                        <td><?= $book->id_room ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Duration:</td>
+                                        <td><?= $book->duration ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Total Room:</td>
+                                        <td><?= $book->totalroom ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Total Price:</td>
+                                        <td><?= $book->totalprice ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Status:</td>
+                                        <td><?= $book->stat ?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <?php if ($book->stat != 'Waiting for payment') { ?>
+                            <?= $this->tag->image([$book->payment]) ?>
+                        <?php } ?>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Room Details Section End -->
+
+
 
 
         <!-- Footer -->
