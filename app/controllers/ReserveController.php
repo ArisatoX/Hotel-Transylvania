@@ -207,8 +207,6 @@ class ReserveController extends ControllerBase
         ]);
 
         $path = 'img/payment/';
-        
-        $path = 'img/payment/';
 
         if($book->paid == 0){
             if($this->request->hasFiles()){
@@ -220,7 +218,7 @@ class ReserveController extends ControllerBase
                 // Checking extension
                 if (in_array($extension, $allow))
                 {
-                    $path = $path . "user " . $book->id_user . "_ reserve " . $book->id . "_" . $name;
+                    $path = $path . "user " . $book->userID . "_ reserve " . $book->id . "_" . $name;
                     $picture->moveTo($path);
                 }
 

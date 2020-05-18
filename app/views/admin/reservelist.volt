@@ -16,6 +16,7 @@
                 <th><h5>Start Time</h5></th>
                 <th><h5>Finish Time</h5></th>
                 <th><h5>Price</h5></th>
+                <th><h5>Payment Picture</h5></th>
                 <th colspan="3"></th>
             </tr>
             </thead>
@@ -32,6 +33,7 @@
                             <td><h6>{{date('H:i', strtotime(data.start_time))}}</h6></td>
                             <td><h6>{{date('H:i', strtotime(data.end_time))}}</h6></td>
                             <td><h6>Rp.{{data.price}}</h6></td>
+                            <td><h6>{{image(data.payment)}}</h6></td>
                             {% if !data.paid %}
                             <td>
                                 <button class="offbutton" type="submit" disabled><h6>Waiting for Payment</h6></button>
