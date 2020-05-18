@@ -1,4 +1,4 @@
-a:3:{i:0;s:3663:"<!DOCTYPE html>
+a:3:{i:0;s:3743:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -81,6 +81,7 @@ a:3:{i:0;s:3663:"<!DOCTYPE html>
                                 <ul>
                                     <li><a href="/admin/roomlist">Rooms</a></li>
                                     <li><a href="/admin/meetinglist">Meetings</a></li>
+                                    <li><a href="#contact">Contact Us</a></li>
                                     
                                     
                                 </ul>
@@ -94,7 +95,7 @@ a:3:{i:0;s:3663:"<!DOCTYPE html>
     </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:68:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/adminbase.volt";s:4:"line";i:97;}}i:1;s:1268:"
+        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:68:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/adminbase.volt";s:4:"line";i:98;}}i:1;s:1268:"
 
         <!-- Footer -->
         <footer class="footer-section">

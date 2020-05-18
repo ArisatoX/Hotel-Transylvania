@@ -79,8 +79,9 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="admin/roomlist">Rooms</a></li>
-                                    <li><a href="/">Meetings</a></li>
+                                    <li><a href="/admin/roomlist">Rooms</a></li>
+                                    <li><a href="/admin/meetinglist">Meetings</a></li>
+                                    <li><a href="#contact">Contact Us</a></li>
                                     
                                     
                                 </ul>
@@ -96,72 +97,59 @@
         <!-- Content -->
         
 
-    <div class="container-contact100" style="background-image: url('img/background/bgform1.jpg');">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" method ="POST" action="../admin/roomcreateregister" enctype="multipart/form-data">
-				<span class="contact100-form-title">
-					CREATE ROOM
-				</span>
 
-				
-				<b style="color:red"><?= $this->flashSession->output() ?></b>
-				<br><br>
-
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Name</span>
-					<input class="input100" type="text" name="name" placeholder="">
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Meeting Rooms</h2>
+                        <div class="bt-option">
+                            <a href="/admin">Home</a>
+                            <span>Meeting Rooms</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    
+<?php if (($rooms->count() > 0)) { ?>
+<div class="welcome-area" id="welcome">
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th><h5>Room Name</h5></th>
+                <th><h5>Room Location</h5></th>
+                <th><h5>Capacity</h5></th>
+                <th><h5>Price per Hour</h5></th>
+            </tr>
+            </thead>
+            
+            <tbody class="table-secondary">
+            <?php foreach ($rooms as $room) { ?>
+                <tr>
+                    <td><h6><?= $room->name ?></h6></td>
+                    <td><h6><?= $room->location ?></h6></td>
+                    <td><h6><?= $room->capacity ?></h6></td>
+                    <td><h6><?= $room->hourPrice ?></h6></td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
 
-                <div class="wrap-input100 validate-input" data-validate="Price is required">
-					<span class="label-input100">Price</span>
-					<input class="input100" type="text" name="price" placeholder="">
-                </div>
+        <div class="room-booking">
+            <form method="get" action="/admin/meetingcreate">
+                <button type="submit">Create</button><br>
+            </form>
+        </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Size is required">
-					<span class="label-input100">Size</span>
-					<input class="input100" type="text" name="size" placeholder="">
-                </div>
+        
 
-                <div class="wrap-input100 validate-input" data-validate="Capacity is required">
-					<span class="label-input100">Capacity</span>
-					<input class="input100" type="text" name="capacity" placeholder="">
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Bed is required">
-					<span class="label-input100">Bed</span>
-					<input class="input100" type="text" name="bed" placeholder="">
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Features is required">
-					<span class="label-input100">Features</span>
-					<input class="input100" type="text" name="features" placeholder="">
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Description is required">
-					<span class="label-input100">Description</span>
-					<input class="input100" type="text" name="description" placeholder="">
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Room Count is required">
-					<span class="label-input100">Available</span>
-					<input class="input100" type="text" name="available" placeholder="">
-                </div>
-
-                <input type="file" name="picture" placeholder="">
-                <br><br>
-
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							Submit
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
-
-	</div>
+    </div>
+</div>
+<?php } ?>
 
 
 

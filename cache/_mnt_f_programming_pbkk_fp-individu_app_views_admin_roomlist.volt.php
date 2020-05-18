@@ -79,8 +79,9 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="admin/roomlist">Rooms</a></li>
-                                    <li><a href="/">Meetings</a></li>
+                                    <li><a href="/admin/roomlist">Rooms</a></li>
+                                    <li><a href="/admin/meetinglist">Meetings</a></li>
+                                    <li><a href="#contact">Contact Us</a></li>
                                     
                                     
                                 </ul>

@@ -81,8 +81,7 @@ class AdminController extends ControllerBase
 
         if ($success)
         {
-            echo "success";
-            $this->view->disable();
+            $this->response->redirect('admin/roomlist');
         }
         else
         {

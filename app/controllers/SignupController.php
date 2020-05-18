@@ -104,7 +104,7 @@ class SignupController extends ControllerBase
                     // Go to Admin
                     else if ($user->roles == 1) 
                     {
-                        return $this->response->redirect('admin');
+                        return $this->response->redirect('admin/roomlist');
                         // echo "ADMIN LOGGED IN:" . PHP_EOL;
                         // echo $this->session->get("auth_firstName") . $this->session->get("auth_lastName");
                         // $this->view->disable();
