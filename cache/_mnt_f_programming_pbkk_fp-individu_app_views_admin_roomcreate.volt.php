@@ -79,7 +79,7 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/">Rooms</a></li>
+                                    <li><a href="admin/roomlist">Rooms</a></li>
                                     <li><a href="/">Meetings</a></li>
                                     
                                     
@@ -96,7 +96,7 @@
         <!-- Content -->
         
 
-<p> <br><br><br>Testing<br><br><br> </p>
+<p> <br><br><br>Room Create<br><br><br> </p>
 
 
 

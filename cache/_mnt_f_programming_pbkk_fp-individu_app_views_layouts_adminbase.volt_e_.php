@@ -1,4 +1,4 @@
-a:3:{i:0;s:3632:"<!DOCTYPE html>
+a:3:{i:0;s:3645:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -79,7 +79,7 @@ a:3:{i:0;s:3632:"<!DOCTYPE html>
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/">Rooms</a></li>
+                                    <li><a href="admin/roomlist">Rooms</a></li>
                                     <li><a href="/">Meetings</a></li>
                                     
                                     
