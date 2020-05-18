@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a:3:{i:0;s:3632:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -26,9 +26,6 @@
                                     <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
-                                            <li><a href="#">Profile</a></li>
-                                            <li><a href="/booking/bookinglist">Bookings</a></li>
-                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -78,15 +75,13 @@
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9">      
+                    <div class="col-lg-8">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/room">Rooms</a></li>
-                                    <li><a href="/booking">Booking</a></li>
-                                    <li><a href="/meeting">Meetings</a></li>
-                                    <li><a href="/#aboutus">About Us</a></li>
+                                    <li><a href="/">Rooms</a></li>
+                                    <li><a href="/">Meetings</a></li>
+                                    
                                     
                                 </ul>
                             </nav>
@@ -99,59 +94,7 @@
     </header>
 
         <!-- Content -->
-        
-
-<div class="container-contact100" style="background-image: url('img/background/bgform2.jpg');">
-    <div class="wrap-contact100">
-        <form class="contact100-form validate-form" method = "POST" action="/reserve/confirm">
-            <span class="contact100-form-title">
-                Meeting Room Reservation
-            </span>
-
-            <div class="wrap-input100 validate-input">
-                <span class="label-input100">Rooms</span>
-                <br>
-                <select id="room" name="room">
-                    <?php foreach ($rooms as $room) { ?>
-                        <option value='<?= $room->id ?>'><?= $room->name ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate="Invalid date">
-                <span class="label-input100">Choose reservation date:</span>
-                <input class="input100" type="date" name="reserveDate" placeholder=""
-                    value="<?= date('Y-m-d', time()) ?>"
-                    min="2020-01-01" max="2030-12-31" required>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate="Time must in between 7:00 AM and 8:00 PM">
-                <span class="label-input100">Start Time</span>
-                <input class="input100" type="time" name="start_time" placeholder=""
-                    value="<?= date('H:i', time()) ?>"
-                    min="07:00" max="20:00" required>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate="Time must in between 8:00 AM and 9:00 PM">
-                <span class="label-input100">Finish Time</span>
-                <input class="input100" type="time" name="end_time" placeholder=""
-                    value="<?= date('H:i', time() + 3600) ?>"
-                    min="08:00" max="21:00" required>
-            </div>
-
-            <div class="container-contact100-form-btn">
-                <div class="wrap-contact100-form-btn">
-                    <div class="contact100-form-bgbtn"></div>
-                    <button class="contact100-form-btn">
-                        Reserve
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-</div>
-
+        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:68:"/mnt/f/programming/pbkk/fp-individu/app/views/layouts/adminbase.volt";s:4:"line";i:97;}}i:1;s:1268:"
 
         <!-- Footer -->
         <footer class="footer-section">
@@ -186,3 +129,4 @@
 
     </body>
 </html>
+";}

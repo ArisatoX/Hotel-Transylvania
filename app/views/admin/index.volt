@@ -1,7 +1,7 @@
-{% extends "layouts/base.volt" %}
+{% extends "layouts/adminbase.volt" %}
 
 {% block content %}
 
-<p> Testing </p>
+<p> <br><br><br>Testing<br><br><br> </p>
 
 {% endblock %}

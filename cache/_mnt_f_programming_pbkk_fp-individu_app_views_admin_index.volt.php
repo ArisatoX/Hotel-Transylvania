@@ -26,9 +26,6 @@
                                     <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
-                                            <li><a href="#">Profile</a></li>
-                                            <li><a href="/booking/bookinglist">Bookings</a></li>
-                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -78,15 +75,13 @@
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9">      
+                    <div class="col-lg-8">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/room">Rooms</a></li>
-                                    <li><a href="/booking">Booking</a></li>
-                                    <li><a href="/meeting">Meetings</a></li>
-                                    <li><a href="/#aboutus">About Us</a></li>
+                                    <li><a href="/">Rooms</a></li>
+                                    <li><a href="/">Meetings</a></li>
+                                    
                                     
                                 </ul>
                             </nav>
@@ -101,7 +96,7 @@
         <!-- Content -->
         
 
-<p> Testing </p>
+<p> <br><br><br>Testing<br><br><br> </p>
 
 
 

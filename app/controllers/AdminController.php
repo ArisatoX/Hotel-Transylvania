@@ -11,4 +11,9 @@ class AdminController extends ControllerBase
     {
         
     }
+
+    public function roomCreateAction()
+    {
+        
+    }
 }

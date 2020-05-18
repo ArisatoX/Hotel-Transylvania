@@ -75,7 +75,7 @@
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9">      
+                    <div class="col-lg-8">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
