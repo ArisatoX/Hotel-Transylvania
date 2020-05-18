@@ -78,7 +78,7 @@ VALUES ('Chairman Suite', '10000000', '9500000', '219', '5', '2 King, Rollaway b
 DELETE FROM Users WHERE id = 3;
 
 --Delete Users
-DELETE FROM Booking WHERE id = 8;
+DELETE FROM Reservation WHERE id = 2;
 
 --Delete Users
 DELETE FROM Rooms;
