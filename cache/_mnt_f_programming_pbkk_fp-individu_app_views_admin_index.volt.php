@@ -1,11 +1,11 @@
-a:3:{i:0;s:4304:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Success!!</title>
+        <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
         <?= $this->assets->outputCss() ?>
@@ -26,8 +26,6 @@ a:3:{i:0;s:4304:"<!DOCTYPE html>
                                     <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
-                                            <li><a href="#">Profile</a></li>
-                                            <li><a href="/booking/bookinglist">Bookings</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -77,15 +75,14 @@ a:3:{i:0;s:4304:"<!DOCTYPE html>
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9">      
+                    <div class="col-lg-8">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/room">Rooms</a></li>
-                                    <li><a href="/booking">Booking</a></li>
-                                    <li><a href="/#aboutus">About Us</a></li>
-                                    <li><a href="#contact">Contact</a></li>
+                                    <li><a href="/">Rooms</a></li>
+                                    <li><a href="/">Meetings</a></li>
+                                    
+                                    
                                 </ul>
                             </nav>
                         </div>
@@ -96,34 +93,13 @@ a:3:{i:0;s:4304:"<!DOCTYPE html>
         
     </header>
 
-        <div class = "container">
-            <section class="aboutus-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="about-text">
-                                <div class="section-title">
-                                    <h2>Success</h2>
-                                </div>
-                                
-                                ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:77:"/home/ivan/Documents/GitHub/Hotel-Transylvania/app/views/layouts/success.volt";s:4:"line";i:109;}}i:1;s:1816:"
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="about-pic">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="<?= $this->url->get('img/icons/success.png') ?>" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <!-- Content -->
         
+
+<p> <br><br><br>Testing<br><br><br> </p>
+
+
+
         <!-- Footer -->
         <footer class="footer-section">
             <div class="container" id="contact">
@@ -137,9 +113,9 @@ a:3:{i:0;s:4304:"<!DOCTYPE html>
                             <div class="ft-contact">
                                 <h6>Contact Us</h6>
                                 <ul>
-                                    <li>Patrick Sungkharisma</li>
-                                    <li>05111740000041</li>
-                                    <li>PBKK C - FP Individu</li>
+                                    <li><strong>Patrick Sungkharisma</strong> - 05111740000041</li>
+                                    <li><strong>Octavianus Giovanni Y</strong> - 05111740000113</li>
+                                    <li>PBKK C - FP Kelompok</li>
                                 </ul>
                             </div>
                         </div>
@@ -157,4 +133,3 @@ a:3:{i:0;s:4304:"<!DOCTYPE html>
 
     </body>
 </html>
-";}
