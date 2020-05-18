@@ -32,7 +32,7 @@ class AdminController extends ControllerBase
 
     public function roomcreateregisterAction()
     {
-        $name = $this->request->getPost('name', 'string');
+        $names = $this->request->getPost('name', 'string');
         $price = $this->request->getPost('price', 'string');
         $size = $this->request->getPost('size', 'string');
         $capacity = $this->request->getPost('capacity', 'string');
@@ -63,7 +63,7 @@ class AdminController extends ControllerBase
         $room = new Rooms();
 
         // Set room
-        $room->name = $name;
+        $room->names = $names;
         $room->price = $price;
         $room->memberprice = $memberprice;
         $room->size = $size;
@@ -74,15 +74,12 @@ class AdminController extends ControllerBase
         $room->available = $available;
         $room->picture = $path;
 
-        $savestatus = $room->save();
+        $success = $room->create();
 
-        echo $savestatus;
-        $this->view->disable;
+        echo $room->names . PHP_EOL . $room->price . PHP_EOL . $room->memberprice . PHP_EOL . $room->size . PHP_EOL . $room->capacity . PHP_EOL . $room->bed . PHP_EOL . $room->features. PHP_EOL . $room->descriptions. PHP_EOL . $room->available. PHP_EOL . $room->picture;
+        $this->view->disable();
 
-        // echo $path. PHP_EOL . $name . PHP_EOL . $price . PHP_EOL . $memberprice . PHP_EOL . $size . PHP_EOL . $capacity . PHP_EOL . $bed;
-        // $this->view->disable();
-
-        if ($savestatus)
+        if ($success)
         {
             echo "success";
             $this->view->disable();
