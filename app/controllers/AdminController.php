@@ -6,6 +6,8 @@ namespace App\Controllers;
 use App\Models\Booking;
 use App\Models\Rooms;
 use App\Models\Meetings;
+use App\Models\Reservation;
+
 use Dotenv\Result\Success;
 
 class AdminController extends ControllerBase
@@ -333,4 +335,32 @@ class AdminController extends ControllerBase
 
         $this->response->redirect('admin/meetinglist');
     }
+    public function reservelistAction()
+    {
+
+        $rooms = Meetings::find();
+        $this->view->rooms = $rooms;
+
+        $books = Reservation::find();
+        $this->view->books = $books;
+    }
+    public function reservevalidationAction()
+    {
+        $meetID = $this->request->getPost('id','string');
+        $conditions = ['id'=>$meetID];
+        $meet = Reservation::findFirst([
+        'conditions' => 'id= :id:',
+        'bind' => $conditions,
+        ]);
+
+        $meet->valid = 1;
+
+        if($meet->save()){
+            $this->response->redirect('admin/reservelist');
+        }
+        else{
+            echo "failed";
+            $this->view->disable();
+        }
+    }   
 }

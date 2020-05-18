@@ -16,4 +16,5 @@ class Reservation extends Model
     public $userID;
     public $paid;
     public $payment;
+    public $valid;
 }

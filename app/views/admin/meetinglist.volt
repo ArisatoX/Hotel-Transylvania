@@ -64,9 +64,11 @@
             </form>
         </div>
 
-        {# <div>
-            <a href="/reserve" class="primary-btn">Reserve</a>
-        </div>                #}
+        <div class="room-booking">
+                <form method="get" action="/admin/reservelist">
+                    <button type="submit">See Reservations List</button><br>
+                </form>
+            </div>
 
     </div>
 </div>
