@@ -14,7 +14,7 @@
                 <br>
                 <select id="room" name="room">
                     {% for room in rooms %}
-                        <option value='{{room.id}}'><h5>{{room.name}}</h5></option>
+                        <option value='{{room.id}}'>{{room.name}}</option>
                     {% endfor %}
                 </select>
             </div>
