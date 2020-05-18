@@ -98,7 +98,7 @@
                             </div>
 
                             {# Payment #}
-                            {% if book.paid == 1 %}
+                            {% if book.stat != "Waiting for payment" %}
                                 {{image(book.payment)}}
                             {% endif %}
 

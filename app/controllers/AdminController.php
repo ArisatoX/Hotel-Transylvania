@@ -3,8 +3,10 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Models\Booking;
 use App\Models\Rooms;
 use App\Models\Meetings;
+use Dotenv\Result\Success;
 
 class AdminController extends ControllerBase
 {
@@ -188,6 +190,51 @@ class AdminController extends ControllerBase
         {
             echo "failed";
             $this->view->disable();
+        }
+
+    }
+
+    public function bookinglistAction()
+    {
+        // $query = $this->modelsManager->createQuery("SELECT * FROM App\Models\Booking x WHERE x.stat = 'Payment in process'");
+        // $booking = $query->execute();
+
+        $booking = Booking::find();
+        $this->view->booking = $booking;
+    }
+
+    public function bookingshowAction($id)
+    {
+        $conditions = ['id'=>$id];
+        $book = Booking::findFirst([
+        'conditions' => 'id= :id:',
+        'bind' => $conditions,
+        ]);
+        $this->view->book = $book;
+    }
+
+    public function bookingvalidationAction($id)
+    {
+        $conditions = ['id'=>$id];
+        $book = Booking::findFirst([
+        'conditions' => 'id= :id:',
+        'bind' => $conditions,
+        ]);
+        $this->view->book = $book;
+        
+        $book->paid = 1;
+        $book->stat = "Payment received";
+
+        $success = $book->save();
+
+        if ($success)
+        {
+            $this->response->redirect("../admin/bookinglist");
+        }
+        else
+        {
+            echo "failed";
+            $this->view->disable;
         }
 
     }
