@@ -124,10 +124,33 @@ class AdminController extends ControllerBase
 
     public function meetingcreateAction()
     {
-        $name = $this->request->getPost('name', 'string');
-        $location;
-        $capacity;
-        $description;
-        $hourPrice;
+        
+    }
+
+    public function meetingcreatingAction()
+    {
+        $name = $this->request->getPost('room', 'string');
+        $location = $this->request->getPost('location', 'string');
+        $capacity = $this->request->getPost('capacity', 'number');
+        $description = $this->request->getPost('description', 'string');
+        $hourPrice = $this->request->getPost('hourprice', 'number');
+
+        $meeting = new Meetings();
+
+        $meeting->name = $name;
+        $meeting->location = $location;
+        $meeting->capacity = $capacity;
+        $meeting->description = $description;
+        $meeting->hourPrice = $hourPrice;
+
+        $success = $meeting->create();
+
+        if($success){
+            $this->response->redirect('admin/meetinglist');
+        }
+        else{
+            echo "failed";
+            $this->view->disable();
+        }
     }
 }

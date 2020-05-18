@@ -4,7 +4,7 @@
 
 <div class="container-contact100" style="background-image: url('img/background/bgform2.jpg');">
     <div class="wrap-contact100">
-        <form class="contact100-form validate-form" method = "POST" action="/reserve/confirm">
+        <form class="contact100-form validate-form" method = "POST" action="/admin/meetingcreating">
             <span class="contact100-form-title">
                 Creating Meeting Room
             </span>
@@ -21,7 +21,7 @@
 
             <div class="wrap-input100 validate-input">
                 <span class="label-input100">Capacity:</span>
-                <input class="input100" type="text" name="capacity" placeholder="" required>
+                <input class="input100" type="number" name="capacity" placeholder="" required>
             </div>
 
             <div class="wrap-input100 validate-input">
@@ -31,7 +31,7 @@
             
             <div class="wrap-input100 validate-input">
                 <span class="label-input100">Price per Hour:</span>
-                <input class="input100" type="text" name="hourprice" placeholder="" required>
+                <input class="input100" type="number" name="hourprice" placeholder="" required>
             </div>
 
             <div class="container-contact100-form-btn">
