@@ -1,4 +1,4 @@
-{% extends "layouts/base.volt" %}
+{% extends "layouts/adminbase.volt" %}
 
 {% block content %}
 
@@ -9,6 +9,7 @@
         <table class="table table-bordered table-hover">
             <thead class="thead-light">
             <tr>
+                <th><h5>Reserve ID</h5></th>
                 <th><h5>Room Name</h5></th>
                 <th><h5>Room Location</h5></th>
                 <th><h5>Reserve Date</h5></th>
@@ -22,8 +23,9 @@
             <tbody class="table-secondary">
             {% for data in books %}
                 {% for room in rooms %}
-                    {% if room.id == data.RoomID and userid == data.userID %}
+                    {% if room.id == data.RoomID %}
                         <tr>
+                            <td><h6>{{data.id}}</h6></td>
                             <td><h6>{{room.name}}</h6></td>
                             <td><h6>{{room.location}}</h6></td>
                             <td><h6>{{data.reserveDate}}</h6></td>
@@ -32,28 +34,16 @@
                             <td><h6>Rp.{{data.price}}</h6></td>
                             {% if !data.paid %}
                             <td>
-                                <form action="/reserve/update" method="post">
-                                    <input type="text" name="id" value="{{ data.id }}" hidden>
-                                    <button class="updatebutton" type="submit"><h6>Update</h6></button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action="/reserve/delete" method="post">
-                                    <input type="text" name="id" value="{{ data.id }}" hidden>
-                                    <button class="deletebutton" type="submit"><h6>Delete</h6></button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action="/reserve/payment" method="post">
-                                    <input type="text" name="id" value="{{ data.id }}" hidden>
-                                    <button class="updatebutton" type="submit"><h6>Payment</h6></button>
-                                </form>
+                                <button class="offbutton" type="submit" disabled><h6>Waiting for Payment</h6></button>
                             </td>
                             {% else %}
                         
-                            <td colspan="3">
+                            <td>
                                 {% if !data.valid %}
-                                <button class="offbutton" type="submit" disabled><h6>Waiting</h6></button>
+                                <form action="/admin/reservevalidation" method="post">
+                                    <input type="text" name="id" value="{{ data.id }}" hidden>
+                                    <button class="updatebutton" type="submit"><h6>Validation</h6></button>
+                                </form>
                                 {% else %}
                                 <button class="offbutton" type="submit" disabled><h6>Paid</h6></button>
                                 {% endif %}

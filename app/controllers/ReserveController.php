@@ -62,6 +62,7 @@ class ReserveController extends ControllerBase
         $reserve->userID = $userid;
         $reserve->paid = 0;
         $reserve->payment = ' ';
+        $reserve->valid = 0;
 
         // echo $roomid . PHP_EOL . $dates . PHP_EOL . $start_time . PHP_EOL . $end_time . PHP_EOL . $price . PHP_EOL . $userid;
         // $this->view->disable();
