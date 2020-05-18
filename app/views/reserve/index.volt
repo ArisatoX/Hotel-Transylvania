@@ -20,7 +20,7 @@
             </div>
 
             <div class="wrap-input100 validate-input" data-validate="Invalid date">
-                <span class="label-input100">Choose reservation date (mm/dd/yyyy):</span>
+                <span class="label-input100">Choose reservation date:</span>
                 <input class="input100" type="date" name="reserveDate" placeholder=""
                     value="{{ date('Y-m-d',time()) }}"
                     min="2020-01-01" max="2030-12-31" required>
