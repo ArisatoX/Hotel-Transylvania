@@ -130,7 +130,7 @@
                                     <div class="rating">
                                         
                                     </div>
-                                    <a href="#">Edit</a>
+                                    <a href="../roomedit/<?= $room->id ?>">Edit</a>
                                 </div>
                             </div>
 
