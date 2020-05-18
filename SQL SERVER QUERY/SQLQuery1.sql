@@ -146,3 +146,10 @@ INSERT INTO Meetings VALUES ('207','Jasmine',12,'More spacious meeting room for 
 INSERT INTO Meetings VALUES ('208','Lavender',10,'Some more facilities are not in the other rooms',32000);
 INSERT INTO Meetings VALUES ('307','Sakura',6,'Room that is for small company, but still the facilities is as good as others',28000);
 INSERT INTO Meetings VALUES ('308','Pansy',8,'A minimalist meeting room, but the facility is still as good as others',30000);
+
+ALTER TABLE Reservation
+ADD valid bit;
+
+UPDATE Reservation
+SET valid = 0;
+
