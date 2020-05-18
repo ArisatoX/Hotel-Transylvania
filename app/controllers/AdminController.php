@@ -124,6 +124,10 @@ class AdminController extends ControllerBase
 
     public function meetingcreateAction()
     {
-        
+        $name = $this->request->getPost('name', 'string');
+        $location;
+        $capacity;
+        $description;
+        $hourPrice;
     }
 }
