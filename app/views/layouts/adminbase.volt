@@ -81,6 +81,7 @@
                                 <ul>
                                     <li><a href="/admin/roomlist">Rooms</a></li>
                                     <li><a href="/admin/meetinglist">Meetings</a></li>
+                                    <li><a href="#contact">Contact Us</a></li>
                                     
                                     {# <li><a href="#contact">Contact</a></li> #}
                                 </ul>
