@@ -1,4 +1,4 @@
-a:3:{i:0;s:4001:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -8,14 +8,14 @@ a:3:{i:0;s:4001:"<!DOCTYPE html>
         <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
-        <?= $this->assets->outputCss() ?>
+        {{ assets.outputCss() }}
 
     </head>
     <body>
 
         <header class="header-section header-normal">
 
-        <?php if ($this->session->has('auth_id')) { ?>
+        {% if session.has("auth_id") %}
             <!-- Logged in -->
             <div class="top-nav">
                 <div class="container">
@@ -23,12 +23,9 @@ a:3:{i:0;s:4001:"<!DOCTYPE html>
                         <div class="col-lg-12">
                             <div class="tn-right">
                                 <div class="language-option">
-                                    <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
+                                    <span class="bk-btn">{{ session.get("auth_firstName")}}<i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
-                                            <li><a href="#">Profile</a></li>
-                                            <li><a href="/booking/bookinglist">Bookings</a></li>
-                                            <li><a href="/reserve/history">Reservations</a></li>
                                             <li><a href="/logout">Logout</a></li>
                                         </ul>
                                     </div>
@@ -39,7 +36,7 @@ a:3:{i:0;s:4001:"<!DOCTYPE html>
                 </div>
             </div>        
 
-        <?php } else { ?>
+        {% else %}
             <!-- Not Logged In -->
             <div class="top-nav">
                 <div class="container">
@@ -53,7 +50,7 @@ a:3:{i:0;s:4001:"<!DOCTYPE html>
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        {% endif %}
 
         <!-- Logo -->
         <div class="menu-item">
@@ -64,7 +61,7 @@ a:3:{i:0;s:4001:"<!DOCTYPE html>
                             <nav class="mainmenu">
                                 <div class="logo">
                                     <a href="/">
-                                        <img src="<?= $this->url->get('img/icons/MainIcon.png') ?>" alt="">
+                                        <img src="{{ url("img/icons/MainIcon.png") }}" alt="">
                                     </a>
                                 </div>
                             </nav>
@@ -78,16 +75,14 @@ a:3:{i:0;s:4001:"<!DOCTYPE html>
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9">      
+                    <div class="col-lg-8">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/room">Rooms</a></li>
-                                    <li><a href="/booking">Booking</a></li>
-                                    <li><a href="/meeting">Meetings</a></li>
-                                    <li><a href="/#aboutus">About Us</a></li>
+                                    <li><a href="/">Rooms</a></li>
+                                    <li><a href="/">Meetings</a></li>
                                     
+                                    {# <li><a href="#contact">Contact</a></li> #}
                                 </ul>
                             </nav>
                         </div>
@@ -99,7 +94,7 @@ a:3:{i:0;s:4001:"<!DOCTYPE html>
     </header>
 
         <!-- Content -->
-        ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:1:" ";s:4:"file";s:74:"/home/ivan/Documents/GitHub/Hotel-Transylvania/app/views/layouts/base.volt";s:4:"line";i:102;}}i:1;s:1233:"
+        {% block content %} {% endblock %}
 
         <!-- Footer -->
         <footer class="footer-section">
@@ -130,8 +125,7 @@ a:3:{i:0;s:4001:"<!DOCTYPE html>
 
 
         <!-- Load JS -->
-        <?= $this->assets->outputJs() ?>
+        {{ assets.outputJs() }}
 
     </body>
 </html>
-";}
