@@ -39,7 +39,7 @@
                                         <i class="icon_star"></i>
                                         <i class="icon_star-half_alt"></i> #}
                                     </div>
-                                    <a href="#">Edit</a>
+                                    <a href="../roomedit/{{room.id}}">Edit</a>
                                 </div>
                             </div>
 
