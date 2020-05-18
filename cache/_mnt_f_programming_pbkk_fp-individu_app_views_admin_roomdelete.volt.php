@@ -96,7 +96,34 @@
         <!-- Content -->
         
 
-<p> <br><br><br>Main Menu<br><br><br> </p>
+    <div class="container-contact100" style="background-image: url('img/background/bgform1.jpg');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method ="POST" action="../admin/roomdeleteregister" enctype="multipart/form-data">
+				<span class="contact100-form-title">
+					DELETE ROOM
+				</span>
+
+				
+				<b style="color:red"><?= $this->flashSession->output() ?></b>
+				<br><br>
+
+				<div class="wrap-input100 validate-input" data-validate="id is required">
+					<span class="label-input100">Room ID</span>
+					<input class="input100" type="text" name="id" placeholder="">
+                </div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Submit
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
 
 
 

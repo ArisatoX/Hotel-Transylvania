@@ -29,7 +29,6 @@
                                     <h3>Rp {{room.price}}<span> / Pernight</span></h3>
                                 {% endif %} #}
     
-                                <a href="room/show/{{ room.id }}" class="primary-btn">Details</a>
                             </div>
                         </div>
                     </div>
@@ -45,6 +44,14 @@
             <button type="submit">Create</button><br>
         </form>
     </div>
+
+    <div class="room-booking">
+        <form method="get" action="../admin/roomdelete">
+            <button type="submit">Delete</button><br>
+        </form>
+    </div>
+
+    
 
 </div>
 
