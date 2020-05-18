@@ -53,6 +53,12 @@
         </form>
     </div>
 
+    <div class="room-booking">
+        <form method="get" action="../admin/bookingvalidation">
+            <button type="submit">Validation</button><br>
+        </form>
+    </div>
+
     
 
 </div>

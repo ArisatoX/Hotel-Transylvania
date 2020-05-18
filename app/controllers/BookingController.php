@@ -204,7 +204,7 @@ class BookingController extends ControllerBase
         'bind' => $conditions,
         ]);
          
-        if ($book->paid == 0)
+        if ($book->stat == "Waiting for payment")
         {
             $this->view->book = $book;
             $this->view->room = $room; 
@@ -359,7 +359,7 @@ class BookingController extends ControllerBase
         $this->view->room = $room;  
         
         // Delete booking
-        if ($book->paid == 0)
+        if ($book->stat == "Waiting for payment")
         {
             // Update the room stock
             $room->available += $book->totalroom;
@@ -384,7 +384,7 @@ class BookingController extends ControllerBase
         'bind' => $conditions,
         ]);
 
-        if ($book->paid == 0)
+        if ($book->stat == "Waiting for payment")
         {
             $this->view->book = $book;
         }
@@ -422,8 +422,7 @@ class BookingController extends ControllerBase
             
             // Update booking
             $book->payment = $path;
-            $book->paid = 1;
-            $book->stat = "Payment received";
+            $book->stat = "Payment in Proccess";
 
             $success = $book->save();
 
