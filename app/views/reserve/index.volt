@@ -14,13 +14,13 @@
                 <br>
                 <select id="room" name="room">
                     {% for room in rooms %}
-                        <option value='{{room.id}}'>{{room.name}}</option>
+                        <option value='{{room.id}}'><h5>{{room.name}}</h5></option>
                     {% endfor %}
                 </select>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate="Invalid date">
-                <span class="label-input100">Choose reservation date:</span>
+                <span class="label-input100">Choose reservation date (mm/dd/yyyy):</span>
                 <input class="input100" type="date" name="reserveDate" placeholder=""
                     value="{{ date('Y-m-d',time()) }}"
                     min="2020-01-01" max="2030-12-31" required>
