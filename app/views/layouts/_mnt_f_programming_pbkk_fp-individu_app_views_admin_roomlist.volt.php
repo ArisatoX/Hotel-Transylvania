@@ -8,14 +8,14 @@
         <title>Hotel Transylvania</title>
 
         <!-- Load CSS -->
-        <?= $this->assets->outputCss() ?>
+        {{ assets.outputCss() }}
 
     </head>
     <body>
 
         <header class="header-section header-normal">
 
-        <?php if ($this->session->has('auth_id')) { ?>
+        {% if session.has("auth_id") %}
             <!-- Logged in -->
             <div class="top-nav">
                 <div class="container">
@@ -23,7 +23,7 @@
                         <div class="col-lg-12">
                             <div class="tn-right">
                                 <div class="language-option">
-                                    <span class="bk-btn"><?= $this->session->get('auth_firstName') ?><i class="fa fa-angle-down"></i></span>
+                                    <span class="bk-btn">{{ session.get("auth_firstName")}}<i class="fa fa-angle-down"></i></span>
                                     <div class="flag-dropdown">
                                         <ul>
                                             <li><a href="/logout">Logout</a></li>
@@ -36,7 +36,7 @@
                 </div>
             </div>        
 
-        <?php } else { ?>
+        {% else %}
             <!-- Not Logged In -->
             <div class="top-nav">
                 <div class="container">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        {% endif %}
 
         <!-- Logo -->
         <div class="menu-item">
@@ -61,7 +61,7 @@
                             <nav class="mainmenu">
                                 <div class="logo">
                                     <a href="/">
-                                        <img src="<?= $this->url->get('img/icons/MainIcon.png') ?>" alt="">
+                                        <img src="{{ url("img/icons/MainIcon.png") }}" alt="">
                                     </a>
                                 </div>
                             </nav>
@@ -75,14 +75,14 @@
         <div class="menu-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">      
+                    <div class="col-lg-9">      
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
                                     <li><a href="admin/roomlist">Rooms</a></li>
                                     <li><a href="/">Meetings</a></li>
                                     
-                                    
+                                    {# <li><a href="#contact">Contact</a></li> #}
                                 </ul>
                             </nav>
                         </div>
@@ -94,11 +94,54 @@
     </header>
 
         <!-- Content -->
+<<<<<<< HEAD:app/views/layouts/_mnt_f_programming_pbkk_fp-individu_app_views_admin_roomlist.volt.php
         
 
-<p> <br><br><br>Room Create<br><br><br> </p>
+<div class="container">
+
+    <br><br>
+
+    
+    <section class="hp-room-section">
+        <div class="container-fluid">
+            <div class="hp-room-items">
+                <div class="row">
+
+                    <!-- Room -->
+                    <?php foreach ($rooms as $room) { ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="room-item">
+                            <?= $this->tag->image([$room->picture]) ?>
+                            <div class="ri-text">
+                                <h4><?= $room->names ?></h4>
+                                
+                                <h3>Rp <?= $room->price ?><span> / night</span></h3>
+
+                                
+    
+                                <a href="room/show/<?= $room->id ?>" class="primary-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="room-booking">
+        <form method="get" action="../admin/roomcreate">
+            <button type="submit">Create</button><br>
+        </form>
+    </div>
+
+</div>
 
 
+=======
+        {% block content %} {% endblock %}
+>>>>>>> e2f940c06281e2a71af1181dd727ed29cbaa45a2:app/views/layouts/admin.volt
 
         <!-- Footer -->
         <footer class="footer-section">
@@ -129,7 +172,7 @@
 
 
         <!-- Load JS -->
-        <?= $this->assets->outputJs() ?>
+        {{ assets.outputJs() }}
 
     </body>
 </html>
