@@ -28,7 +28,9 @@
                                 {% else %}
                                     <h3>Rp {{room.price}}<span> / Pernight</span></h3>
                                 {% endif %} #}
-    
+
+                                <a href="roomshow/{{ room.id }}" class="primary-btn">Edit</a>
+
                             </div>
                         </div>
                     </div>

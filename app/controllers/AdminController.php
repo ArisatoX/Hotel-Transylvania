@@ -105,6 +105,16 @@ class AdminController extends ControllerBase
         $this->response->redirect('admin/roomlist');
     }
 
+    public function roomshowAction($id)
+    {
+        $conditions = ['id'=>$id];
+        $room = Rooms::findFirst([
+        'conditions' => 'id= :id:',
+        'bind' => $conditions,
+        ]);
+        $this->view->room = $room;
+    }
+
     public function meetinglistAction()
     {
             $rooms = Meetings::find();

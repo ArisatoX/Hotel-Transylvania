@@ -97,59 +97,82 @@
         <!-- Content -->
         
 
-
+    <!-- Breadcrumb Section Begin -->
     <div class="breadcrumb-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <h2>Meeting Rooms</h2>
+                        <h2>Room Edit</h2>
                         <div class="bt-option">
-                            <a href="/admin">Home</a>
-                            <span>Meeting Rooms</span>
+                            <a href="../roomlist">Room List</a>
+                            <span><?= $room->names ?></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Breadcrumb Section End -->
+
     
-<?php if (($rooms->count() > 0)) { ?>
-<div class="welcome-area" id="welcome">
-    <div class="container">
-        <table class="table table-bordered table-hover">
-            <thead class="thead-light">
-            <tr>
-                <th><h5>Room Name</h5></th>
-                <th><h5>Room Location</h5></th>
-                <th><h5>Capacity</h5></th>
-                <th><h5>Price per Hour</h5></th>
-            </tr>
-            </thead>
-            
-            <tbody class="table-secondary">
-            <?php foreach ($rooms as $room) { ?>
-                <tr>
-                    <td><h6><?= $room->name ?></h6></td>
-                    <td><h6><?= $room->location ?></h6></td>
-                    <td><h6><?= $room->capacity ?></h6></td>
-                    <td><h6><?= $room->hourPrice ?></h6></td>
-                </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+    <!-- Room Details Section Begin -->
+    <section class="room-details-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="room-details-item">
+                        <?= $this->tag->image([$room->picture]) ?>
+                        <div class="rd-text">
+                            <div class="rd-title">
+                                <h3><?= $room->names ?></h3>
+                                <div class="rdt-right">
+                                    <div class="rating">
+                                        
+                                    </div>
+                                    <a href="#">Edit</a>
+                                </div>
+                            </div>
 
-        <div class="room-booking">
-            <form method="get" action="/admin/meetingcreate">
-                <button type="submit">Create</button><br>
-            </form>
+                            <h2>Rp <?= $room->price ?><span> / night</span></h2>
+
+                            
+
+                            
+                            <p class="f-para"> <?= $room->descriptions ?></p>
+
+                            
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td><?= $room->size ?> sqm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td><?= $room->capacity ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td><?= $room->bed ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Features:</td>
+                                        <td><?= $room->features ?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
         </div>
+    </section>
+    <!-- Room Details Section End -->
 
-        
-
-    </div>
-</div>
-<?php } ?>
 
 
 
