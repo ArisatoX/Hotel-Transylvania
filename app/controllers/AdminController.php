@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use App\Models\Users;
 use App\Models\Rooms;
+use App\Models\Meetings;
 
 class AdminController extends ControllerBase
 {
@@ -23,5 +24,12 @@ class AdminController extends ControllerBase
     public function roomcreateAction()
     {
         
+    }
+
+    public function meetinglistAction()
+    {
+            $rooms = Meetings::find();
+            $this->view->rooms = $rooms;
+            
     }
 }
